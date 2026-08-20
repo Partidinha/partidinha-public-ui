@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text">
             <div className="billow-glass-pill-navy inline-flex items-center gap-2 px-4 py-1.5 text-sky-300 text-xs font-semibold tracking-wide shadow-xs">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-              <span>O Bot Capitão no seu WhatsApp</span>
+              <span>O Bot do Partidinha no seu WhatsApp</span>
             </div>
 
             <h1
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             />
 
             <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança de inadimplentes, sorteio de times e estatísticas — tudo gerido por um bot inteligente no seu grupo.
+              Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos veacos do grupo, sorteio de times e estatísticas — tudo gerido por um bot inteligente no seu grupo.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">

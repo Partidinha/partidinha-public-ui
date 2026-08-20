@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Partidinha — Vestiário Digital no seu WhatsApp",
   description:
-    "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança de inadimplentes, sorteio de times e estatísticas — tudo gerido por um bot inteligente.",
+    "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos veacos do grupo, sorteio de times e estatísticas — tudo gerido por um bot inteligente.",
 };
 
 export default function RootLayout({

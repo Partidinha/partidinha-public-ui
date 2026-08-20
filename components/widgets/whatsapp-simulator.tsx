@@ -178,7 +178,7 @@ export const WhatsAppSimulator: React.FC = () => {
           </div>
           <div>
             <div className="font-bold text-xs flex items-center gap-1">
-              Bot Capitão{" "}
+              Bot do Partidinha{" "}
               <span className="bg-emerald-500/30 text-emerald-200 text-[9px] px-1.5 py-0.2 rounded font-mono">
                 OFICIAL
               </span>
@@ -233,9 +233,8 @@ export const WhatsAppSimulator: React.FC = () => {
           return (
             <div
               key={m.id}
-              className={`chat-bubble-received p-2.5 rounded-lg max-w-[88%] shadow-xs space-y-1 ${
-                m.borderLeft ? `border-l-4 ${m.borderLeft}` : ""
-              }`}
+              className={`chat-bubble-received p-2.5 rounded-lg max-w-[88%] shadow-xs space-y-1 ${m.borderLeft ? `border-l-4 ${m.borderLeft}` : ""
+                }`}
             >
               {m.sender && (
                 <div className="font-bold text-sky-600 text-[11px] flex items-center justify-between">

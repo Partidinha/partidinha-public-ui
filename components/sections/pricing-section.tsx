@@ -61,7 +61,7 @@ export const PricingSection: React.FC = () => {
                 Plano Pro
               </h3>
               <p className="text-xs text-slate-500 mb-6">
-                Para o capitão que quer automação completa.
+                Para o admin do grupo que quer automação completa.
               </p>
 
               <div className="text-4xl font-extrabold text-slate-900 mb-6 font-mono">

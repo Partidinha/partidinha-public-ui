@@ -70,7 +70,7 @@ export const ProblemSection: React.FC = () => {
 
             <div className="space-y-4 relative z-10">
               <h3 className="font-lastik font-bold text-2xl text-sky-600 pt-2">
-                O capitão que nunca esquece
+                O admin do grupo que nunca esquece
               </h3>
 
               <div className="bg-white/90 p-4 rounded-2xl border border-sky-200 space-y-2 font-sans text-xs shadow-xs">
@@ -78,7 +78,7 @@ export const ProblemSection: React.FC = () => {
                   <div className="flex items-center gap-2.5">
                     <span className="text-lg">🤖</span>
                     <div>
-                      <div className="font-bold text-sky-700">Bot Capitão</div>
+                      <div className="font-bold text-sky-700">Bot do Partidinha</div>
                       <div className="text-[11px] text-slate-600">14/14 Confirmados • Lista Fechada</div>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export const ProblemSection: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                  <span>Cobrança automática de inadimplentes sem constrangimento</span>
+                  <span>Cobrança automática dos veacos do grupo sem constrangimento</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />

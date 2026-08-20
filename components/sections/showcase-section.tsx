@@ -16,7 +16,7 @@ export const ShowcaseSection: React.FC = () => {
             Veja por dentro
           </span>
           <h2 className="headline-title text-3xl sm:text-5xl font-lastik tracking-tight text-white">
-            O aplicativo que todo capitão sempre quis
+            O aplicativo que todo admin de grupo sempre quis
           </h2>
         </div>
 

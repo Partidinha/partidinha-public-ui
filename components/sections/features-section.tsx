@@ -21,7 +21,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
             No vestiário digital, <span className="text-gradient-light">nada fica pra trás</span>
           </h2>
           <p className="text-slate-600 text-base">
-            Cada recurso foi pensado para tirar o estresse das costas do capitão e devolver o prazer do futebol.
+            Cada recurso foi pensado para tirar o estresse das costas do admin do grupo e devolver o prazer do futebol.
           </p>
         </div>
 

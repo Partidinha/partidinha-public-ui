@@ -46,7 +46,7 @@ export const FEATURES = [
   },
   {
     icon: "💰",
-    title: "Cobrança de Inadimplentes",
+    title: "Cobrança dos Veacos do Grupo",
     description:
       "Marque quem pagou no app. O bot manda lembretes educados no grupo periodicamente. Pare de ser o chato da cobrança!",
     iconBg: "bg-gradient-to-tr from-amber-600 to-amber-400",
