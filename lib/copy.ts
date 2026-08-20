@@ -27,6 +27,12 @@ export const HEADLINES: HeadlineOption[] = [
   },
 ];
 
+export const FEATURES_HEADER = {
+  subtitle: "Tudo que seu time precisa",
+  titleHtml: 'Tudo que sua pelada precisa <span class="text-gradient-light">para rodar no piloto automático</span>',
+  description: "Cada recurso foi pensado para tirar o estresse das costas do capitão e devolver o prazer do futebol.",
+};
+
 export const FEATURES = [
   {
     icon: "🤖",
@@ -46,7 +52,7 @@ export const FEATURES = [
   },
   {
     icon: "💰",
-    title: "Cobrança dos Veacos do Grupo",
+    title: "Cobrança de Inadimplentes",
     description:
       "Marque quem pagou no app. O bot manda lembretes educados no grupo periodicamente. Pare de ser o chato da cobrança!",
     iconBg: "bg-gradient-to-tr from-amber-600 to-amber-400",

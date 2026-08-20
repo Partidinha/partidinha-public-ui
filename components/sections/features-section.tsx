@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FEATURES } from "@/lib/copy";
+import { FEATURES, FEATURES_HEADER } from "@/lib/copy";
 
 export interface FeaturesSectionProps {
   onOpenRaffleModal: () => void;
@@ -15,13 +15,14 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 gsap-reveal">
           <span className="bg-sky-100 text-sky-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block border border-sky-200">
-            Tudo que seu time precisa
+            {FEATURES_HEADER.subtitle}
           </span>
-          <h2 className="headline-title text-3xl sm:text-5xl font-lastik text-slate-900 tracking-tight">
-            No vestiário digital, <span className="text-gradient-light">nada fica pra trás</span>
-          </h2>
+          <h2
+            className="headline-title text-3xl sm:text-5xl font-lastik text-slate-900 tracking-tight"
+            dangerouslySetInnerHTML={{ __html: FEATURES_HEADER.titleHtml }}
+          />
           <p className="text-slate-600 text-base">
-            Cada recurso foi pensado para tirar o estresse das costas do admin do grupo e devolver o prazer do futebol.
+            {FEATURES_HEADER.description}
           </p>
         </div>
 
