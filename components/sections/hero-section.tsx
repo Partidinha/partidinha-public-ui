@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { HEADLINES } from "@/lib/copy";
 import heroimg from "../../public/hero-phone.png";
+import NoiseDarkBlueGradientWithSquares from "@/components/ui/noise-dark-blue-gradient-with-squares";
 
 export interface HeroSectionProps {
   selectedHeadlineKey: string;
@@ -17,9 +18,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
     HEADLINES.find((h) => h.key === selectedHeadlineKey) || HEADLINES[0];
 
   return (
-    <section className="relative pt-6 pb-20 lg:pt-8 lg:pb-32 overflow-hidden bg-[#0B1926] text-white bg-grid-pattern-dark border-b border-sky-950">
+    <section className="relative pt-6 pb-20 lg:pt-8 lg:pb-32 overflow-hidden bg-[#0B1926] text-white border-b border-sky-950">
+      {/* DYNAMIC NOISE & SQUARES BACKGROUND */}
+      <NoiseDarkBlueGradientWithSquares className="absolute inset-0 z-0 bg-transparent" />
+
       {/* HERO CONIC LIGHT BEAM */}
-      <div id="hero-light-beam" className="hero-light-ray-navy" />
+      <div id="hero-light-beam" className="hero-light-ray-navy relative z-10 pointer-events-none" />
 
       {/* FLOATING GLASS PILL NAVBAR */}
       <Navbar />
