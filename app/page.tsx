@@ -27,7 +27,7 @@ export default function Home() {
       {/* Main Container Wrapper */}
       <div
         id="lp-container"
-        className={`transition-all duration-300 min-h-screen relative overflow-hidden ${viewportMode === "mobile" ? "view-mobile-frame my-6" : ""
+        className={`transition-all duration-300 min-h-screen relative overflow-x-clip ${viewportMode === "mobile" ? "view-mobile-frame my-6" : ""
           }`}
       >
         <HeroSection selectedHeadlineKey={selectedHeadlineKey} />

@@ -86,24 +86,32 @@ export const FEATURES = [
 
 export const HOW_IT_WORKS = [
   {
-    step: "01",
-    title: "1. Crie seu grupo",
+    step: "Passo 01",
+    title: "Crie seu grupo",
+    content: "Baixe o app, crie sua conta e cadastre o seu time em menos de 2 minutos.",
     description: "Baixe o app, crie sua conta e cadastre o seu time em menos de 2 minutos.",
+    image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: "02",
-    title: "2. O bot entra no Whats",
+    step: "Passo 02",
+    title: "O bot entra no Whats",
+    content: "Cole o link de convite do grupo. Nosso bot entra automaticamente e se apresenta aos atletas.",
     description: "Cole o link de convite do grupo. Nosso bot entra automaticamente e se apresenta aos atletas.",
+    image: "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: "03",
-    title: "3. Crie a partida",
+    step: "Passo 03",
+    title: "Crie a partida",
+    content: "Defina data, hora e valor no app. O bot anuncia no Whats e colhe confirmações.",
     description: "Defina data, hora e valor no app. O bot anuncia no Whats e colhe confirmações.",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    step: "04",
-    title: "4. Relaxa e joga",
+    step: "Passo 04",
+    title: "Relaxa e joga",
+    content: "No dia do jogo, sorteie os times, anote os gols no app e veja a resenha acontecer.",
     description: "No dia do jogo, sorteie os times, anote os gols no app e veja a resenha acontecer.",
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
