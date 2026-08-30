@@ -2,23 +2,21 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Logo from "../../app/logo-icon.png";
 
 export const Navbar: React.FC = () => {
   return (
     <header className="relative z-40 pt-4 px-4 sm:px-6 lg:px-8 mb-12">
       <div className="max-w-7xl mx-auto billow-glass-pill-navy px-6 h-16 flex items-center justify-between shadow-cta-glow">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#1E4A6B] to-[#38BDF8] text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:scale-105 transition duration-300 border border-sky-300/30">
-            ⚽
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-lg text-white tracking-tight flex items-center gap-1.5 font-lastik">
-              Partidinha{" "}
-              <span className="w-2 h-2 rounded-full bg-sky-400 inline-block animate-pulse" />
-            </span>
-          </div>
+
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image src={Logo} alt="Partidinha Logo" className="w-10 h-10" />
+          <span className="font-bold text-lg text-white tracking-tight flex items-center gap-1.5 font-lastik">
+            partidinha
+          </span>
         </Link>
 
         {/* Desktop Links */}

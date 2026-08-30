@@ -65,7 +65,7 @@ export const ProblemSection: React.FC = () => {
           {/* Card: Solução */}
           <div className="focused-grid-card-light p-7 sm:p-9 border-2 border-sky-400/60 shadow-md relative overflow-hidden flex flex-col justify-between gsap-reveal">
             <div className="absolute top-0 right-0 bg-sky-600 text-white text-[11px] font-bold px-4 py-1 rounded-bl-2xl uppercase tracking-wider shadow-xs z-10">
-              ✨ Com Partidinha (Vestiário Digital)
+              ✨ Com Partidinha (Tudo resolvido sem estresse)
             </div>
 
             <div className="space-y-4 relative z-10">

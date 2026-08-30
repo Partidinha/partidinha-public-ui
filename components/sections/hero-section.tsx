@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Sparkles, ArrowDown } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
-import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
+//import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { HEADLINES } from "@/lib/copy";
+import heroimg from "../../public/hero-phone.png";
 
 export interface HeroSectionProps {
   selectedHeadlineKey: string;
@@ -27,8 +29,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text">
             <div className="billow-glass-pill-navy inline-flex items-center gap-2 px-4 py-1.5 text-sky-300 text-xs font-semibold tracking-wide shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-              <span>O Bot do Partidinha no seu WhatsApp</span>
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+              <span>{"  "}O Bot do Partidinha no seu WhatsApp</span>
             </div>
 
             <h1
@@ -91,7 +93,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           {/* Right Column: WhatsApp Simulator */}
           <div className="lg:col-span-5 flex justify-center relative gsap-hero-card">
             <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/40 via-cyan-400/30 to-sky-600/30 rounded-[50px] blur-3xl -z-10 scale-110" />
-            <WhatsAppSimulator />
+            {/* <WhatsAppSimulator /> */}
+            <Image height={600} src={heroimg} alt="Partidinha no WhatsApp" />
           </div>
         </div>
       </div>
