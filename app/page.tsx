@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { DesignerToolbar } from "@/components/controls/designer-toolbar";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProblemSection } from "@/components/sections/problem-section";
 import { FeaturesSection } from "@/components/sections/features-section";
@@ -25,20 +24,11 @@ export default function Home() {
       {/* GSAP Scroll Animations Initializer */}
       <ScrollAnimations />
 
-      {/* Interactive Toolbar */}
-      <DesignerToolbar
-        selectedHeadlineKey={selectedHeadlineKey}
-        onSelectHeadline={setSelectedHeadlineKey}
-        viewportMode={viewportMode}
-        onToggleViewport={setViewportMode}
-      />
-
       {/* Main Container Wrapper */}
       <div
         id="lp-container"
-        className={`transition-all duration-300 min-h-screen relative overflow-hidden ${
-          viewportMode === "mobile" ? "view-mobile-frame my-6" : ""
-        }`}
+        className={`transition-all duration-300 min-h-screen relative overflow-hidden ${viewportMode === "mobile" ? "view-mobile-frame my-6" : ""
+          }`}
       >
         <HeroSection selectedHeadlineKey={selectedHeadlineKey} />
         <ProblemSection />
