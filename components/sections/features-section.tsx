@@ -1,20 +1,43 @@
 "use client";
 
 import React from "react";
+import { Bot, CheckCircle2, Banknote, Shuffle, BarChart3, Clock } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { FEATURES, FEATURES_HEADER } from "@/lib/copy";
+import { FeatureCard, FeatureType } from "@/components/ui/grid-feature-cards";
 
 export interface FeaturesSectionProps {
   onOpenRaffleModal: () => void;
 }
 
+const FEATURE_ICONS: Record<number, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+  0: Bot,
+  1: CheckCircle2,
+  2: Banknote,
+  3: Shuffle,
+  4: BarChart3,
+  5: Clock,
+};
+
+const FEATURE_IMAGES: Record<number, string> = {
+  0: "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=1000&auto=format&fit=crop",
+  1: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000&auto=format&fit=crop",
+  2: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop",
+  3: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop",
+  4: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000&auto=format&fit=crop",
+  5: "https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1000&auto=format&fit=crop",
+};
+
 export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
   onOpenRaffleModal,
 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section id="features" className="py-16 sm:py-24 bg-white border-b border-slate-200/60 relative">
+    <section id="features" className="py-16 sm:py-24 bg-white border-b border-sky-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 gsap-reveal">
-          <span className="bg-sky-100 text-sky-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block border border-sky-200">
+          <span className="bg-sky-100 text-sky-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block border border-sky-200 shadow-xs">
             {FEATURES_HEADER.subtitle}
           </span>
           <h2
@@ -26,58 +49,64 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <AnimatedGrid shouldReduceMotion={shouldReduceMotion}>
           {FEATURES.map((item, index) => {
-            if (item.isFocused) {
-              return (
-                <div
-                  key={index}
-                  className="focused-grid-card-light p-8 relative group border-2 border-sky-400/50 gsap-stagger-card"
-                >
-                  <div
-                    className={`w-12 h-12 rounded-2xl ${item.iconBg} text-white flex items-center justify-center text-2xl mb-5 shadow-xs group-hover:scale-110 transition duration-300 relative z-10`}
-                  >
-                    {item.icon}
-                  </div>
-                  <div className="flex items-center justify-between mb-2 relative z-10">
-                    <h3 className="font-lastik text-2xl font-bold text-slate-900">
-                      {item.title}
-                    </h3>
+            const feature: FeatureType = {
+              title: item.title,
+              icon: FEATURE_ICONS[index] || Bot,
+              description: item.description,
+              image: FEATURE_IMAGES[index],
+            };
+
+            return (
+              <div key={index} className="relative group border-sky-200/80 border-dashed lg:odd:border-r border-b">
+                <FeatureCard
+                  feature={feature}
+                  className="h-full bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300"
+                />
+                {item.isFocused && (
+                  <div className="absolute top-6 right-6 z-30">
                     <button
                       onClick={onOpenRaffleModal}
-                      className="text-xs bg-sky-600 hover:bg-sky-500 text-white font-bold px-3 py-1 rounded-full transition shadow-xs cursor-pointer"
+                      className="text-xs bg-sky-600 hover:bg-sky-500 text-white font-bold px-3.5 py-1.5 rounded-full transition shadow-xs cursor-pointer"
                     >
                       Testar Sorteio
                     </button>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed relative z-10">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            }
-
-            return (
-              <div
-                key={index}
-                className="billow-glass-card-light p-8 relative group gsap-stagger-card"
-              >
-                <div
-                  className={`w-12 h-12 rounded-2xl ${item.iconBg} text-white flex items-center justify-center text-2xl mb-5 shadow-xs group-hover:scale-110 transition duration-300`}
-                >
-                  {item.icon}
-                </div>
-                <h3 className="font-lastik text-2xl font-bold text-slate-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {item.description}
-                </p>
+                )}
               </div>
             );
           })}
-        </div>
+        </AnimatedGrid>
       </div>
     </section>
   );
 };
+
+function AnimatedGrid({
+  children,
+  shouldReduceMotion,
+}: {
+  children: React.ReactNode;
+  shouldReduceMotion: boolean | null;
+}) {
+  if (shouldReduceMotion) {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10">
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ filter: "blur(4px)", translateY: -8, opacity: 0 }}
+      whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+      className="grid grid-cols-1 lg:grid-cols-2 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10"
+    >
+      {children}
+    </motion.div>
+  );
+}
