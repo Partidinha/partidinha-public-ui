@@ -46,17 +46,13 @@ export const TestimonialsSection: React.FC = () => {
                 i === 0 ? "md:border-r" : i === 1 ? "md:border-r" : ""
               } border-b md:border-b-0`}
             >
-              <div className="relative overflow-hidden p-8 md:p-10 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
+              <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
                 {/* Background SVG Grid Overlay & Cyan Rays */}
                 <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
                   <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
                     <GridPattern />
                   </div>
                 </div>
-
-                {/* Blue blur glow — bottom right corner */}
-                <div className="pointer-events-none absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-sky-400/25 blur-[48px]" />
-                <div className="pointer-events-none absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-cyan-300/20 blur-[32px]" />
 
                 {/* Quote icon */}
                 <div className="relative z-10 mb-4">
@@ -71,7 +67,7 @@ export const TestimonialsSection: React.FC = () => {
                 </p>
 
                 {/* Author */}
-                <div className="relative z-10 flex items-center gap-3 pt-6 mt-6 border-t border-sky-200/60">
+                <div className="relative z-10 flex items-center gap-3 pt-5 mt-5 border-t border-sky-200/60">
                   <div
                     className={`w-10 h-10 rounded-full ${t.gradient} text-white font-bold flex items-center justify-center text-sm shadow-xs shrink-0`}
                   >
