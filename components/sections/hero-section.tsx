@@ -29,9 +29,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           {/* Left Column: Copy & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text pb-16 lg:pb-28 pt-4">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text pb-16 lg:pb-28 pt-20 lg:pt-24">
             <div className="billow-glass-pill-navy inline-flex items-center gap-2 px-4 py-1.5 text-sky-300 text-xs font-semibold tracking-wide shadow-xs">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
               <span>{"  "}O Bot do Partidinha no seu WhatsApp</span>
@@ -66,19 +66,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           </div>
 
           {/* Right Column: Hero Image Mockup */}
-          <div className="lg:col-span-5 relative gsap-hero-card min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
+          <div className="lg:col-span-5 relative gsap-hero-card min-h-[450px] sm:min-h-[580px] lg:min-h-[680px] xl:min-h-[740px]">
             {/* Bottom-Up Blue Light Glow (BEHIND IMAGE - Extra Wide) */}
-            <div className="absolute -bottom-10 -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[650px] sm:w-[850px] lg:w-[1100px] max-w-none h-64 sm:h-80 bg-gradient-to-t from-sky-400/50 via-cyan-400/20 to-transparent blur-3xl z-10 pointer-events-none" />
+            <div className="absolute -bottom-10 -left-[255px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-64 sm:h-80 bg-gradient-to-t from-sky-400/50 via-cyan-400/20 to-transparent blur-3xl z-10 pointer-events-none" />
 
             <Image
               src={heroimg}
               alt="Partidinha no WhatsApp"
-              className="absolute -bottom-12 lg:-bottom-20 -left-[140px] sm:-left-[180px] lg:-left-[220px] w-[550px] sm:w-[750px] lg:w-[920px] max-w-none h-auto object-contain drop-shadow-2xl z-30 pointer-events-none"
+              sizes="(min-width: 1280px) 1160px, (min-width: 1024px) 1080px, (min-width: 640px) 880px, 650px"
+              className="absolute -bottom-14 lg:-bottom-[104px] -left-[210px] sm:-left-[270px] lg:-left-[305px] xl:-left-[315px] w-[650px] sm:w-[880px] lg:w-[1080px] xl:w-[1160px] max-w-none h-auto object-contain drop-shadow-2xl z-30 pointer-events-none"
               priority
             />
 
             {/* Bottom-Up Blue Light Glow (IN FRONT OF IMAGE - Extra Wide) */}
-            <div className="absolute -bottom-10 -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[650px] sm:w-[850px] lg:w-[1100px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
+            <div className="absolute -bottom-10 -left-[255px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
           </div>
         </div>
       </div>

@@ -337,7 +337,7 @@ export default function NoiseDarkBlueGradientWithSquares({
   }, [direction, speed, squareSize]);
 
   return (
-    <div className={cn("fixed inset-0 z-50 bg-neutral-950", className)}>
+    <div className={cn("absolute inset-0 z-50 bg-neutral-950", className)}>
       {/* soft spotlight tone */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_620px_at_50%_200px,rgba(37,99,235,0.35),transparent_70%)]" />
 
