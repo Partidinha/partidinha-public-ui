@@ -1,98 +1,172 @@
 import React from "react";
-import { Check, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { Check, CheckCircle2, Zap } from "lucide-react";
+
+const plans = [
+  {
+    name: "Free",
+    title: "Plano Free",
+    price: "R$ 0",
+    period: "/mês",
+    description: "Para grupos pequenos testarem sem compromisso.",
+    features: [
+      "1 grupo cadastrado",
+      "Até 15 jogadores",
+      "Bot básico (confirmações)",
+    ],
+    cta: "Começar grátis",
+    popular: false,
+  },
+  {
+    name: "Pro",
+    title: "Plano Pro",
+    price: "R$ 19,90",
+    period: "/mês",
+    description: "Para o admin que quer automação completa.",
+    features: [
+      "Grupos & Jogadores Ilimitados",
+      "Bot completo com Cobranças Automáticas",
+      "Sorteio inteligente de times",
+      "Tabelas de artilharia & Estatísticas",
+      "Notificações push & Lembretes",
+      "Suporte prioritário",
+    ],
+    cta: "Assinar Pro (7 dias grátis)",
+    popular: true,
+  },
+];
+
+function GridPattern() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="absolute inset-0 h-full w-full fill-sky-500/10 stroke-sky-400/30 mix-blend-overlay"
+    >
+      <defs>
+        <pattern
+          id="pricing-grid"
+          width="24"
+          height="24"
+          patternUnits="userSpaceOnUse"
+          x="-12"
+          y="4"
+        >
+          <path d="M.5 24V.5H24" fill="none" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" strokeWidth={0} fill="url(#pricing-grid)" />
+    </svg>
+  );
+}
 
 export const PricingSection: React.FC = () => {
   return (
-    <section id="planos" className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/60 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 gsap-reveal">
-          <span className="bg-sky-100 text-sky-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block border border-sky-200">
+    <section id="planos" className="py-16 md:py-32 bg-white border-b border-sky-100 relative">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-4 gsap-reveal">
+          <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
             Escolha seu plano
           </span>
-          <h2 className="headline-title text-3xl sm:text-5xl font-lastik text-slate-900 tracking-tight">
+          <h2 className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             Menos que o valor de um lanche por mês
           </h2>
+          <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto">
+            Comece grátis e evolua conforme seu grupo cresce. Sem contratos, cancele quando quiser.
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          {/* Free Plan */}
-          <div className="billow-glass-card-light p-9 flex flex-col justify-between bg-white gsap-reveal">
-            <div>
-              <h3 className="font-lastik font-bold text-2xl text-slate-900 mb-1">
-                Plano Free
-              </h3>
-              <p className="text-xs text-slate-500 mb-6">
-                Para grupos pequenos testarem sem compromisso.
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`relative group border-sky-200/80 border-dashed ${
+                plan.popular ? "md:border-l" : "md:border-r"
+              } border-b md:border-b-0`}
+            >
+              {plan.popular && (
+                <span className="absolute top-4 right-4 z-20 flex h-6 w-fit items-center rounded-full bg-sky-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+                  Recomendado
+                </span>
+              )}
 
-              <div className="text-4xl font-extrabold text-slate-900 mb-6 font-mono">
-                R$ 0 <span className="text-sm font-normal text-slate-500 font-sans">/mês</span>
+              <div className="relative overflow-hidden p-8 md:p-10 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
+                {/* Background SVG Grid Overlay & Cyan Rays */}
+                <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+                  <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
+                    <GridPattern />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 space-y-6">
+                  {/* Header */}
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
+                      {plan.popular ? (
+                        <Zap className="size-6" strokeWidth={2} aria-hidden />
+                      ) : (
+                        <CheckCircle2 className="size-6" strokeWidth={2} aria-hidden />
+                      )}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
+                      {plan.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
+                      {plan.description}
+                    </p>
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl sm:text-5xl font-bold text-slate-900 font-lastik">
+                      {plan.price}
+                    </span>
+                    <span className="text-sm font-normal text-slate-500">
+                      {plan.period}
+                    </span>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-3">
+                    {plan.features.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2.5 text-sm sm:text-base">
+                        {plan.popular ? (
+                          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-sky-600" />
+                        ) : (
+                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                        )}
+                        <span className="text-slate-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="relative z-10 mt-8">
+                  {plan.popular ? (
+                    <Link
+                      href=""
+                      className="inline-flex w-full items-center justify-center h-12 rounded-full bg-sky-600 text-white font-semibold text-sm shadow-sm hover:bg-sky-500 hover:shadow-md transition-all duration-200 active:scale-95"
+                    >
+                      {plan.cta}
+                    </Link>
+                  ) : (
+                    <Link
+                      href=""
+                      className="inline-flex w-full items-center justify-center h-12 rounded-full border border-slate-300 bg-white text-slate-800 font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95"
+                    >
+                      {plan.cta}
+                    </Link>
+                  )}
+                </div>
               </div>
-
-              <ul className="space-y-3 text-xs text-slate-700 mb-8">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  <span>1 grupo cadastrado</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  <span>Até 15 jogadores</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  <span>Bot básico (confirmações)</span>
-                </li>
-              </ul>
             </div>
-
-            <button className="w-full py-3.5 px-6 rounded-full border border-slate-300 font-bold text-sm text-slate-800 hover:bg-slate-100 transition cursor-pointer">
-              Começar grátis
-            </button>
-          </div>
-
-          {/* Pro Plan */}
-          <div className="focused-grid-card-light p-9 border-2 border-sky-500 shadow-lg relative flex flex-col justify-between bg-white gsap-reveal">
-            <div className="absolute -top-3.5 right-6 bg-sky-600 text-white text-[10px] font-extrabold uppercase px-3.5 py-1 rounded-full tracking-wider shadow-sm z-10">
-              RECOMENDADO
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="font-lastik font-bold text-2xl text-slate-900 mb-1">
-                Plano Pro
-              </h3>
-              <p className="text-xs text-slate-500 mb-6">
-                Para o admin do grupo que quer automação completa.
-              </p>
-
-              <div className="text-4xl font-extrabold text-slate-900 mb-6 font-mono">
-                R$ 19,90 <span className="text-sm font-normal text-slate-500 font-sans">/mês</span>
-              </div>
-
-              <ul className="space-y-3 text-xs text-slate-700 mb-8">
-                <li className="flex items-center gap-2 font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Grupos & Jogadores Ilimitados</span>
-                </li>
-                <li className="flex items-center gap-2 font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Bot completo com Cobranças Automáticas</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Sorteio inteligente de times</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Tabelas de artilharia & Estatísticas</span>
-                </li>
-              </ul>
-            </div>
-
-            <button className="w-full py-4 px-6 rounded-full bg-sky-600 hover:bg-sky-500 font-bold text-sm text-white shadow-cta-glow transition active:scale-95 relative z-10 cursor-pointer">
-              Assinar Pro (7 dias grátis)
-            </button>
-          </div>
+          ))}
         </div>
+
+        <p className="mt-10 text-center text-xs text-slate-400">
+          Pagamento seguro via Stripe. 7 dias de garantia em todos os planos pagos.
+        </p>
       </div>
     </section>
   );
