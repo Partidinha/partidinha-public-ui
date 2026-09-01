@@ -8,7 +8,7 @@ import Logo from "../../app/logo-icon.png";
 
 export const Navbar: React.FC = () => {
   return (
-    <header className="relative z-40 pt-4 px-4 sm:px-6 lg:px-8 mb-12">
+    <header className="relative z-40 pt-4 px-4 sm:px-6 lg:px-8 mb-6">
       <div className="max-w-7xl mx-auto billow-glass-pill-navy px-6 h-16 flex items-center justify-between shadow-cta-glow">
         {/* Logo */}
 

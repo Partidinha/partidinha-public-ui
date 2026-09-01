@@ -34,7 +34,7 @@ export default function Home() {
         <ProblemSection />
         <FeaturesSection onOpenRaffleModal={() => setIsRaffleModalOpen(true)} />
         <HowItWorksSection />
-        <ShowcaseSection />
+        {/* <ShowcaseSection /> */}
         <TestimonialsSection />
         <PricingSection />
         <FaqSection />

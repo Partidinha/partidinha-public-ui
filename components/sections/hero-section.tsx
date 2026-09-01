@@ -6,7 +6,7 @@ import { Sparkles, ArrowDown } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { HEADLINES } from "@/lib/copy";
-import heroimg from "../../public/hero-phone.png";
+import heroimg from "@/app/hero.png";
 import NoiseDarkBlueGradientWithSquares from "@/components/ui/noise-dark-blue-gradient-with-squares";
 
 export interface HeroSectionProps {
@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
     HEADLINES.find((h) => h.key === selectedHeadlineKey) || HEADLINES[0];
 
   return (
-    <section className="relative pt-6 pb-20 lg:pt-8 lg:pb-32 overflow-hidden bg-[#0B1926] text-white border-b border-sky-950">
+    <section className="relative pt-4 pb-12 lg:pt-6 lg:pb-16 overflow-hidden bg-[#0B1926] text-white border-b border-sky-950">
       {/* DYNAMIC NOISE & SQUARES BACKGROUND */}
       <NoiseDarkBlueGradientWithSquares className="absolute inset-0 z-0 bg-transparent" />
 
@@ -29,9 +29,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
           {/* Left Column: Copy & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left gsap-hero-text pb-16 lg:pb-28 pt-4">
             <div className="billow-glass-pill-navy inline-flex items-center gap-2 px-4 py-1.5 text-sky-300 text-xs font-semibold tracking-wide shadow-xs">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
               <span>{"  "}O Bot do Partidinha no seu WhatsApp</span>
@@ -63,42 +63,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
                 <ArrowDown className="w-4 h-4 opacity-80" />
               </a>
             </div>
-
-            {/* Social Proof */}
-            <div className="pt-6 border-t border-sky-900/40 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm font-medium text-slate-200">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <div className="w-7 h-7 rounded-full bg-sky-600 text-white font-bold flex items-center justify-center text-[10px] ring-2 ring-[#0B1926]">
-                    FC
-                  </div>
-                  <div className="w-7 h-7 rounded-full bg-[#1E4A6B] text-white font-bold flex items-center justify-center text-[10px] ring-2 ring-[#0B1926]">
-                    TB
-                  </div>
-                  <div className="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-[10px] ring-2 ring-[#0B1926]">
-                    CR
-                  </div>
-                </div>
-                <span>
-                  <strong className="text-white font-bold">1.200+</strong> grupos ativos
-                </span>
-              </div>
-              <div className="hidden sm:inline opacity-30">•</div>
-              <div>
-                <strong className="text-white font-bold">45.000+</strong> peladeiros
-              </div>
-              <div className="hidden sm:inline opacity-30">•</div>
-              <div className="flex items-center gap-1 text-amber-400">
-                <span>★ 4.8</span>
-                <span className="text-slate-300 font-normal">na App Store</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: WhatsApp Simulator */}
-          <div className="lg:col-span-5 flex justify-center relative gsap-hero-card">
-            <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/40 via-cyan-400/30 to-sky-600/30 rounded-[50px] blur-3xl -z-10 scale-110" />
-            {/* <WhatsAppSimulator /> */}
-            <Image height={600} src={heroimg} alt="Partidinha no WhatsApp" />
+          {/* Right Column: Hero Image Mockup */}
+          <div className="lg:col-span-5 relative gsap-hero-card min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
+            {/* Bottom-Up Blue Light Glow (BEHIND IMAGE - Extra Wide) */}
+            <div className="absolute -bottom-10 -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[650px] sm:w-[850px] lg:w-[1100px] max-w-none h-64 sm:h-80 bg-gradient-to-t from-sky-400/50 via-cyan-400/20 to-transparent blur-3xl z-10 pointer-events-none" />
+
+            <Image
+              src={heroimg}
+              alt="Partidinha no WhatsApp"
+              className="absolute -bottom-12 lg:-bottom-20 -left-[140px] sm:-left-[180px] lg:-left-[220px] w-[550px] sm:w-[750px] lg:w-[920px] max-w-none h-auto object-contain drop-shadow-2xl z-30 pointer-events-none"
+              priority
+            />
+
+            {/* Bottom-Up Blue Light Glow (IN FRONT OF IMAGE - Extra Wide) */}
+            <div className="absolute -bottom-10 -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[650px] sm:w-[850px] lg:w-[1100px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
           </div>
         </div>
       </div>
