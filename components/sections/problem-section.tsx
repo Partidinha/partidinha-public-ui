@@ -65,7 +65,7 @@ export const ProblemSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 border border-dashed border-slate-300/80 rounded-3xl overflow-hidden shadow-xs bg-slate-50/10">
           {/* Card: Caos (Vermelho) */}
-          <div className="relative group border-red-200/80 border-dashed md:border-r border-b md:border-b-0">
+          <div className="relative group border-red-200/80 border-dashed md:border-r border-b md:border-b-0 gsap-reveal">
             <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-red-50/20 hover:bg-red-50/70 transition-colors duration-300">
               {/* Background SVG Grid Overlay & Red Rays */}
               <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
@@ -119,7 +119,7 @@ export const ProblemSection: React.FC = () => {
           </div>
 
           {/* Card: Solução (Azul) */}
-          <div className="relative group border-sky-200/80 border-dashed">
+          <div className="relative group border-sky-200/80 border-dashed gsap-reveal">
             <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
               {/* Background SVG Grid Overlay & Cyan Rays */}
               <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
