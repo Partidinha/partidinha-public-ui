@@ -6,6 +6,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FEATURES, FEATURES_HEADER } from "@/lib/copy";
 import { FeatureCard, FeatureType } from "@/components/ui/grid-feature-cards";
 
+import Times from "../../app/times.webp";
+import Stats from "../../app/match.webp";
+import Ranking from "../../app/ranking.webp";
+import BotWhatsapp from "../../app/bot-1.webp";
+import CheckIn from "../../app/checkin.webp";
+import Charges from "../../app/cobranca-2.webp";
+
 export interface FeaturesSectionProps {
   onOpenRaffleModal: () => void;
 }
@@ -19,12 +26,13 @@ const FEATURE_ICONS: Record<number, React.ComponentType<React.SVGProps<SVGSVGEle
   5: Clock,
 };
 
+
 const FEATURE_IMAGES: Record<number, string> = {
-  0: "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=1000&auto=format&fit=crop",
-  1: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000&auto=format&fit=crop",
-  2: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop",
-  3: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop",
-  4: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000&auto=format&fit=crop",
+  0: BotWhatsapp,
+  1: CheckIn,
+  2: Charges,
+  3: Times,
+  4: Stats,
   5: "https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1000&auto=format&fit=crop",
 };
 

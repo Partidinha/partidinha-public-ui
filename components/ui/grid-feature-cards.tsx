@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import Image from "next/image";
 
 export type FeatureType = {
   title: string;
@@ -51,32 +52,26 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
       </div>
 
       {/* iPhone Mockup Container */}
-      <div className="relative z-10 mt-8 w-full max-w-[280px] sm:max-w-[320px] mx-auto transition-transform duration-500 group-hover:-translate-y-2">
-        <div className="relative rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-950 shadow-2xl shadow-sky-950/20 overflow-hidden ring-1 ring-slate-900/10">
+      <div className="relative z-10 mt-8 w-full max-w-[180px] sm:max-w-[260px] mx-auto transition-transform duration-500 group-hover:-translate-y-2">
+        <div className="relative rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-950  overflow-hidden ring-1 ring-slate-900/10 h-[500px] ">
           {/* Dynamic Island / iPhone Notch */}
-          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-slate-900 rounded-full z-30 flex items-center justify-center gap-1.5">
+          {/* <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-slate-900 rounded-full z-30 flex items-center justify-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-slate-950" />
             <div className="w-1.5 h-1.5 rounded-full bg-slate-950" />
-          </div>
+          </div> */}
 
           {/* iPhone Screen Content Slot */}
-          <div className="relative w-full h-[230px] sm:h-[270px] bg-slate-900 overflow-hidden flex items-center justify-center">
-            {feature.image ? (
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-b from-sky-950/60 via-slate-900 to-slate-950 flex flex-col items-center justify-center p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center mb-3 text-sky-400">
-                  <feature.icon className="size-6" />
-                </div>
-                <span className="text-xs text-sky-200/80 font-semibold tracking-wide">Mockup iPhone</span>
-                <span className="text-[11px] text-slate-400 mt-1">Cole o print da tela aqui</span>
-              </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent pointer-events-none" />
+          <div className="relative w-full h-[500px] sm:h-[500px] bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
+            <Image
+              src={feature.image!}
+              alt={feature.title}
+              className={`
+                  w-full object-cover,
+                  ${["Estatísticas em Tempo Real", "Sorteio de Times", "Confirmações Automáticas"].includes(feature.title) ? "mt-[40px]" : "mt-[10px]"} 
+                `}
+              width={260}
+              height={500}
+            />
           </div>
         </div>
       </div>
