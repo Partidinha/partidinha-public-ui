@@ -67,7 +67,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
               alt={feature.title}
               className={`
                   w-full object-cover,
-                  ${["Estatísticas em Tempo Real", "Sorteio de Times", "Confirmações Automáticas"].includes(feature.title) ? "mt-[40px]" : "mt-[10px]"} 
+                  ${["Controle de Pagamentos", "Estatísticas em Tempo Real", "Sorteio de Times", "Confirmações Automáticas"].includes(feature.title) ? "mt-[40px]" : "mt-[10px]"} 
                 `}
               width={260}
               height={500}

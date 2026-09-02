@@ -32,7 +32,7 @@ export default function Home() {
       >
         <HeroSection selectedHeadlineKey={selectedHeadlineKey} />
         <ProblemSection />
-        <FeaturesSection onOpenRaffleModal={() => setIsRaffleModalOpen(true)} />
+        <FeaturesSection />
         <HowItWorksSection />
         {/* <ShowcaseSection /> */}
         <TestimonialsSection />

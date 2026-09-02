@@ -7,6 +7,10 @@ import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { HEADLINES } from "@/lib/copy";
 import heroimg from "@/app/hero.png";
+import rankBlock from "@/app/rank-block.webp";
+import checkinBlock from "@/app/checkin-block.webp";
+import teamBlock from "@/app/team-block.webp";
+import paymentsBlock from "@/app/payments-block.webp";
 import NoiseDarkBlueGradientWithSquares from "@/components/ui/noise-dark-blue-gradient-with-squares";
 
 export interface HeroSectionProps {
@@ -44,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             />
 
             <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos veacos do grupo, sorteio de times e estatísticas — tudo gerido por um bot inteligente no seu grupo.
+              Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos veacos do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -80,6 +84,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
 
             {/* Bottom-Up Blue Light Glow (IN FRONT OF IMAGE - Extra Wide) */}
             <div className="absolute -bottom-10 -left-[255px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
+
+            {/* Floating app UI element images. Rotation echoes the phone mockup's own perspective tilt */}
+            <div
+              className="hero-float-item absolute bottom-[5%] right-[-10%] lg:right-[-8%] z-50"
+              style={{ animationDelay: "0s", animationDuration: "6s", "--float-rotate": "7deg" } as React.CSSProperties}
+            >
+              <div className="hero-float-glass-frame">
+                <Image src={rankBlock} alt="" className="w-[100px] sm:w-[229px] h-auto" />
+              </div>
+            </div>
+            <div
+              className="hero-float-item absolute bottom-[28%] left-[80%] w-max z-50"
+              style={{ animationDelay: "0.6s", animationDuration: "5.5s", "--float-rotate": "7deg" } as React.CSSProperties}
+            >
+              <div className="hero-float-glass-frame">
+                <Image src={checkinBlock} alt="" className="w-[100px] sm:w-[231px] h-auto" />
+              </div>
+            </div>
+            <div
+              className="hero-float-item absolute top-[24%] right-[-25%] sm:right-[-23%] z-50"
+              style={{ animationDelay: "1.8s", animationDuration: "6.5s", "--float-rotate": "7deg" } as React.CSSProperties}
+            >
+              <div className="hero-float-glass-frame">
+                <Image src={teamBlock} alt="" className="w-[95px] sm:w-[228px] h-auto" />
+              </div>
+            </div>
+            <div
+              className="hero-float-item absolute top-[14%] -left-[6%] z-50"
+              style={{ animationDelay: "0.9s", animationDuration: "5s", "--float-rotate": "7deg", "--float-rotate-y": "-9deg", "--float-rotate-x": "2deg" } as React.CSSProperties}
+            >
+              <div className="hero-float-glass-frame">
+                <Image src={paymentsBlock} alt="" className="w-[95px] sm:w-[226px] h-auto" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

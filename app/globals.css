@@ -94,11 +94,11 @@
   background: 
     conic-gradient(from 180deg at 50% 0%, 
       transparent 0deg, 
-      rgba(14, 165, 233, 0.08) 130deg, 
+      rgba(14, 165, 233, 0.08) 17deg, 
       rgba(56, 189, 248, 0.4) 165deg, 
       rgba(2, 132, 199, 0.75) 180deg, 
       rgba(56, 189, 248, 0.4) 195deg, 
-      rgba(14, 165, 233, 0.08) 230deg, 
+      rgba(14, 165, 233, 0.08) 27deg, 
       transparent 360deg),
     radial-gradient(ellipse at 50% 15%, rgba(56, 189, 248, 0.35) 0%, rgba(14, 165, 233, 0.15) 50%, transparent 80%);
   filter: blur(40px);
@@ -162,6 +162,95 @@
 .custom-scrollbar::-webkit-scrollbar { width: 5px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.05); }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(14, 165, 233, 0.3); border-radius: 9999px; }
+
+/* Floating elements around the hero phone mockup */
+/* Same lateral 3D perspective as the phone mockup image: perspective + rotateY do the
+   foreshortening, rotateX/rotate add the small lean. --float-rotate varies per card. */
+@keyframes hero-float {
+  0%, 100% { transform: perspective(1000px) rotateY(var(--float-rotate-y, -15deg)) rotateX(var(--float-rotate-x, 4deg)) translateY(0) translateX(0) rotate(var(--float-rotate, 7deg)); }
+  50% { transform: perspective(1000px) rotateY(var(--float-rotate-y, -15deg)) rotateX(var(--float-rotate-x, 4deg)) translateY(-14px) translateX(4px) rotate(var(--float-rotate, 7deg)); }
+}
+
+.hero-float-item {
+  animation: hero-float 5s ease-in-out infinite;
+  transform: perspective(1000px) rotateY(var(--float-rotate-y, -15deg)) rotateX(var(--float-rotate-x, 4deg)) rotate(var(--float-rotate, 7deg));
+  transform-style: preserve-3d;
+}
+
+.hero-float-glass {
+  background: linear-gradient(135deg, rgba(30, 74, 107, 0.35) 0%, rgba(7, 13, 20, 0.6) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(186, 230, 253, 0.25);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 1px 0 0 rgba(255, 255, 255, 0.15) inset;
+  border-radius: 14px;
+}
+
+/* Liquid-glass 3D bevel wrapping each floating hero image.
+   This reads as the edge of the image itself curling in 3D, not a separate card
+   mounted behind it: the "frame" is a hairline, mostly-transparent rim, and the
+   shadow hugs the shape tightly instead of casting a big detached halo.
+   The cards tilt with rotateY(-15deg)/rotateX(4deg) (front-left, top-left corner
+   receding away from the viewer), so the bevel is thinnest at that receding
+   top-left corner and thickest at the bottom-right corner leaning toward us. */
+.hero-float-glass-frame {
+  position: relative;
+  display: block;
+  border-radius: 12px 16px 20px 14px;
+  padding: 1px 2px 2.5px 1px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(2, 6, 14, 0.45) 100%);
+  backdrop-filter: blur(5px) saturate(130%);
+  box-shadow:
+    0 6px 14px -8px rgba(0, 0, 0, 0.5),
+    0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+    -1px -2px 4px -2px rgba(0, 0, 0, 0.3) inset;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-float-item:hover .hero-float-glass-frame {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow:
+    0 10px 20px -8px rgba(0, 0, 0, 0.55),
+    0 1px 0 0 rgba(255, 255, 255, 0.45) inset,
+    -1px -2px 4px -2px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* Glossy sheen catching the light on the near (receding-away) edge, the classic "liquid glass" highlight */
+.hero-float-glass-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.06) 20%, transparent 38%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Hairline bevel rim, thinner top/left (far edge) and thicker bottom/right (near edge) to sell the tilt */
+.hero-float-glass-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 0.5px 1px 1px 0.5px;
+  border-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.22) rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.4);
+  box-shadow:
+    inset -1px -1.5px 3px rgba(0, 0, 0, 0.35),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+}
+
+.hero-float-glass-frame img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 11px 16px 20px 14px;
+}
 
 /* Viewport frame for testing mobile mode */
 .view-mobile-frame {

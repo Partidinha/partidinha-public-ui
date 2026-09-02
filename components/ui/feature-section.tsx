@@ -58,7 +58,7 @@ export function FeatureSteps({
   };
 
   return (
-    <div ref={containerRef} className={cn("relative h-[220vh] w-full", className)}>
+    <div ref={containerRef} className={cn("relative h-[150vh] w-full", className)}>
       <div className="sticky top-20 min-h-[75vh] flex flex-col justify-center p-4 md:p-8">
         <div className="max-w-7xl mx-auto w-full">
           {title && (

@@ -12,10 +12,8 @@ import Ranking from "../../app/ranking.webp";
 import BotWhatsapp from "../../app/bot-1.webp";
 import CheckIn from "../../app/checkin.webp";
 import Charges from "../../app/cobranca-2.webp";
+import Payments from "../../app/pagamentos.jpeg";
 
-export interface FeaturesSectionProps {
-  onOpenRaffleModal: () => void;
-}
 
 const FEATURE_ICONS: Record<number, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   0: Bot,
@@ -33,12 +31,10 @@ const FEATURE_IMAGES: Record<number, string> = {
   2: Charges,
   3: Times,
   4: Stats,
-  5: "https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1000&auto=format&fit=crop",
+  5: Payments,
 };
 
-export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
-  onOpenRaffleModal,
-}) => {
+export const FeaturesSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -72,16 +68,6 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                   feature={feature}
                   className="h-full bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300"
                 />
-                {item.isFocused && (
-                  <div className="absolute top-6 right-6 z-30">
-                    <button
-                      onClick={onOpenRaffleModal}
-                      className="text-xs bg-sky-600 hover:bg-sky-500 text-white font-bold px-3.5 py-1.5 rounded-full transition shadow-xs cursor-pointer"
-                    >
-                      Testar Sorteio
-                    </button>
-                  </div>
-                )}
               </div>
             );
           })}

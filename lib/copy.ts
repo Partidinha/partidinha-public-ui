@@ -75,10 +75,10 @@ export const FEATURES = [
     isFocused: false,
   },
   {
-    icon: "📋",
-    title: "Ordem de Chegada",
+    icon: "🧾",
+    title: "Controle de Pagamentos",
     description:
-      "Quem chegou primeiro joga primeiro. O bot registra o horário exato de confirmação e chegada de cada jogador no campo.",
+      "Depois de cada jogo, o admin marca quem pagou. A tela mostra saldo pago e devedores, e o próprio bot barra quem está devendo de confirmar presença nas próximas peladas, até o admin confirmar o pagamento no app.",
     iconBg: "bg-gradient-to-tr from-sky-700 to-sky-400",
     isFocused: false,
   },

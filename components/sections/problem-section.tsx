@@ -84,15 +84,52 @@ export const ProblemSection: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="bg-white/80 p-4 rounded-2xl border border-red-100 space-y-2.5 font-sans text-xs shadow-xs">
-                  <div className="bg-white p-2.5 rounded-lg border border-red-100 shadow-xs text-slate-800">
-                    <span className="font-bold text-red-500">Pedrinho:</span> "Vou mas só posso chegar 20h30"
+                <div className="rounded-2xl border border-red-100 shadow-xs overflow-hidden font-sans">
+                  {/* Barra de topo estilo WhatsApp */}
+                  <div className="bg-[#075E54] px-3 py-2 flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
+                      ⚽
+                    </div>
+                    <div className="leading-tight min-w-0">
+                      <div className="text-white text-xs font-bold truncate">La Pelota FC</div>
+                      <div className="text-emerald-100/70 text-[10px] truncate">Pedrinho, Neco, Lucas e mais 11</div>
+                    </div>
                   </div>
-                  <div className="bg-white p-2.5 rounded-lg border border-red-100 shadow-xs text-slate-800">
-                    <span className="font-bold text-red-500">Neco:</span> "Desculpa cara meu joelho fodeu não vou mais!"
-                  </div>
-                  <div className="bg-white p-2.5 rounded-lg border border-red-100 shadow-xs text-slate-800">
-                    <span className="font-bold text-red-500">Lucas:</span> "Galera quem pagou o Pix do quadra?? Ninguém mandou comprovante no pv"
+
+                  {/* Área de conversa com fundo estilo WhatsApp */}
+                  <div className="bg-[#ECE5DD] p-3 space-y-1.5">
+                    <div className="max-w-[88%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-xs">
+                        <div className="text-[11px] font-bold text-teal-600 leading-tight">Pedrinho</div>
+                        <p className="text-xs text-slate-800 leading-snug">Vou mas só posso chegar 20h30</p>
+                        <div className="text-[9px] text-slate-400 text-right mt-0.5">20:14</div>
+                      </div>
+                    </div>
+                    <div className="max-w-[88%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-xs">
+                        <div className="text-[11px] font-bold text-orange-500 leading-tight">Neco</div>
+                        <p className="text-xs text-slate-800 leading-snug">Desculpa cara meu joelho fodeu não vou mais! 😭</p>
+                        <div className="text-[9px] text-slate-400 text-right mt-0.5">20:17</div>
+                      </div>
+                    </div>
+                    <div className="max-w-[88%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-xs">
+                        <div className="text-[11px] font-bold text-violet-600 leading-tight">Lucas</div>
+                        <p className="text-xs text-slate-800 leading-snug">Galera quem pagou o Pix da quadra?? Ninguém mandou comprovante no pv 😤</p>
+                        <div className="text-[9px] text-slate-400 text-right mt-0.5">20:23</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-end max-w-[88%] ml-auto">
+                      <div className="relative bg-[#DCF8C6] rounded-lg rounded-tr-none px-2.5 py-1.5 shadow-xs">
+                        <p className="text-xs text-slate-800 leading-snug">Gente CONFIRMA logo pfvr 🙏</p>
+                        <div className="text-[9px] text-slate-500/80 text-right mt-0.5 flex items-center justify-end gap-0.5">
+                          20:31
+                          <svg viewBox="0 0 16 11" className="w-3.5 h-3.5 fill-sky-500 inline-block">
+                            <path d="M11.071.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-2.612-2.16a.483.483 0 0 0-.671.061l-.702.845a.463.463 0 0 0 .062.65l3.485 2.883c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077zM15.05.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-.694-.574a.234.234 0 0 0-.328.03l-.552.665a.226.226 0 0 0 .03.318l1.443 1.194c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -138,22 +175,64 @@ export const ProblemSection: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="bg-white/90 p-4 rounded-2xl border border-sky-200 space-y-2 font-sans text-xs shadow-xs">
-                  <div className="bg-sky-50 p-3 rounded-xl border border-sky-200 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <span className="text-lg">🤖</span>
-                      <div>
-                        <div className="font-bold text-sky-700">Bot do Partidinha</div>
-                        <div className="text-[11px] text-slate-600">14/14 Confirmados • Lista Fechada</div>
+                <div className="rounded-2xl border border-sky-100 shadow-xs overflow-hidden font-sans">
+                  {/* Barra de topo estilo WhatsApp */}
+                  <div className="bg-[#075E54] px-3 py-2 flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
+                      ⚽
+                    </div>
+                    <div className="leading-tight min-w-0">
+                      <div className="text-white text-xs font-bold truncate">La Pelota FC</div>
+                      <div className="text-emerald-100/70 text-[10px] truncate">Bot do Partidinha está online</div>
+                    </div>
+                  </div>
+
+                  {/* Área de conversa com fundo estilo WhatsApp */}
+                  <div className="bg-[#ECE5DD] p-3 space-y-1.5">
+                    <div className="max-w-[94%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-2 shadow-xs">
+                        <div className="text-[11px] font-bold text-sky-600 leading-tight">
+                          🤖 Bot do Partidinha
+                        </div>
+                        <div className="text-[11px] text-slate-800 leading-snug mt-1">
+                          <p className="font-bold">⚽️ La Pelota FC (Ter, 01/09 20:00)</p>
+                          <p className="text-slate-500">📍 Flamengo da 212 Sul</p>
+                          <p className="font-bold text-slate-700 mt-1.5">📌 LISTA DO GRUPO</p>
+                          <ol className="text-slate-700 mt-0.5">
+                            <li>1. Alexandre</li>
+                            <li>2. Rafael Amaral 🏆</li>
+                            <li>3. Venâncio 🏆</li>
+                          </ol>
+                          <p className="text-slate-400 italic mt-0.5">+ 14 confirmados...</p>
+                        </div>
+                        <div className="text-[9px] text-slate-400 text-right mt-1">20:04</div>
                       </div>
                     </div>
-                    <span className="bg-emerald-500 text-white px-2.5 py-0.5 rounded font-bold text-[10px] shadow-xs">
-                      TUDO PRONTO
-                    </span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-lg border border-sky-100 text-slate-800 flex items-center justify-between text-[11px]">
-                    <span>💰 Cobrança Automática Pix</span>
-                    <span className="text-emerald-600 font-bold">100% Pago</span>
+                    <div className="max-w-[88%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-xs">
+                        <div className="text-[11px] font-bold text-teal-600 leading-tight">Kennedy</div>
+                        <p className="text-xs text-slate-800 leading-snug">@partidinha entrar</p>
+                        <div className="text-[9px] text-slate-400 text-right mt-0.5">20:12</div>
+                      </div>
+                    </div>
+                    <div className="max-w-[94%]">
+                      <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-2 shadow-xs">
+                        <div className="text-[11px] font-bold text-sky-600 leading-tight">
+                          🤖 Bot do Partidinha
+                        </div>
+                        <div className="text-[11px] text-slate-800 leading-snug mt-1">
+                          <p>✅ Kennedy entrou na lista!</p>
+                          <p className="font-bold text-slate-700 mt-1">
+                            18. Kennedy{" "}
+                            <span className="bg-emerald-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full align-middle">
+                              NOVO
+                            </span>
+                          </p>
+                          <p className="text-slate-500 mt-1">18/20 confirmados</p>
+                        </div>
+                        <div className="text-[9px] text-slate-400 text-right mt-1">20:12</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -163,7 +242,7 @@ export const ProblemSection: React.FC = () => {
                     <span>
                       Confirmação via comando simples (
                       <code className="bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded font-mono font-bold text-xs">
-                        !confirmar
+                        @partidinha entrar
                       </code>
                       )
                     </span>
