@@ -53,8 +53,8 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
       </div>
 
       {/* iPhone Mockup Container */}
-      <div className="relative z-10 mt-8 w-full max-w-[180px] sm:max-w-[260px] mx-auto transition-transform duration-500 group-hover:-translate-y-2">
-        <div className="relative rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-950  overflow-hidden ring-1 ring-slate-900/10 h-[500px] ">
+      <div className="relative z-10 mt-8 mx-auto transition-transform duration-500 group-hover:-translate-y-2">
+        <div className="relative h-[280px] sm:h-[340px] md:h-[min(52vh,460px)] lg:h-[min(56vh,520px)] aspect-380/826 mx-auto rounded-[1rem] sm:rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-950 overflow-hidden ring-1 ring-slate-900/10">
           {/* Dynamic Island / iPhone Notch */}
           {/* <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-slate-900 rounded-full z-30 flex items-center justify-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-slate-950" />
@@ -62,16 +62,13 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
           </div> */}
 
           {/* iPhone Screen Content Slot */}
-          <div className="relative w-full h-[500px] sm:h-[500px] bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
+          <div className="relative w-full h-full bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
             <Image
               src={feature.image!}
               alt={feature.title}
-              className={`
-                  w-full object-cover
-                  ${["Controle de Pagamentos", "Estatísticas em Tempo Real", "Sorteio de Times", "Confirmações Automáticas"].includes(feature.title) ? "mt-[40px]" : "mt-[10px]"} 
-                `}
-              width={260}
-              height={500}
+              fill
+              sizes="240px"
+              className="object-cover"
             />
           </div>
         </div>

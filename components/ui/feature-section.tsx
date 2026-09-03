@@ -47,15 +47,6 @@ export function FeatureSteps({
 
   const handleStepClick = (index: number) => {
     setCurrentFeature(index);
-    if (containerRef.current) {
-      const containerTop = containerRef.current.offsetTop;
-      const containerHeight = containerRef.current.offsetHeight;
-      const stepScrollPos = containerTop + (containerHeight / features.length) * index;
-      window.scrollTo({
-        top: stepScrollPos,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
@@ -68,7 +59,7 @@ export function FeatureSteps({
             </h2>
           )}
 
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-12 items-center">
             <div className="order-2 md:order-1 space-y-6 md:space-y-8">
               {features.map((feature, index) => (
                 <motion.div
@@ -117,7 +108,7 @@ export function FeatureSteps({
 
               {/* Moldura de celular — altura acompanha a viewport para caber na área sticky */}
               <div className="relative z-10">
-                <div className="relative h-[280px] sm:h-[340px] md:h-[min(52vh,460px)] lg:h-[min(56vh,520px)] aspect-380/826 @container rounded-[2.25rem] border-[6px] border-slate-900 bg-slate-950 overflow-hidden shadow-2xl shadow-slate-900/25 ring-1 ring-slate-900/10">
+                <div className="relative h-[280px] sm:h-[340px] md:h-[min(52vh,460px)] lg:h-[min(56vh,520px)] aspect-380/826 @container rounded-[1rem] sm:rounded-[2.25rem] border-[6px] border-slate-900 bg-slate-950 overflow-hidden shadow-2xl shadow-slate-900/25 ring-1 ring-slate-900/10">
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
