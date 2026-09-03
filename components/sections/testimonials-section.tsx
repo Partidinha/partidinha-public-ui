@@ -63,7 +63,7 @@ export const TestimonialsSection: React.FC = () => {
 
                 {/* Quote text */}
                 <p className="relative z-10 text-sm sm:text-base text-slate-700 leading-relaxed italic flex-1">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </p>
 
                 {/* Author */}

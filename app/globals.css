@@ -163,6 +163,57 @@
 .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.05); }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(14, 165, 233, 0.3); border-radius: 9999px; }
 
+/* Hero entrance.
+   Deliberately CSS and not GSAP: a JS-driven tween only initialises after
+   hydration, so the hero painted fully visible, snapped back to opacity 0 when
+   the tween set its from-state, and animated in a second time. Keyframes start
+   at the first paint, so there is nothing to flash. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-card-in {
+  from { opacity: 0; transform: scale(0.94) translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-fade-in {
+  to { opacity: 1; }
+}
+
+/* Each direct child of the copy column rises on its own beat */
+.hero-reveal-text > * {
+  opacity: 0;
+  animation: hero-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-reveal-text > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-reveal-text > *:nth-child(2) { animation-delay: 0.14s; }
+.hero-reveal-text > *:nth-child(3) { animation-delay: 0.23s; }
+.hero-reveal-text > *:nth-child(4) { animation-delay: 0.32s; }
+
+.hero-reveal-card {
+  opacity: 0;
+  animation: hero-card-in 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+/* The glass cards fade in after the phone has settled. Opacity only, so the
+   `forwards` fill never freezes the hover transform on .hero-float-glass-frame. */
+.hero-reveal-card .hero-float-glass-frame {
+  opacity: 0;
+  animation: hero-fade-in 0.6s ease-out var(--reveal-delay, 0.7s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal-text > *,
+  .hero-reveal-card,
+  .hero-reveal-card .hero-float-glass-frame,
+  .hero-float-item {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 /* Floating elements around the hero phone mockup */
 /* Same lateral 3D perspective as the phone mockup image: perspective + rotateY do the
    foreshortening, rotateX/rotate add the small lean. --float-rotate varies per card. */
@@ -198,11 +249,11 @@
   display: block;
   border-radius: 12px 16px 20px 14px;
   padding: 1px 2px 2.5px 1px;
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(2, 6, 14, 0.45) 100%);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(2, 6, 14, 0.45) 100%);
   backdrop-filter: blur(5px) saturate(130%);
   box-shadow:
     0 6px 14px -8px rgba(0, 0, 0, 0.5),
-    0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.24) inset,
     -1px -2px 4px -2px rgba(0, 0, 0, 0.3) inset;
   overflow: hidden;
   isolation: isolate;
@@ -213,7 +264,7 @@
   transform: scale(1.08) translateY(-2px);
   box-shadow:
     0 10px 20px -8px rgba(0, 0, 0, 0.55),
-    0 1px 0 0 rgba(255, 255, 255, 0.45) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.28) inset,
     -1px -2px 4px -2px rgba(0, 0, 0, 0.3) inset;
 }
 
@@ -224,7 +275,7 @@
   inset: 0;
   z-index: 2;
   border-radius: inherit;
-  background: linear-gradient(125deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.06) 20%, transparent 38%);
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.04) 20%, transparent 38%);
   mix-blend-mode: overlay;
   pointer-events: none;
 }
@@ -238,10 +289,10 @@
   border-radius: inherit;
   border-style: solid;
   border-width: 0.5px 1px 1px 0.5px;
-  border-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.22) rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.24) rgba(255, 255, 255, 0.16) rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.24);
   box-shadow:
     inset -1px -1.5px 3px rgba(0, 0, 0, 0.35),
-    inset 1px 1px 1px rgba(255, 255, 255, 0.45);
+    inset 1px 1px 1px rgba(255, 255, 255, 0.28);
   pointer-events: none;
 }
 

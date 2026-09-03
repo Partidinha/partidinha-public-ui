@@ -20,7 +20,7 @@ const plans = [
   {
     name: "Pro",
     title: "Plano Pro",
-    price: "R$ 19,90",
+    price: "R$ 29,90",
     period: "/mês",
     description: "Para o admin que quer automação completa.",
     features: [
@@ -79,9 +79,8 @@ export const PricingSection: React.FC = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative group border-sky-200/80 border-dashed ${
-                plan.popular ? "md:border-l" : "md:border-r"
-              } border-b md:border-b-0`}
+              className={`relative group border-sky-200/80 border-dashed ${plan.popular ? "md:border-l" : "md:border-r"
+                } border-b md:border-b-0`}
             >
               {plan.popular && (
                 <span className="absolute top-4 right-4 z-20 flex h-6 w-fit items-center rounded-full bg-sky-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">

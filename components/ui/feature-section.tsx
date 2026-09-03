@@ -2,28 +2,29 @@
 
 import React, { useState, useRef } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import Image from "next/image";
+import Image, { type ImageProps } from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface Feature {
   step: string;
   title?: string;
   content: string;
-  image: string;
+  /** Screenshot do app exibido dentro da moldura de celular. */
+  image?: ImageProps["src"];
+  /** Alternativa ao screenshot: um mock renderizado (ex.: tela do WhatsApp). */
+  node?: React.ReactNode;
 }
 
 export interface FeatureStepsProps {
   features: Feature[];
   className?: string;
   title?: string;
-  imageHeight?: string;
 }
 
 export function FeatureSteps({
   features,
   className,
   title = "How to get Started",
-  imageHeight = "h-[400px]",
 }: FeatureStepsProps) {
   const [currentFeature, setCurrentFeature] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,42 +106,52 @@ export function FeatureSteps({
               ))}
             </div>
 
-            <div
-              className={cn(
-                "order-1 md:order-2 relative w-full h-[260px] sm:h-[340px] md:h-[400px] lg:h-[460px] overflow-hidden rounded-2xl border border-slate-200/80 shadow-2xl shadow-slate-200/60 bg-slate-950",
-                imageHeight
-              )}
-            >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none"
-                  initial={false}
-                  animate={{
-                    opacity: index === currentFeature ? 1 : 0,
-                    scale: index === currentFeature ? 1 : 1.04,
-                  }}
-                  transition={{ duration: 0.18, ease: "easeOut" }}
-                >
-                  <Image
-                    src={feature.image}
-                    alt={feature.title || feature.step}
-                    className="w-full h-full object-cover"
-                    width={1000}
-                    height={500}
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                    <span className="text-xs uppercase font-bold tracking-widest text-sky-400 bg-sky-950/60 px-2.5 py-1 rounded-full border border-sky-500/30 inline-block">
-                      {feature.step}
-                    </span>
-                    <h4 className="text-xl md:text-2xl font-bold font-lastik">
-                      {feature.title}
-                    </h4>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="order-1 md:order-2 relative flex items-center justify-center">
+              {/* Brilho de fundo atrás do celular */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 flex items-center justify-center"
+              >
+                <div className="w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] rounded-full bg-sky-400/20 blur-3xl" />
+              </div>
+
+              {/* Moldura de celular — altura acompanha a viewport para caber na área sticky */}
+              <div className="relative z-10">
+                <div className="relative h-[280px] sm:h-[340px] md:h-[min(52vh,460px)] lg:h-[min(56vh,520px)] aspect-380/826 @container rounded-[2.25rem] border-[6px] border-slate-900 bg-slate-950 overflow-hidden shadow-2xl shadow-slate-900/25 ring-1 ring-slate-900/10">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      className="absolute inset-0 overflow-hidden pointer-events-none"
+                      initial={false}
+                      animate={{
+                        opacity: index === currentFeature ? 1 : 0,
+                        scale: index === currentFeature ? 1 : 1.04,
+                      }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                    >
+                      {feature.node ? (
+                        feature.node
+                      ) : feature.image ? (
+                        <Image
+                          src={feature.image}
+                          alt={feature.title || feature.step}
+                          className="w-full h-full object-cover object-top"
+                          width={380}
+                          height={826}
+                          priority={index === 0}
+                        />
+                      ) : null}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Etiqueta do passo atual */}
+                <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-20">
+                  <span className="bg-sky-600 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-sky-500/40 shadow-lg shadow-sky-500/25 whitespace-nowrap">
+                    {features[currentFeature]?.step}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

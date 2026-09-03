@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import type { ImageProps } from "next/image";
 import { Bot, CheckCircle2, Banknote, Shuffle, BarChart3, Clock } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FEATURES, FEATURES_HEADER } from "@/lib/copy";
@@ -25,7 +26,7 @@ const FEATURE_ICONS: Record<number, React.ComponentType<React.SVGProps<SVGSVGEle
 };
 
 
-const FEATURE_IMAGES: Record<number, string> = {
+const FEATURE_IMAGES: Record<number, ImageProps["src"]> = {
   0: BotWhatsapp,
   1: CheckIn,
   2: Charges,

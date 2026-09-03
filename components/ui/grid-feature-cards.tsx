@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-import Image from "next/image";
+import Image, { type ImageProps } from "next/image";
 
 export type FeatureType = {
   title: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   description: string;
-  image?: string;
+  image?: ImageProps["src"];
 };
 
 export type FeatureCardProps = React.ComponentProps<"div"> & {
@@ -14,7 +14,8 @@ export type FeatureCardProps = React.ComponentProps<"div"> & {
 };
 
 export function FeatureCard({ feature, className, ...props }: FeatureCardProps) {
-  const p = genRandomPattern();
+  const patternSeed = React.useId();
+  const p = genPattern(patternSeed);
 
   return (
     <div
@@ -66,7 +67,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
               src={feature.image!}
               alt={feature.title}
               className={`
-                  w-full object-cover,
+                  w-full object-cover
                   ${["Controle de Pagamentos", "Estatísticas em Tempo Real", "Sorteio de Times", "Confirmações Automáticas"].includes(feature.title) ? "mt-[40px]" : "mt-[10px]"} 
                 `}
               width={260}
@@ -108,10 +109,24 @@ function GridPattern({
   );
 }
 
-function genRandomPattern(length?: number): number[][] {
+// Deterministic so server and client render the same squares (no hydration mismatch).
+function genPattern(seed: string, length?: number): number[][] {
   length = length ?? 5;
+
+  let state = 2166136261;
+  for (let i = 0; i < seed.length; i++) {
+    state ^= seed.charCodeAt(i);
+    state = Math.imul(state, 16777619);
+  }
+
+  const next = () => {
+    state = Math.imul(state ^ (state >>> 15), 2246822507);
+    state = Math.imul(state ^ (state >>> 13), 3266489909);
+    return ((state ^= state >>> 16) >>> 0) / 4294967296;
+  };
+
   return Array.from({ length }, () => [
-    Math.floor(Math.random() * 4) + 7, // random x between 7 and 10
-    Math.floor(Math.random() * 6) + 1, // random y between 1 and 6
+    Math.floor(next() * 4) + 7, // x between 7 and 10
+    Math.floor(next() * 6) + 1, // y between 1 and 6
   ]);
 }

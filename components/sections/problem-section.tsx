@@ -140,7 +140,7 @@ export const ProblemSection: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                    <span>Você vira o "chato do privado" cobrando din-din de marmanjo</span>
+                    <span>Você vira o &ldquo;chato do privado&rdquo; cobrando din-din de marmanjo</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />

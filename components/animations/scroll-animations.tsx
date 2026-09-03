@@ -10,32 +10,9 @@ export const ScrollAnimations: React.FC = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Text Reveal with explicit clearProps for 100% opacity
-    gsap.fromTo(
-      ".gsap-hero-text",
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.9,
-        ease: "power3.out",
-        clearProps: "transform,opacity",
-      }
-    );
-
-    // Hero Card Reveal with clearProps
-    gsap.fromTo(
-      ".gsap-hero-card",
-      { scale: 0.92, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        delay: 0.15,
-        ease: "back.out(1.3)",
-        clearProps: "transform,opacity",
-      }
-    );
+    // The hero entrance lives in CSS (.hero-reveal-text / .hero-reveal-card in
+    // globals.css). Tweening it here made it play twice: the markup painted
+    // visible, then this effect ran after hydration and reset it to opacity 0.
 
     // Reveal elements on scroll
     const revealElements = gsap.utils.toArray<HTMLElement>(".gsap-reveal");
