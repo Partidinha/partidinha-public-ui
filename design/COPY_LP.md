@@ -297,7 +297,7 @@
 
 **Plano Pro (destaque):**
 > ### Pro
-> ## R$ 19,90/mês
+> ## R$ 29,90/mês
 > - Grupos ilimitados
 > - Jogadores ilimitados
 > - Bot completo (confirmações + cobranças automáticas)
