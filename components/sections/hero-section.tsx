@@ -7,7 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
 import { HEADLINES } from "@/lib/copy";
-import heroimg from "@/app/hero.png";
+import heroimg from "@/app/hero.webp";
 import rankBlock from "@/app/rank-block.webp";
 import checkinBlock from "@/app/checkin-block.webp";
 import teamBlock from "@/app/team-block.webp";
@@ -79,6 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               alt="Partidinha no WhatsApp"
               sizes="(min-width: 1280px) 1160px, (min-width: 1024px) 1080px, (min-width: 640px) 880px, 650px"
               className="absolute -bottom-14 lg:-bottom-[104px] -left-[155px] sm:-left-[270px] lg:-left-[305px] xl:-left-[315px] w-[650px] sm:w-[880px] lg:w-[1080px] xl:w-[1160px] max-w-none h-auto object-contain drop-shadow-2xl z-30 pointer-events-none"
+              quality={100}
               priority
             />
 
@@ -91,7 +92,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               style={{ animationDelay: "0s", animationDuration: "6s", "--float-rotate": "7deg", "--reveal-delay": "0.75s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
-                <Image src={rankBlock} alt="" className="w-[100px] sm:w-[229px] h-auto" />
+                <Image src={rankBlock} alt="" className="w-[100px] sm:w-[229px] h-auto" quality={100} />
               </div>
             </div>
             <div
@@ -99,7 +100,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               style={{ animationDelay: "0.6s", animationDuration: "5.5s", "--float-rotate": "7deg", "--reveal-delay": "0.9s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
-                <Image src={checkinBlock} alt="" className="w-[100px] sm:w-[231px] h-auto" />
+                <Image src={checkinBlock} alt="" className="w-[100px] sm:w-[231px] h-auto" quality={100} />
               </div>
             </div>
             <div
@@ -107,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               style={{ animationDelay: "1.8s", animationDuration: "6.5s", "--float-rotate": "7deg", "--reveal-delay": "1.05s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
-                <Image src={teamBlock} alt="" className="w-[95px] sm:w-[228px] h-auto" />
+                <Image src={teamBlock} alt="" className="w-[95px] sm:w-[228px] h-auto" quality={100} />
               </div>
             </div>
             <div
@@ -115,7 +116,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               style={{ animationDelay: "0.9s", animationDuration: "5s", "--float-rotate": "7deg", "--float-rotate-y": "-9deg", "--float-rotate-x": "2deg", "--reveal-delay": "1.2s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
-                <Image src={paymentsBlock} alt="" className="w-[95px] sm:w-[226px] h-auto" />
+                <Image src={paymentsBlock} alt="" className="w-[95px] sm:w-[226px] h-auto" quality={100} />
               </div>
             </div>
           </div>
