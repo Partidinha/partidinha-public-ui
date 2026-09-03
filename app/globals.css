@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  /* Was referenced on the main CTAs but never defined, so it rendered
+     as a no-op. Tied to the brand accent blue, not the old pale sky-400. */
+  --shadow-cta-glow: 0 10px 36px -4px rgba(2, 132, 199, 0.5);
+}
+
 /* ------------------------------------------------------------- */
 /* LASTIK VARIABLE FONT INTEGRATION                              */
 /* ------------------------------------------------------------- */
@@ -141,6 +147,30 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 1px 0 0 rgba(255, 255, 255, 0.15) inset;
   border-radius: 9999px;
   color: #E0F2FE;
+}
+
+/* Secondary CTA — same glass pill as .billow-glass-pill-navy, but its border
+   and hover state are tinted with the brand-accent blue so it visibly pairs
+   with the gradient primary CTA instead of reading as a neutral/unrelated pill. */
+.cta-secondary {
+  border-color: rgba(56, 189, 248, 0.35);
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.cta-secondary:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.4) 0%, rgba(7, 13, 20, 0.65) 100%);
+  color: #FFFFFF;
+}
+.cta-secondary svg {
+  transition: transform 0.25s ease;
+}
+.cta-secondary:hover svg {
+  transform: translateY(3px);
+}
+/* Same drawing effect as .fdc-button's arrow, reused here so both CTAs'
+   icons animate the same way on hover — just flipped to match a down arrow. */
+.cta-secondary:hover svg path:first-of-type {
+  animation: fdc-dash 0.8s ease-in-out infinite;
 }
 
 .text-gradient-cyan {
@@ -310,4 +340,110 @@
   border: 14px solid #0F172A;
   border-radius: 44px;
   box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.3);
+}
+
+/* ------------------------------------------------------------- */
+/* FLOATING DOTS CTA (main site CTAs)                            */
+/* Structural/behavioral only — brand color, padding and radius  */
+/* are supplied per-usage via Tailwind classes on the element.   */
+/* ------------------------------------------------------------- */
+@keyframes fdc-floating-points {
+  0% {
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-55px);
+    opacity: 0;
+  }
+}
+
+@keyframes fdc-dash {
+  0% {
+    stroke-dasharray: 0, 20;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 10, 10;
+    stroke-dashoffset: -5;
+  }
+  100% {
+    stroke-dasharray: 20, 0;
+    stroke-dashoffset: -10;
+  }
+}
+
+.fdc-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fdc-points_wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fdc-point {
+  position: absolute;
+  bottom: -6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 0;
+}
+
+.fdc-button:hover .fdc-point {
+  opacity: 1;
+  animation-name: fdc-floating-points;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.fdc-point:nth-child(1) { left: 4%; animation-duration: 2.35s; animation-delay: 0.2s; }
+.fdc-point:nth-child(2) { left: 13%; animation-duration: 2.5s; animation-delay: 0.5s; }
+.fdc-point:nth-child(3) { left: 22%; animation-duration: 2.2s; animation-delay: 0.1s; }
+.fdc-point:nth-child(4) { left: 32%; animation-duration: 2.65s; animation-delay: 0.7s; }
+.fdc-point:nth-child(5) { left: 42%; animation-duration: 2.4s; animation-delay: 0s; }
+.fdc-point:nth-child(6) { left: 54%; animation-duration: 2.3s; animation-delay: 0.4s; }
+.fdc-point:nth-child(7) { left: 65%; animation-duration: 2.55s; animation-delay: 0.15s; }
+.fdc-point:nth-child(8) { left: 76%; animation-duration: 2.2s; animation-delay: 0.6s; }
+.fdc-point:nth-child(9) { left: 86%; animation-duration: 2.45s; animation-delay: 0.3s; }
+.fdc-point:nth-child(10) { left: 95%; animation-duration: 2.6s; animation-delay: 0.5s; }
+
+.fdc-inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fdc-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.fdc-button:hover .fdc-icon {
+  transform: translateX(3px);
+}
+
+.fdc-button:hover .fdc-icon path:first-of-type {
+  animation: fdc-dash 0.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fdc-button:hover .fdc-point,
+  .fdc-button:hover .fdc-icon,
+  .fdc-button:hover .fdc-icon path:first-of-type {
+    animation: none;
+  }
 }

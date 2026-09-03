@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
 import Logo from "../../app/logo-icon.png";
 
 export const Navbar: React.FC = () => {
@@ -40,13 +40,12 @@ export const Navbar: React.FC = () => {
 
         {/* CTA Nav */}
         <div className="flex items-center gap-3">
-          <a
-            href="#bot-simulator"
-            className="bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-500 hover:opacity-95 text-slate-950 font-bold text-xs px-5 py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5"
+          <FloatingDotsCtaLink
+            href="https://app.partidinha.com/"
+            className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-5 py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5"
           >
-            <span>Criar grupo</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+            Criar grupo
+          </FloatingDotsCtaLink>
         </div>
       </div>
     </header>

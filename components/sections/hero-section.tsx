@@ -2,9 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import { Sparkles, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
+import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
 import { HEADLINES } from "@/lib/copy";
 import heroimg from "@/app/hero.png";
 import rankBlock from "@/app/rank-block.webp";
@@ -52,16 +53,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a
-                href="#bot-simulator"
-                className="w-full sm:w-auto bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-500 hover:opacity-95 text-slate-950 font-extrabold px-9 py-4 rounded-full shadow-cta-glow transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
+              <FloatingDotsCtaLink
+                href="https://app.partidinha.com/"
+                className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-9 py-4 rounded-full shadow-cta-glow transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
               >
-                <span>Criar meu grupo grátis</span>
-                <Sparkles className="w-5 h-5" />
-              </a>
+                Criar meu grupo grátis
+              </FloatingDotsCtaLink>
               <a
                 href="#como-funciona"
-                className="w-full sm:w-auto billow-glass-pill-navy hover:opacity-90 font-semibold px-7 py-4 rounded-full transition text-center flex items-center justify-center gap-2 text-base"
+                className="w-full sm:w-auto billow-glass-pill-navy cta-secondary font-semibold px-7 py-4 rounded-full transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
               >
                 <span>Ver como funciona</span>
                 <ArrowDown className="w-4 h-4 opacity-80" />

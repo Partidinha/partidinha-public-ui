@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import { Check, CheckCircle2, Zap } from "lucide-react";
+import { FloatingDotsCtaNextLink } from "@/components/ui/floating-dots-cta";
 
 const plans = [
   {
@@ -24,14 +24,14 @@ const plans = [
     period: "/mês",
     description: "Para o admin que quer automação completa.",
     features: [
-      "Grupos & Jogadores Ilimitados",
+      "Grupos, Jogadores & Partidas Ilimitadas",
       "Bot completo com Cobranças Automáticas",
       "Sorteio inteligente de times",
       "Tabelas de artilharia & Estatísticas",
       "Notificações push & Lembretes",
       "Suporte prioritário",
     ],
-    cta: "Assinar Pro (7 dias grátis)",
+    cta: "Assinar Pro",
     popular: true,
   },
 ];
@@ -143,19 +143,19 @@ export const PricingSection: React.FC = () => {
                 {/* CTA */}
                 <div className="relative z-10 mt-8">
                   {plan.popular ? (
-                    <Link
-                      href=""
+                    <FloatingDotsCtaNextLink
+                      href="https://app.partidinha.com/"
                       className="inline-flex w-full items-center justify-center h-12 rounded-full bg-sky-600 text-white font-semibold text-sm shadow-sm hover:bg-sky-500 hover:shadow-md transition-all duration-200 active:scale-95"
                     >
                       {plan.cta}
-                    </Link>
+                    </FloatingDotsCtaNextLink>
                   ) : (
-                    <Link
-                      href=""
+                    <FloatingDotsCtaNextLink
+                      href="https://app.partidinha.com/"
                       className="inline-flex w-full items-center justify-center h-12 rounded-full border border-slate-300 bg-white text-slate-800 font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95"
                     >
                       {plan.cta}
-                    </Link>
+                    </FloatingDotsCtaNextLink>
                   )}
                 </div>
               </div>
