@@ -26,8 +26,11 @@ export const Navbar: React.FC = () => {
 
         <Link href="/" className="flex items-center gap-3 group">
           <Image src={Logo} alt="Partidinha Logo" className="w-10 h-10" />
-          <span className="font-bold text-lg text-white tracking-tight flex items-center gap-1.5 font-lastik">
-            partidinha
+          <span
+            className="font-bold text-xl text-white font-lastik"
+            style={{ letterSpacing: "0.03em" }}
+          >
+            Partidinha
           </span>
         </Link>
 

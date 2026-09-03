@@ -11,8 +11,11 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center gap-2 font-bold text-white font-lastik text-sm text-center sm:text-left">
           <Link href="/" className="flex items-center gap-3 group">
             <Image src={Logo} alt="Partidinha Logo" className="w-10 h-10" />
-            <span className="font-bold text-lg text-white tracking-tight flex items-center gap-1.5 font-lastik">
-              partidinha
+            <span
+              className="font-bold text-xl text-white font-lastik"
+              style={{ letterSpacing: "0.03em" }}
+            >
+              Partidinha
             </span>
           </Link>
           <span className="text-slate-500 font-normal font-sans text-xs">
