@@ -1,0 +1,74 @@
+diff --git a/node_modules/aeo.js/dist/next.js b/node_modules/aeo.js/dist/next.js
+--- a/node_modules/aeo.js/dist/next.js
++++ b/node_modules/aeo.js/dist/next.js
+@@ -1139,13 +1139,12 @@
+   text = text.replace(/<script[\s\S]*?<\/script>/gi, "");
+   text = text.replace(/<style[\s\S]*?<\/style>/gi, "");
+   text = text.replace(/<svg[\s\S]*?<\/svg>/gi, "");
++  text = text.replace(/<nav[\s\S]*?<\/nav>/gi, "");
++  text = text.replace(/<header[\s\S]*?<\/header>/gi, "");
++  text = text.replace(/<footer[\s\S]*?<\/footer>/gi, "");
+   const mainMatch = text.match(/<main[^>]*>([\s\S]*)<\/main>/i);
+   if (mainMatch) {
+     text = mainMatch[1];
+-  } else {
+-    text = text.replace(/<nav[\s\S]*?<\/nav>/gi, "");
+-    text = text.replace(/<header[\s\S]*?<\/header>/gi, "");
+-    text = text.replace(/<footer[\s\S]*?<\/footer>/gi, "");
+   }
+   text = text.replace(/<a[^>]+href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, (_, url, inner) => {
+     if (/<(?:h[1-6]|div|p|section)[^>]*>/i.test(inner)) {
+@@ -1163,8 +1162,14 @@
+   text = text.replace(/<h5[^>]*>([\s\S]*?)<\/h5>/gi, "\n\n##### $1\n\n");
+   text = text.replace(/<h6[^>]*>([\s\S]*?)<\/h6>/gi, "\n\n###### $1\n\n");
+   text = text.replace(/<a[^>]+href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, "[$2]($1)");
+-  text = text.replace(/<(?:strong|b)[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, "**$1**");
+-  text = text.replace(/<(?:em|i)[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, "*$1*");
++  text = text.replace(/<(?:strong|b)(?=[\s\/>])[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, (_, inner) => {
++    const bare = inner.replace(/<[^>]+>/g, "").trim();
++    return bare ? `**${inner}**` : "";
++  });
++  text = text.replace(/<(?:em|i)(?=[\s\/>])[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, (_, inner) => {
++    const bare = inner.replace(/<[^>]+>/g, "").trim();
++    return bare ? `*${inner}*` : "";
++  });
+   text = text.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, "\n- $1");
+   text = text.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, "\n\n> $1\n\n");
+   text = text.replace(/<hr[^>]*\/?>/gi, "\n\n---\n\n");
+diff --git a/node_modules/aeo.js/dist/next.mjs b/node_modules/aeo.js/dist/next.mjs
+--- a/node_modules/aeo.js/dist/next.mjs
++++ b/node_modules/aeo.js/dist/next.mjs
+@@ -1135,13 +1135,12 @@
+   text = text.replace(/<script[\s\S]*?<\/script>/gi, "");
+   text = text.replace(/<style[\s\S]*?<\/style>/gi, "");
+   text = text.replace(/<svg[\s\S]*?<\/svg>/gi, "");
++  text = text.replace(/<nav[\s\S]*?<\/nav>/gi, "");
++  text = text.replace(/<header[\s\S]*?<\/header>/gi, "");
++  text = text.replace(/<footer[\s\S]*?<\/footer>/gi, "");
+   const mainMatch = text.match(/<main[^>]*>([\s\S]*)<\/main>/i);
+   if (mainMatch) {
+     text = mainMatch[1];
+-  } else {
+-    text = text.replace(/<nav[\s\S]*?<\/nav>/gi, "");
+-    text = text.replace(/<header[\s\S]*?<\/header>/gi, "");
+-    text = text.replace(/<footer[\s\S]*?<\/footer>/gi, "");
+   }
+   text = text.replace(/<a[^>]+href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, (_, url, inner) => {
+     if (/<(?:h[1-6]|div|p|section)[^>]*>/i.test(inner)) {
+@@ -1159,8 +1158,14 @@
+   text = text.replace(/<h5[^>]*>([\s\S]*?)<\/h5>/gi, "\n\n##### $1\n\n");
+   text = text.replace(/<h6[^>]*>([\s\S]*?)<\/h6>/gi, "\n\n###### $1\n\n");
+   text = text.replace(/<a[^>]+href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, "[$2]($1)");
+-  text = text.replace(/<(?:strong|b)[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, "**$1**");
+-  text = text.replace(/<(?:em|i)[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, "*$1*");
++  text = text.replace(/<(?:strong|b)(?=[\s\/>])[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, (_, inner) => {
++    const bare = inner.replace(/<[^>]+>/g, "").trim();
++    return bare ? `**${inner}**` : "";
++  });
++  text = text.replace(/<(?:em|i)(?=[\s\/>])[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, (_, inner) => {
++    const bare = inner.replace(/<[^>]+>/g, "").trim();
++    return bare ? `*${inner}*` : "";
++  });
+   text = text.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, "\n- $1");
+   text = text.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, "\n\n> $1\n\n");
+   text = text.replace(/<hr[^>]*\/?>/gi, "\n\n---\n\n");

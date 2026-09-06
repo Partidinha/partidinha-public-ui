@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "generated": "2026-09-06T21:12:32.625Z",
+  "site": {
+    "title": "Partidinha: Bot no seu WhatsApp",
+    "description": "Organize sua pelada sem sair do WhatsApp.",
+    "url": "https://partidinha.com"
+  },
+  "documents": [
+    {
+      "url": "https://partidinha.com",
+      "title": "Partidinha: Bot no seu WhatsApp",
+      "description": "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente."
+    },
+    {
+      "url": "https://partidinha.com/politica-de-privacidade",
+      "title": "Politica-de-privacidade",
+      "description": "Organize sua pelada sem sair do WhatsApp."
+    },
+    {
+      "url": "https://partidinha.com/termos-de-uso",
+      "title": "Termos-de-uso",
+      "description": "Organize sua pelada sem sair do WhatsApp."
+    }
+  ],
+  "metadata": {
+    "totalDocuments": 3,
+    "generator": "aeo.js",
+    "generatorUrl": "https://aeojs.org"
+  }
+}
