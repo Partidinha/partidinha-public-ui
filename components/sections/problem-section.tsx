@@ -59,7 +59,7 @@ export const ProblemSection: React.FC = () => {
             O grupo do Whats virou bagunça.<br />E você é o único que se estressa.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Todo sábado é a mesma novela. Você cria a partida e começa o caos de mensagens perdidas, furos de última hora e cobranças chatinhas.
+            Todo dia de jogo é a mesma novela. Você puxa a lista da partida e começa o caos de mensagens perdidas, furos de última hora e cobranças chatinhas.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export const ProblemSection: React.FC = () => {
                       ⚽
                     </div>
                     <div className="leading-tight min-w-0">
-                      <div className="text-white text-xs font-bold truncate">La Pelota FC</div>
+                      <div className="text-white text-xs font-bold truncate">Resenha FC</div>
                       <div className="text-emerald-100/70 text-[10px] truncate">Pedrinho, Neco, Lucas e mais 11</div>
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export const ProblemSection: React.FC = () => {
                     <div className="max-w-[88%]">
                       <div className="relative bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-xs">
                         <div className="text-[11px] font-bold text-orange-500 leading-tight">Neco</div>
-                        <p className="text-xs text-slate-800 leading-snug">Desculpa cara meu joelho fodeu não vou mais! 😭</p>
+                        <p className="text-xs text-slate-800 leading-snug">Foi mal, não vou conseguir ir hoje 😭</p>
                         <div className="text-[9px] text-slate-400 text-right mt-0.5">20:17</div>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export const ProblemSection: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                    <span>Você vira o &ldquo;chato do privado&rdquo; cobrando din-din de marmanjo</span>
+                    <span>Você vira o &ldquo;chato do privado&rdquo; tendo que cobrar dinheiro de amigo</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
@@ -182,7 +182,7 @@ export const ProblemSection: React.FC = () => {
                       ⚽
                     </div>
                     <div className="leading-tight min-w-0">
-                      <div className="text-white text-xs font-bold truncate">La Pelota FC</div>
+                      <div className="text-white text-xs font-bold truncate">Resenha FC</div>
                       <div className="text-emerald-100/70 text-[10px] truncate">Bot do Partidinha está online</div>
                     </div>
                   </div>
@@ -195,13 +195,13 @@ export const ProblemSection: React.FC = () => {
                           🤖 Bot do Partidinha
                         </div>
                         <div className="text-[11px] text-slate-800 leading-snug mt-1">
-                          <p className="font-bold">⚽️ La Pelota FC (Ter, 01/09 20:00)</p>
+                          <p className="font-bold">⚽️ Resenha FC (Ter, 01/09 20:00)</p>
                           <p className="text-slate-500">📍 Flamengo da 212 Sul</p>
                           <p className="font-bold text-slate-700 mt-1.5">📌 LISTA DO GRUPO</p>
                           <ol className="text-slate-700 mt-0.5">
                             <li>1. Alexandre</li>
-                            <li>2. Rafael Amaral 🏆</li>
-                            <li>3. Venâncio 🏆</li>
+                            <li>2. Rafael Lima 🏆</li>
+                            <li>3. Carlos</li>
                           </ol>
                           <p className="text-slate-400 italic mt-0.5">+ 14 confirmados...</p>
                         </div>
@@ -249,7 +249,7 @@ export const ProblemSection: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                    <span>Cobrança automática dos veacos do grupo sem constrangimento</span>
+                    <span>Cobrança automática dos devedores do grupo sem constrangimento</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />

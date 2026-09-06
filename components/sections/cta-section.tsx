@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
 
 export const CtaSection: React.FC = () => {
@@ -33,6 +36,12 @@ export const CtaSection: React.FC = () => {
           <FloatingDotsCtaLink
             href="https://app.partidinha.com/"
             className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-10 py-4 rounded-full text-base shadow-cta-glow transition hover:scale-105 active:scale-95"
+            onClick={() =>
+              posthog.capture("cta_section_cta_clicked", {
+                cta_label: "Criar meu grupo grátis",
+                cta_location: "bottom_cta_section",
+              })
+            }
           >
             Criar meu grupo grátis
           </FloatingDotsCtaLink>

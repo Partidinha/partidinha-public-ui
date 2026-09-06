@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import { Check, CheckCircle2, Zap } from "lucide-react";
+import posthog from "posthog-js";
 import { FloatingDotsCtaNextLink } from "@/components/ui/floating-dots-cta";
 
 const plans = [
@@ -60,8 +63,28 @@ function GridPattern() {
 }
 
 export const PricingSection: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          posthog.capture("pricing_plan_viewed", {
+            plans_shown: plans.map((p) => p.name),
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="planos" className="py-16 md:py-32 bg-white border-b border-sky-100 relative">
+    <section ref={sectionRef} id="planos" className="py-16 md:py-32 bg-white border-b border-sky-100 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-4 gsap-reveal">
           <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
@@ -146,6 +169,14 @@ export const PricingSection: React.FC = () => {
                     <FloatingDotsCtaNextLink
                       href="https://app.partidinha.com/"
                       className="inline-flex w-full items-center justify-center h-12 rounded-full bg-sky-600 text-white font-semibold text-sm shadow-sm hover:bg-sky-500 hover:shadow-md transition-all duration-200 active:scale-95"
+                      onClick={() =>
+                        posthog.capture("pricing_plan_cta_clicked", {
+                          plan_name: plan.name,
+                          plan_price: plan.price,
+                          cta_label: plan.cta,
+                          is_popular: plan.popular,
+                        })
+                      }
                     >
                       {plan.cta}
                     </FloatingDotsCtaNextLink>
@@ -153,6 +184,14 @@ export const PricingSection: React.FC = () => {
                     <FloatingDotsCtaNextLink
                       href="https://app.partidinha.com/"
                       className="inline-flex w-full items-center justify-center h-12 rounded-full border border-slate-300 bg-white text-slate-800 font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95"
+                      onClick={() =>
+                        posthog.capture("pricing_plan_cta_clicked", {
+                          plan_name: plan.name,
+                          plan_price: plan.price,
+                          cta_label: plan.cta,
+                          is_popular: plan.popular,
+                        })
+                      }
                     >
                       {plan.cta}
                     </FloatingDotsCtaNextLink>
@@ -164,7 +203,7 @@ export const PricingSection: React.FC = () => {
         </div>
 
         <p className="mt-10 text-center text-xs text-slate-400">
-          Pagamento seguro via Stripe. 7 dias de garantia em todos os planos pagos.
+          Primeiro mês grátis pra testar o Pro completo. Sem cartão agora — combinamos o pagamento com você depois.
         </p>
       </div>
     </section>

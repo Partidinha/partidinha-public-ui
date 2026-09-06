@@ -94,7 +94,7 @@ export default function PoliticaDePrivacidadePage() {
       </ul>
       <p>
         Para exercer esses direitos, entre em contato pelo e-mail{" "}
-        <a href="mailto:privacidade@partidinha.com">privacidade@partidinha.com</a>.
+        <a href="mailto:contato@partidinha.com">contato@partidinha.com</a>.
       </p>
 
       <h2>7. Dados de menores</h2>

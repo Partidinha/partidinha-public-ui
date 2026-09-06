@@ -13,6 +13,7 @@ import { CtaSection } from "@/components/sections/cta-section";
 import { Footer } from "@/components/layout/footer";
 import { TeamRaffleModal } from "@/components/widgets/team-raffle-modal";
 import { ScrollAnimations } from "@/components/animations/scroll-animations";
+import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
 
 export default function Home() {
   const [selectedHeadlineKey, setSelectedHeadlineKey] = useState("A");
@@ -23,6 +24,8 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       {/* GSAP Scroll Animations Initializer */}
       <ScrollAnimations />
+      {/* PostHog Scroll Depth Tracker (50%, 75%, 100%) */}
+      <ScrollDepthTracker />
 
       {/* Main Container Wrapper */}
       <div
@@ -37,7 +40,7 @@ export default function Home() {
         {/* <ShowcaseSection /> */}
         <TestimonialsSection />
         <PricingSection />
-        {/* <FaqSection /> */}
+        <FaqSection />
         <CtaSection />
         <Footer />
       </div>

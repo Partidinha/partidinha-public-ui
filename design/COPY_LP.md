@@ -17,7 +17,7 @@
 **Tom:** Conversacional, direto, com gírias leves do futebol brasileiro. Nada de linguagem corporativa. Papo de vestiário.
 
 **Fio narrativo:**
-- Hero → "Chega de sufoco antes do apito"
+- Hero → "Sua pelada no piloto automático"
 - Problema → "A bagunça do grupo do WhatsApp"
 - Solução → "O vestiário digital do seu time"
 - Features → "Tudo que o capitão precisa"
@@ -105,7 +105,7 @@
 **Princípio:** Pattern interrupt + promise + proof + CTA único
 
 **Headline principal:**
-> # Chega de sufoco antes do apito
+> # Sua pelada no piloto automático
 
 **Subheadline:**
 > Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança de inadimplentes, sorteio de times e estatísticas — tudo por um bot no seu grupo.
@@ -136,7 +136,7 @@
 > ## O grupo do Whats virou bagunça. E você é o único que se estressa.
 
 **Copy:**
-> Todo sábado é a mesma novela. Você cria a partida, manda no grupo, e começa o caos:
+> Todo dia de jogo é a mesma novela. Você cria a partida, manda no grupo, e começa o caos:
 >
 > — "Vou!" / "Não vou mais!" / "Depende do churras da sogra"  
 > — Mensagens perdidas no meio de meme e áudio de política  
@@ -190,7 +190,7 @@
 2. **✅ Confirmações Automáticas**
    > Sabe quem vai, quem não vai, e quem tá na dúvida. Sem mensagem perdida, sem "achei que ia".
 
-3. **💰 Cobrança de Inadimplentes**
+3. **💰 Cobrança de Devedores**
    > Marca quem não pagou no app. O bot cobra no grupo automaticamente, de tempo em tempo. Você não é mais o chato.
 
 4. **⚽ Sorteio de Times**
@@ -224,7 +224,7 @@
 **3. Crie a partida**
 > No app, defina data, hora e local. O bot anuncia no grupo e começa a receber confirmações.
 
-**4. Relaxa e joga**
+**4. Só chegar e jogar**
 > No dia, use o app pra sortear times, marcar stats e gerar a tabela. O bot cuida do resto.
 
 ---
@@ -384,7 +384,7 @@
 ## 🎨 VARIAÇÕES DE HEADLINE PARA TESTE
 
 **Variação A (Proposta principal):**
-> Chega de sufoco antes do apito
+> Sua pelada no piloto automático
 
 **Variação B (Mais direta):**
 > Sua pelada organizada, sem você fazer nada

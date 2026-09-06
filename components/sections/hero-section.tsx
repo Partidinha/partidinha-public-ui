@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
+import posthog from "posthog-js";
 import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
@@ -49,7 +50,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             />
 
             <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos veacos do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
+              Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -62,6 +63,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               <a
                 href="#como-funciona"
                 className="w-full sm:w-auto billow-glass-pill-navy cta-secondary font-semibold px-7 py-4 rounded-full transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
+                onClick={() =>
+                  posthog.capture("hero_secondary_cta_clicked", {
+                    cta_label: "Ver como funciona",
+                    cta_href: "#como-funciona",
+                  })
+                }
               >
                 <span>Ver como funciona</span>
                 <ArrowDown className="w-4 h-4 opacity-80" />

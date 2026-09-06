@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
 
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import posthog from "posthog-js";
 import Logo from "../../app/logo-icon.png";
 
 export const Footer: React.FC = () => {
@@ -23,13 +25,25 @@ export const Footer: React.FC = () => {
           </span>
         </div>
         <div className="flex items-center gap-6 text-slate-400">
-          <Link href="/politica-de-privacidade" className="hover:text-white transition">
+          <Link
+            href="/politica-de-privacidade"
+            className="hover:text-white transition"
+            onClick={() => posthog.capture("footer_link_clicked", { link_label: "Privacidade", link_href: "/politica-de-privacidade" })}
+          >
             Privacidade
           </Link>
-          <Link href="/termos-de-uso" className="hover:text-white transition">
+          <Link
+            href="/termos-de-uso"
+            className="hover:text-white transition"
+            onClick={() => posthog.capture("footer_link_clicked", { link_label: "Termos de Uso", link_href: "/termos-de-uso" })}
+          >
             Termos de Uso
           </Link>
-          <a href="#" className="hover:text-white transition">
+          <a
+            href="#"
+            className="hover:text-white transition"
+            onClick={() => posthog.capture("footer_link_clicked", { link_label: "Suporte", link_href: "#" })}
+          >
             Suporte
           </a>
         </div>

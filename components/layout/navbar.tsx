@@ -3,14 +3,25 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
 import Logo from "../../app/logo-icon.png";
 
-const AnimatedNavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
-  href,
-  children,
-}) => (
-  <a href={href} className="group relative inline-block h-4 overflow-hidden">
+const AnimatedNavLink: React.FC<{
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}> = ({ href, label, children }) => (
+  <a
+    href={href}
+    className="group relative inline-block h-4 overflow-hidden"
+    onClick={() =>
+      posthog.capture("navbar_link_clicked", {
+        link_label: label,
+        link_href: href,
+      })
+    }
+  >
     <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
       <span className="text-sky-200/80">{children}</span>
       <span className="text-white">{children}</span>
@@ -36,11 +47,21 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
-          <AnimatedNavLink href="#como-funciona">Como funciona</AnimatedNavLink>
-          <AnimatedNavLink href="#features">Recursos</AnimatedNavLink>
-          <AnimatedNavLink href="#depoimentos">Depoimentos</AnimatedNavLink>
-          <AnimatedNavLink href="#planos">Planos</AnimatedNavLink>
-          <AnimatedNavLink href="#faq">FAQ</AnimatedNavLink>
+          <AnimatedNavLink href="#como-funciona" label="Como funciona">
+            Como funciona
+          </AnimatedNavLink>
+          <AnimatedNavLink href="#features" label="Recursos">
+            Recursos
+          </AnimatedNavLink>
+          <AnimatedNavLink href="#depoimentos" label="Depoimentos">
+            Depoimentos
+          </AnimatedNavLink>
+          <AnimatedNavLink href="#planos" label="Planos">
+            Planos
+          </AnimatedNavLink>
+          <AnimatedNavLink href="#faq" label="FAQ">
+            FAQ
+          </AnimatedNavLink>
         </nav>
 
         {/* CTA Nav */}
@@ -48,6 +69,12 @@ export const Navbar: React.FC = () => {
           <FloatingDotsCtaLink
             href="https://app.partidinha.com/"
             className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-5 py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5"
+            onClick={() =>
+              posthog.capture("navbar_cta_clicked", {
+                cta_label: "Criar grupo",
+                cta_location: "navbar",
+              })
+            }
           >
             Criar grupo
           </FloatingDotsCtaLink>

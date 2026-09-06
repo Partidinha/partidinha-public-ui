@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import Link, { type LinkProps } from "next/link";
+import posthog from "posthog-js";
 
 import { cn } from "@/lib/utils";
 
@@ -67,10 +68,20 @@ export function FloatingDotsCtaLink({
   label,
   className,
   children,
+  onClick,
   ...props
 }: FloatingDotsCtaLinkProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    posthog.capture("cta_clicked", {
+      cta_label: typeof children === "string" ? children : label,
+      cta_href: props.href,
+      cta_location: "floating_dots_link",
+    });
+    onClick?.(e);
+  };
+
   return (
-    <a className={cn("fdc-button", className)} {...props}>
+    <a className={cn("fdc-button", className)} onClick={handleClick} {...props}>
       <FdcPoints />
       <span className="fdc-inner">
         {children ?? label}
@@ -90,10 +101,20 @@ export function FloatingDotsCtaNextLink({
   label,
   className,
   children,
+  onClick,
   ...props
 }: FloatingDotsCtaNextLinkProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    posthog.capture("cta_clicked", {
+      cta_label: typeof children === "string" ? children : label,
+      cta_href: typeof props.href === "string" ? props.href : String(props.href),
+      cta_location: "floating_dots_next_link",
+    });
+    onClick?.(e);
+  };
+
   return (
-    <Link className={cn("fdc-button", className)} {...props}>
+    <Link className={cn("fdc-button", className)} onClick={handleClick} {...props}>
       <FdcPoints />
       <span className="fdc-inner">
         {children ?? label}

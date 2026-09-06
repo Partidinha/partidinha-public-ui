@@ -56,11 +56,11 @@ export const WhatsAppBotJoin: React.FC = () => {
               <strong>sorteio dos times</strong> e da <strong>cobrança do Pix</strong>.
             </p>
             <div className="bg-sky-50 border border-sky-200 rounded-[1.3cqw] px-[1.6cqw] py-[1.1cqw] text-[2.4cqw] font-mono text-slate-600 leading-relaxed">
-              É só digitar:
+              É só marcar o bot e digitar:
               <br />
-              <span className="text-sky-600 font-bold">!confirmar</span> ·{" "}
-              <span className="text-sky-600 font-bold">!lista</span> ·{" "}
-              <span className="text-sky-600 font-bold">!sortear</span>
+              <span className="text-sky-600 font-bold">entrar</span> ·{" "}
+              <span className="text-sky-600 font-bold">sair</span> ·{" "}
+              <span className="text-sky-600 font-bold">apelido</span>
             </div>
             <div className="text-[2.1cqw] text-slate-400 text-right">19:02</div>
           </div>

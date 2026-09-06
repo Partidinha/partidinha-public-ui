@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Shuffle } from "lucide-react";
+import posthog from "posthog-js";
 import { Modal } from "@/components/ui/modal";
 import { shuffleArray } from "@/lib/utils";
 
@@ -29,11 +30,17 @@ export const TeamRaffleModal: React.FC<TeamRaffleModalProps> = ({
 
   const [teamBlue, setTeamBlue] = useState(defaultPlayers.slice(0, 5));
   const [teamCyan, setTeamCyan] = useState(defaultPlayers.slice(5, 10));
+  const shuffleCountRef = useRef(0);
 
   const handleShuffle = () => {
     const shuffled = shuffleArray(defaultPlayers);
     setTeamBlue(shuffled.slice(0, 5));
     setTeamCyan(shuffled.slice(5, 10));
+    shuffleCountRef.current += 1;
+    posthog.capture("team_raffle_shuffled", {
+      shuffle_count: shuffleCountRef.current,
+      player_count: defaultPlayers.length,
+    });
   };
 
   return (

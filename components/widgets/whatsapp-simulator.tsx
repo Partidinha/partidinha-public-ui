@@ -29,7 +29,7 @@ export const WhatsAppSimulator: React.FC = () => {
       textHtml: `🚨 <strong>CONVOCAÇÃO OFICIAL!</strong><br>🗓️ Quinta-feira, 20:00h<br>📍 Arena Soccer Club - Campo 2<br>💰 R$ 25,00 por jogador
       <div class="bg-sky-50 p-1.5 rounded text-[10.5px] text-slate-700 font-mono border border-sky-200 mt-1">
         Comandos rápidos:<br>
-        <span class="text-sky-600 font-bold">!confirmar</span> | <span class="text-sky-600 font-bold">!lista</span> | <span class="text-sky-600 font-bold">!sortear</span>
+        <span class="text-sky-600 font-bold">entrar</span> | <span class="text-sky-600 font-bold">sair</span> | <span class="text-sky-600 font-bold">apelido</span>
       </div>`,
     },
     {
@@ -37,14 +37,14 @@ export const WhatsAppSimulator: React.FC = () => {
       type: "sent",
       sender: "Renan (Admin)",
       time: "18:31",
-      textHtml: "!confirmar",
+      textHtml: "@Partidinha Bot entrar",
     },
     {
       id: "initial-confirm",
       type: "received",
       borderLeft: "border-emerald-500",
       textHtml:
-        "✅ <strong>Renan</strong> confirmado! (Vaga #1 de 14). Falta pagar R$ 25 via Pix.",
+        "✅ <strong>Renan</strong> entrou na lista! (Vaga #1 de 14). Falta pagar R$ 25 via Pix.",
     },
   ]);
 
@@ -76,7 +76,7 @@ export const WhatsAppSimulator: React.FC = () => {
           type: "received",
           sender: "🤖 Bot Partidinha",
           textHtml:
-            "🚨 <strong>CONVOCAÇÃO OFICIAL!</strong> Quinta, 20h. Digite <strong>!confirmar</strong>",
+            "🚨 <strong>CONVOCAÇÃO OFICIAL!</strong> Quinta, 20h. Digite <strong>@Partidinha Bot entrar</strong>",
         },
       ]);
       return;
@@ -94,7 +94,7 @@ export const WhatsAppSimulator: React.FC = () => {
     ];
     const randomName = names[Math.floor(Math.random() * names.length)];
 
-    if (cmd === "confirmar") {
+    if (cmd === "entrar") {
       const nextCount = confirmedCount + 1;
       setConfirmedCount(nextCount);
       setMessages((prev) => [
@@ -104,40 +104,57 @@ export const WhatsAppSimulator: React.FC = () => {
           type: "sent",
           sender: randomName,
           time: timeStr,
-          textHtml: "!confirmar",
+          textHtml: "@Partidinha Bot entrar",
         },
         {
           id: Date.now() + "-res",
           type: "received",
           borderLeft: "border-emerald-500",
-          textHtml: `✅ <strong>${randomName}</strong> confirmado! (Vaga #${nextCount} de 14).`,
+          textHtml: `✅ <strong>${randomName}</strong> entrou na lista! (Vaga #${nextCount} de 14).`,
         },
       ]);
-    } else if (cmd === "lista") {
+    } else if (cmd === "sair") {
+      const nextCount = Math.max(1, confirmedCount - 1);
+      setConfirmedCount(nextCount);
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now() + "-sent",
           type: "sent",
-          textHtml: "!lista",
+          sender: randomName,
+          time: timeStr,
+          textHtml: "@Partidinha Bot sair",
         },
         {
           id: Date.now() + "-res",
           type: "received",
-          textHtml: `📋 <strong>LISTA DE PRESENÇA (${confirmedCount}/14):</strong><br>
-          1. Renan (Pago)<br>
-          2. ${randomName} (Pendente)<br>
-          3. Lucas (Pago)<br>
-          ⏳ Restam ${Math.max(0, 14 - confirmedCount)} vagas!`,
+          textHtml: `👋 <strong>${randomName}</strong> saiu da lista. Restam ${Math.max(0, 14 - nextCount)} vagas!`,
+        },
+      ]);
+    } else if (cmd === "apelido") {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + "-sent",
+          type: "sent",
+          sender: randomName,
+          time: timeStr,
+          textHtml: "@Partidinha Bot apelido Canhotinha",
+        },
+        {
+          id: Date.now() + "-res",
+          type: "received",
+          textHtml: `✅ Apelido de <strong>${randomName}</strong> atualizado para <strong>Canhotinha</strong>!`,
         },
       ]);
     } else if (cmd === "sortear") {
       setMessages((prev) => [
         ...prev,
         {
-          id: Date.now() + "-sent",
-          type: "sent",
-          textHtml: "!sortear",
+          id: Date.now() + "-sys",
+          type: "system",
+          textHtml:
+            '<span class="bg-white/80 text-slate-600 text-[10px] px-2.5 py-0.5 rounded-md font-mono shadow-xs">Renan sorteou os times no app 📱</span>',
         },
         {
           id: Date.now() + "-res",
@@ -155,7 +172,7 @@ export const WhatsAppSimulator: React.FC = () => {
           id: Date.now() + "-res",
           type: "received",
           borderLeft: "border-amber-500",
-          textHtml: `📢 <strong>LEMBRETE DE PIX!</strong><br>
+          textHtml: `📢 <strong>LEMBRETE AUTOMÁTICO!</strong><br>
           Fala @${randomName}, o Pix da quadra está pendente (R$ 25,00). Chave: <code>pix@partidinha.com</code>`,
         },
       ]);
@@ -264,31 +281,37 @@ export const WhatsAppSimulator: React.FC = () => {
 
         <div className="grid grid-cols-3 gap-1.5">
           <button
-            onClick={() => handleCommand("confirmar")}
+            onClick={() => handleCommand("entrar")}
             className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 px-2 rounded-lg text-[10.5px] transition active:scale-95 shadow-xs cursor-pointer"
           >
-            !confirmar
+            entrar
           </button>
           <button
-            onClick={() => handleCommand("lista")}
+            onClick={() => handleCommand("sair")}
             className="bg-sky-600 hover:bg-sky-500 text-white font-bold py-1.5 px-2 rounded-lg text-[10.5px] transition active:scale-95 shadow-xs cursor-pointer"
           >
-            !lista
+            sair
           </button>
           <button
-            onClick={() => handleCommand("sortear")}
+            onClick={() => handleCommand("apelido")}
             className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-1.5 px-2 rounded-lg text-[10.5px] transition active:scale-95 shadow-xs cursor-pointer"
           >
-            !sortear
+            apelido
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-1.5 mt-1.5">
+        <div className="grid grid-cols-3 gap-1.5 mt-1.5">
+          <button
+            onClick={() => handleCommand("sortear")}
+            className="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-1.5 px-1.5 rounded-lg text-[10px] transition text-center border border-slate-700 cursor-pointer"
+          >
+            🎲 Sorteio (app)
+          </button>
           <button
             onClick={() => handleCommand("cobrar")}
             className="bg-amber-600 hover:bg-amber-500 text-white font-bold py-1.5 px-1.5 rounded-lg text-[10px] transition text-center cursor-pointer"
           >
-            📢 !cobrar_pix
+            📢 Lembrete auto
           </button>
           <button
             onClick={() => handleCommand("limpar")}
