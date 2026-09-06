@@ -21,7 +21,7 @@ O Bot do Partidinha no seu WhatsApp
 
 ## Sua pelada no piloto automático
 
-Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
+Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
 
 [Criar meu grupo grátis](https://app.partidinha.com/)[Ver como funciona](#como-funciona)
 
@@ -82,8 +82,8 @@ Flamengo da 212 Sul
 LISTA DO GRUPO
 
 - 1. Alexandre
-- 2. Rafael Amaral
-- 3. Venâncio
+- 2. Rafael Lima
+- 3. Carlos
 + 14 confirmados...
 
 20:04
