@@ -10,7 +10,7 @@ export function AeoWidgetLoader() {
           title: "Partidinha: Bot no seu WhatsApp",
           url: "https://partidinha.com",
           widget: {
-            enabled: true,
+            enabled: false,
             position: "bottom-right",
           },
         },
