@@ -11,8 +11,8 @@ import { HEADLINES } from "@/lib/copy";
 import heroimg from "@/app/hero.webp";
 import rankBlock from "@/app/rank-block.webp";
 import checkinBlock from "@/app/checkin-block.webp";
-import teamBlock from "@/app/team-block.webp";
 import paymentsBlock from "@/app/payments-block.webp";
+import { WhatsAppStatusBlock } from "@/components/widgets/whatsapp-status-block";
 import NoiseDarkBlueGradientWithSquares from "@/components/ui/noise-dark-blue-gradient-with-squares";
 
 export interface HeroSectionProps {
@@ -114,8 +114,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               className="hero-float-item absolute top-[24%] right-[0%] sm:right-[-23%] max-[1439px]:xl:-ml-[80px] z-50"
               style={{ animationDelay: "1.8s", animationDuration: "6.5s", "--float-rotate": "7deg", "--reveal-delay": "1.05s" } as React.CSSProperties}
             >
-              <div className="hero-float-glass-frame">
-                <Image src={teamBlock} alt="" className="w-[95px] sm:w-[228px] h-auto" quality={100} />
+              <div className="hero-float-glass-frame w-[95px] sm:w-[228px]">
+                <WhatsAppStatusBlock />
               </div>
             </div>
             <div
