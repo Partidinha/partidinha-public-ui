@@ -1,6 +1,8 @@
 export const WHATSAPP_BOT_URL =
   "https://api.whatsapp.com/send/?phone=556393049388&text=Quero+usar+o+Partidinha+no+meu+grupo";
 
+export const BOT_START_PATH = "/bot-start";
+
 export const WEB_APP_URL = "https://app.partidinha.com/";
 
 export interface HeadlineOption {

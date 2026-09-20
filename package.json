@@ -8,7 +8,7 @@
     "postbuild": "node -e \"import('aeo.js/next').then(m => m.postBuild({ title: 'Partidinha: Bot no seu WhatsApp', description: 'Organize sua pelada sem sair do WhatsApp.', url: 'https://partidinha.com' }))\"",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test lib/scroll-depth.test.mjs",
+    "test": "node --test lib/scroll-depth.test.mjs lib/bot-redirect.test.mjs",
     "postinstall": "patch-package"
   },
   "dependencies": {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
-import { WHATSAPP_BOT_URL } from "@/lib/copy";
+import { BOT_START_PATH } from "@/lib/copy";
 import Logo from "../../app/logo-icon.png";
 
 const AnimatedNavLink: React.FC<{
@@ -68,14 +68,14 @@ export const Navbar: React.FC = () => {
         {/* CTA Nav */}
         <div className="flex items-center gap-3 shrink-0">
           <FloatingDotsCtaLink
-            href={WHATSAPP_BOT_URL}
+            href={BOT_START_PATH}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5 whitespace-nowrap"
             onClick={() =>
               posthog.capture("navbar_cta_clicked", {
                 cta_label: "Acessar o bot",
-                cta_href: WHATSAPP_BOT_URL,
+                cta_href: BOT_START_PATH,
                 cta_location: "navbar",
                 destination: "whatsapp",
               })

@@ -3,7 +3,7 @@
 import React from "react";
 import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
-import { WHATSAPP_BOT_URL, WEB_APP_URL } from "@/lib/copy";
+import { BOT_START_PATH, WEB_APP_URL } from "@/lib/copy";
 
 export const CtaSection: React.FC = () => {
   return (
@@ -36,14 +36,14 @@ export const CtaSection: React.FC = () => {
         <div className="pt-4 flex flex-col items-center justify-center gap-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <FloatingDotsCtaLink
-              href={WHATSAPP_BOT_URL}
+              href={BOT_START_PATH}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-10 py-4 rounded-full text-base shadow-cta-glow transition hover:scale-105 active:scale-95"
               onClick={() =>
                 posthog.capture("cta_section_cta_clicked", {
                   cta_label: "Acessar o bot",
-                  cta_href: WHATSAPP_BOT_URL,
+                  cta_href: BOT_START_PATH,
                   cta_location: "bottom_cta_section",
                   destination: "whatsapp",
                 })

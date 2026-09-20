@@ -11,6 +11,8 @@ optimized for consumption by Large Language Models (LLMs) and AI assistants.
 
 - [Partidinha: Bot no seu WhatsApp](https://partidinha.com)
   Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente.
+- [Bot-start](https://partidinha.com/bot-start)
+  Organize sua pelada sem sair do WhatsApp.
 - [Politica-de-privacidade](https://partidinha.com/politica-de-privacidade)
   Organize sua pelada sem sair do WhatsApp.
 - [Termos-de-uso](https://partidinha.com/termos-de-uso)

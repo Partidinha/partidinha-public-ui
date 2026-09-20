@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
-import { HEADLINES, WHATSAPP_BOT_URL, WEB_APP_URL } from "@/lib/copy";
+import { HEADLINES, BOT_START_PATH, WEB_APP_URL } from "@/lib/copy";
 import heroimg from "@/app/hero.webp";
 import rankBlock from "@/app/rank-block.webp";
 import checkinBlock from "@/app/checkin-block.webp";
@@ -56,14 +56,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             <div className="pt-2 space-y-3">
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <FloatingDotsCtaLink
-                  href={WHATSAPP_BOT_URL}
+                  href={BOT_START_PATH}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-9 py-4 rounded-full shadow-cta-glow transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
                   onClick={() =>
                     posthog.capture("hero_primary_cta_clicked", {
                       cta_label: "Acessar o bot",
-                      cta_href: WHATSAPP_BOT_URL,
+                      cta_href: BOT_START_PATH,
                       destination: "whatsapp",
                     })
                   }

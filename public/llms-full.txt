@@ -23,9 +23,25 @@ O Bot do Partidinha no seu WhatsApp
 
 Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
 
-[Acessar o bot](https://api.whatsapp.com/send/?phone=556393049388&text=Quero+usar+o+Partidinha+no+meu+grupo)[Ver como funciona](#como-funciona)
-Prefere pelo navegador? [Criar pelo App →](https://app.partidinha.com/)
+[Acessar o bot](/bot-start)[Ver como funciona](#como-funciona)
+Prefere pelo aplicativo? [Criar pelo App →](https://app.partidinha.com/)
 
+Pelada das Quintas FC
+
+Grupo • 24 participantes
+
+Gabriel
+
+@Partidinha Bot entrar
+
+18:31
+
+Partidinha BotBot
+
+Pelada das Quintas FC (Sáb, 18:00)
+Campo do Bairro Novo
+
+Gabriel entrou! (14/14)
 
 Você conhece essa cena?
 
@@ -287,11 +303,19 @@ Dá pra usar em mais de uma pelada com a mesma conta?
 
 Crie seu grupo grátis em menos de 2 minutos. Seu time vai agradecer e você vai voltar a jogar sem estresse.
 
-[Acessar o bot](https://api.whatsapp.com/send/?phone=556393049388&text=Quero+usar+o+Partidinha+no+meu+grupo)
+[Acessar o bot](/bot-start)
 
 [Criar pelo App →](https://app.partidinha.com/)•[Ver planos e preços →](#planos)
 
 Sem necessidade de cartão de crédito. Teste 100% grátis.
+
+---
+
+# Bot-start
+
+URL: https://partidinha.com/bot-start
+
+> Organize sua pelada sem sair do WhatsApp.
 
 ---
 
