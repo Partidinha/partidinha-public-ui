@@ -33,13 +33,13 @@ const AnimatedNavLink: React.FC<{
 export const Navbar: React.FC = () => {
   return (
     <header className="relative z-40 pt-4 px-4 sm:px-6 lg:px-8 mb-6">
-      <div className="max-w-7xl mx-auto billow-glass-pill-navy px-6 h-16 flex items-center justify-between shadow-cta-glow transition-colors duration-300 hover:border-sky-300/40">
+      <div className="max-w-7xl mx-auto billow-glass-pill-navy px-4 sm:px-6 h-16 flex items-center justify-between gap-3 shadow-cta-glow transition-colors duration-300 hover:border-sky-300/40">
         {/* Logo */}
 
-        <Link href="/" className="flex items-center gap-3 group">
-          <Image src={Logo} alt="Partidinha Logo" className="w-10 h-10" />
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink-0">
+          <Image src={Logo} alt="Partidinha Logo" className="w-9 h-9 sm:w-10 sm:h-10 shrink-0" />
           <span
-            className="font-bold text-xl text-white font-lastik"
+            className="hidden min-[400px]:inline font-bold text-lg sm:text-xl text-white font-lastik whitespace-nowrap"
             style={{ letterSpacing: "0.03em" }}
           >
             Partidinha
@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
+        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
           <AnimatedNavLink href="#como-funciona" label="Como funciona">
             Como funciona
           </AnimatedNavLink>
@@ -66,12 +66,12 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* CTA Nav */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <FloatingDotsCtaLink
             href={WHATSAPP_BOT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-5 py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5"
+            className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5 whitespace-nowrap"
             onClick={() =>
               posthog.capture("navbar_cta_clicked", {
                 cta_label: "Acessar o bot",

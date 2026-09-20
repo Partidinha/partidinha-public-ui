@@ -122,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
 
             {/* Floating app UI element images. Rotation echoes the phone mockup's own perspective tilt */}
             <div
-              className="hero-float-item absolute bottom-[5%] right-[4%] sm:right-[-10%] lg:right-[-8%] max-[1439px]:xl:-ml-[80px] z-50"
+              className="hero-float-item absolute bottom-[5%] right-[4%] lg:right-[-8%] max-[1439px]:xl:-ml-[80px] z-50"
               style={{ animationDelay: "0s", animationDuration: "6s", "--float-rotate": "7deg", "--reveal-delay": "0.75s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
-              className="hero-float-item absolute bottom-[28%] left-[58%] sm:left-[80%] max-[1439px]:xl:-ml-[80px] w-max z-50"
+              className="hero-float-item absolute bottom-[28%] left-[58%] lg:left-[80%] max-[1439px]:xl:-ml-[80px] w-max z-50"
               style={{ animationDelay: "0.6s", animationDuration: "5.5s", "--float-rotate": "7deg", "--reveal-delay": "0.9s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
@@ -138,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
-              className="hero-float-item absolute top-[24%] right-[0%] sm:right-[-23%] max-[1439px]:xl:-ml-[80px] z-50"
+              className="hero-float-item absolute top-[24%] right-[0%] lg:right-[-23%] max-[1439px]:xl:-ml-[80px] z-50"
               style={{ animationDelay: "1.8s", animationDuration: "6.5s", "--float-rotate": "7deg", "--reveal-delay": "1.05s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame w-[95px] sm:w-[228px]">
@@ -146,7 +146,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
-              className="hero-float-item absolute top-[14%] left-[4%] sm:-left-[4%] max-[1439px]:xl:-ml-[70px] z-50"
+              className="hero-float-item absolute top-[14%] left-[4%] lg:-left-[4%] max-[1439px]:xl:-ml-[70px] z-50"
               style={{ animationDelay: "0.9s", animationDuration: "5s", "--float-rotate": "7deg", "--float-rotate-y": "-9deg", "--float-rotate-x": "2deg", "--reveal-delay": "1.2s" } as React.CSSProperties}
             >
               <div className="hero-float-glass-frame">
