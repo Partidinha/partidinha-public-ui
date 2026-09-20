@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
+import { WHATSAPP_BOT_URL } from "@/lib/copy";
 import Logo from "../../app/logo-icon.png";
 
 const AnimatedNavLink: React.FC<{
@@ -67,16 +68,20 @@ export const Navbar: React.FC = () => {
         {/* CTA Nav */}
         <div className="flex items-center gap-3">
           <FloatingDotsCtaLink
-            href="https://app.partidinha.com/"
+            href={WHATSAPP_BOT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-bold text-xs px-5 py-2.5 rounded-full transition shadow-cta-glow hover:-translate-y-0.5 active:scale-95 flex items-center gap-1.5"
             onClick={() =>
               posthog.capture("navbar_cta_clicked", {
-                cta_label: "Criar grupo",
+                cta_label: "Acessar o bot",
+                cta_href: WHATSAPP_BOT_URL,
                 cta_location: "navbar",
+                destination: "whatsapp",
               })
             }
           >
-            Criar grupo
+            Acessar o bot
           </FloatingDotsCtaLink>
         </div>
       </div>

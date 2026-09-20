@@ -16,7 +16,8 @@ O Bot do Partidinha no seu WhatsApp
 
 Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
 
-[Criar meu grupo grátis](https://app.partidinha.com/)[Ver como funciona](#como-funciona)
+[Acessar o bot](https://api.whatsapp.com/send/?phone=556393049388&text=Quero+usar+o+Partidinha+no+meu+grupo)[Ver como funciona](#como-funciona)
+Prefere pelo navegador? [Criar pelo App →](https://app.partidinha.com/)
 
 Você conhece essa cena?
 
@@ -278,5 +279,8 @@ Dá pra usar em mais de uma pelada com a mesma conta?
 
 Crie seu grupo grátis em menos de 2 minutos. Seu time vai agradecer e você vai voltar a jogar sem estresse.
 
-[Criar meu grupo grátis](https://app.partidinha.com/)[Ver planos e preços →](#planos)
+[Acessar o bot](https://api.whatsapp.com/send/?phone=556393049388&text=Quero+usar+o+Partidinha+no+meu+grupo)
+
+[Criar pelo App →](https://app.partidinha.com/)•[Ver planos e preços →](#planos)
+
 Sem necessidade de cartão de crédito. Teste 100% grátis.

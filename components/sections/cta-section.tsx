@@ -3,6 +3,7 @@
 import React from "react";
 import posthog from "posthog-js";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
+import { WHATSAPP_BOT_URL, WEB_APP_URL } from "@/lib/copy";
 
 export const CtaSection: React.FC = () => {
   return (
@@ -32,25 +33,48 @@ export const CtaSection: React.FC = () => {
           Crie seu grupo grátis em menos de 2 minutos. Seu time vai agradecer e você vai voltar a jogar sem estresse.
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <FloatingDotsCtaLink
-            href="https://app.partidinha.com/"
-            className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-10 py-4 rounded-full text-base shadow-cta-glow transition hover:scale-105 active:scale-95"
-            onClick={() =>
-              posthog.capture("cta_section_cta_clicked", {
-                cta_label: "Criar meu grupo grátis",
-                cta_location: "bottom_cta_section",
-              })
-            }
-          >
-            Criar meu grupo grátis
-          </FloatingDotsCtaLink>
-          <a
-            href="#planos"
-            className="text-sm font-semibold text-slate-300 hover:text-white transition"
-          >
-            Ver planos e preços →
-          </a>
+        <div className="pt-4 flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <FloatingDotsCtaLink
+              href={WHATSAPP_BOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-10 py-4 rounded-full text-base shadow-cta-glow transition hover:scale-105 active:scale-95"
+              onClick={() =>
+                posthog.capture("cta_section_cta_clicked", {
+                  cta_label: "Acessar o bot",
+                  cta_href: WHATSAPP_BOT_URL,
+                  cta_location: "bottom_cta_section",
+                  destination: "whatsapp",
+                })
+              }
+            >
+              Acessar o bot
+            </FloatingDotsCtaLink>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm">
+            <a
+              href={WEB_APP_URL}
+              className="font-medium text-sky-300 hover:text-sky-200 underline underline-offset-4 transition"
+              onClick={() =>
+                posthog.capture("cta_section_webapp_clicked", {
+                  cta_label: "Criar pelo App",
+                  cta_href: WEB_APP_URL,
+                  cta_location: "bottom_cta_section",
+                  destination: "web_app",
+                })
+              }
+            >
+              Criar pelo App →
+            </a>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <a
+              href="#planos"
+              className="font-semibold text-slate-300 hover:text-white transition"
+            >
+              Ver planos e preços →
+            </a>
+          </div>
         </div>
 
         <p className="text-xs text-slate-400 pt-2 font-mono">

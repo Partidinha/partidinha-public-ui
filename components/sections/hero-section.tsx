@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import { Navbar } from "@/components/layout/navbar";
 //import { WhatsAppSimulator } from "@/components/widgets/whatsapp-simulator";
 import { FloatingDotsCtaLink } from "@/components/ui/floating-dots-cta";
-import { HEADLINES } from "@/lib/copy";
+import { HEADLINES, WHATSAPP_BOT_URL, WEB_APP_URL } from "@/lib/copy";
 import heroimg from "@/app/hero.webp";
 import rankBlock from "@/app/rank-block.webp";
 import checkinBlock from "@/app/checkin-block.webp";
@@ -53,26 +53,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <FloatingDotsCtaLink
-                href="https://app.partidinha.com/"
-                className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-9 py-4 rounded-full shadow-cta-glow transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
-              >
-                Criar meu grupo grátis
-              </FloatingDotsCtaLink>
-              <a
-                href="#como-funciona"
-                className="w-full sm:w-auto billow-glass-pill-navy cta-secondary font-semibold px-7 py-4 rounded-full transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
-                onClick={() =>
-                  posthog.capture("hero_secondary_cta_clicked", {
-                    cta_label: "Ver como funciona",
-                    cta_href: "#como-funciona",
-                  })
-                }
-              >
-                <span>Ver como funciona</span>
-                <ArrowDown className="w-4 h-4 opacity-80" />
-              </a>
+            <div className="pt-2 space-y-3">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <FloatingDotsCtaLink
+                  href={WHATSAPP_BOT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-600 hover:brightness-110 text-white font-extrabold px-9 py-4 rounded-full shadow-cta-glow transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
+                  onClick={() =>
+                    posthog.capture("hero_primary_cta_clicked", {
+                      cta_label: "Acessar o bot",
+                      cta_href: WHATSAPP_BOT_URL,
+                      destination: "whatsapp",
+                    })
+                  }
+                >
+                  Acessar o bot
+                </FloatingDotsCtaLink>
+                <a
+                  href="#como-funciona"
+                  className="w-full sm:w-auto billow-glass-pill-navy cta-secondary font-semibold px-7 py-4 rounded-full transition hover:-translate-y-0.5 active:scale-95 text-center flex items-center justify-center gap-2 text-base"
+                  onClick={() =>
+                    posthog.capture("hero_secondary_cta_clicked", {
+                      cta_label: "Ver como funciona",
+                      cta_href: "#como-funciona",
+                    })
+                  }
+                >
+                  <span>Ver como funciona</span>
+                  <ArrowDown className="w-4 h-4 opacity-80" />
+                </a>
+              </div>
+              <p className="text-xs text-slate-400 text-center lg:text-left">
+                Prefere pelo aplicativo?{" "}
+                <a
+                  href={WEB_APP_URL}
+                  className="text-sky-300 hover:text-sky-200 underline underline-offset-4 font-medium transition"
+                  onClick={() =>
+                    posthog.capture("hero_webapp_cta_clicked", {
+                      cta_label: "Criar pelo App",
+                      cta_href: WEB_APP_URL,
+                      destination: "web_app",
+                    })
+                  }
+                >
+                  Criar pelo App →
+                </a>
+              </p>
             </div>
           </div>
 
