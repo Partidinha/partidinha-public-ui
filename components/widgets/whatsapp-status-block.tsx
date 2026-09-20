@@ -47,14 +47,14 @@ export const WhatsAppStatusBlock: React.FC = () => {
             Bot
           </span>
         </div>
-        <p className="text-[6.5px] sm:text-[9.5px] text-slate-100 leading-snug font-medium whitespace-nowrap">
+        <div className="text-[6.5px] sm:text-[9.5px] text-slate-100 leading-snug font-medium whitespace-nowrap">
           <div className="game-header">
               ⚽ Pelada das Quintas FC (Sáb, 18:00) <br/>
               📍 Campo do Bairro Novo
             </div>
             <br/>
           ✅ Gabriel entrou! <span className="opacity-70">(14/14)</span>
-        </p>
+        </div>
       </div>
     </div>
   );
