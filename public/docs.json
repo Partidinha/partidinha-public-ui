@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-09-20T20:32:34.432Z",
+  "generated": "2026-09-22T01:07:08.694Z",
   "site": {
     "title": "Partidinha: Bot no seu WhatsApp",
     "description": "Organize sua pelada sem sair do WhatsApp.",
@@ -11,6 +11,11 @@
       "url": "https://partidinha.com",
       "title": "Partidinha: Bot no seu WhatsApp",
       "description": "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente."
+    },
+    {
+      "url": "https://partidinha.com/apresentacoes/pitch-fla",
+      "title": "Pitch-fla",
+      "description": "Organize sua pelada sem sair do WhatsApp."
     },
     {
       "url": "https://partidinha.com/bot-start",
@@ -29,7 +34,7 @@
     }
   ],
   "metadata": {
-    "totalDocuments": 4,
+    "totalDocuments": 5,
     "generator": "aeo.js",
     "generatorUrl": "https://aeojs.org"
   }

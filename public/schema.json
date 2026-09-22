@@ -24,6 +24,39 @@
         "description": "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente."
       }
     ],
+    "/apresentacoes/pitch-fla": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Pitch-fla",
+        "url": "https://partidinha.com/apresentacoes/pitch-fla",
+        "description": "Organize sua pelada sem sair do WhatsApp."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://partidinha.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Apresentacoes",
+            "item": "https://partidinha.com/apresentacoes"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pitch fla",
+            "item": "https://partidinha.com/apresentacoes/pitch-fla"
+          }
+        ]
+      }
+    ],
     "/bot-start": [
       {
         "@context": "https://schema.org",
