@@ -55,10 +55,11 @@ export const TeamRaffleModal: React.FC<TeamRaffleModalProps> = ({
         </p>
 
         <button
+          type="button"
           onClick={handleShuffle}
           className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-xs flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
         >
-          <Shuffle className="w-4 h-4" />
+          <Shuffle aria-hidden="true" className="w-4 h-4" />
           <span>Sortear Agora!</span>
         </button>
 
@@ -67,26 +68,26 @@ export const TeamRaffleModal: React.FC<TeamRaffleModalProps> = ({
             <div className="font-bold text-sky-700 mb-1.5 font-sans">
               🔵 Time Azul
             </div>
-            <div className="space-y-1 text-slate-800 text-[11px]">
+            <ul className="space-y-1 text-slate-800 text-[11px]">
               {teamBlue.map((p, i) => (
-                <div key={i}>
-                  • {p.name} ({p.rating})
-                </div>
+                <li key={i}>
+                  <span aria-hidden="true">•</span> {p.name} ({p.rating})
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div className="bg-cyan-50 border border-cyan-200 p-3 rounded-xl">
             <div className="font-bold text-cyan-700 mb-1.5 font-sans">
               🌐 Time Ciano
             </div>
-            <div className="space-y-1 text-slate-800 text-[11px]">
+            <ul className="space-y-1 text-slate-800 text-[11px]">
               {teamCyan.map((p, i) => (
-                <div key={i}>
-                  • {p.name} ({p.rating})
-                </div>
+                <li key={i}>
+                  <span aria-hidden="true">•</span> {p.name} ({p.rating})
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

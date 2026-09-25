@@ -49,13 +49,13 @@ function BlueGridPattern() {
 
 export const ProblemSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-sky-100 relative">
+    <section aria-labelledby="problema-title" className="py-16 sm:py-24 bg-white border-b border-sky-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 gsap-reveal">
           <span className="inline-flex items-center rounded-full bg-red-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-red-700 border border-red-200 shadow-xs">
             Você conhece essa cena?
           </span>
-          <h2 className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="problema-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             O grupo do Whats virou bagunça.<br />E você é o único que se estressa.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
@@ -65,10 +65,10 @@ export const ProblemSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 border border-dashed border-slate-300/80 rounded-3xl overflow-hidden shadow-xs bg-slate-50/10">
           {/* Card: Caos (Vermelho) */}
-          <div className="relative group border-red-200/80 border-dashed md:border-r border-b md:border-b-0 gsap-reveal">
+          <article aria-labelledby="problema-sem-partidinha" className="relative group border-red-200/80 border-dashed md:border-r border-b md:border-b-0 gsap-reveal">
             <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-red-50/20 hover:bg-red-50/70 transition-colors duration-300">
               {/* Background SVG Grid Overlay & Red Rays */}
-              <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+              <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
                 <div className="from-red-500/15 via-rose-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
                   <RedGridPattern />
                 </div>
@@ -76,7 +76,7 @@ export const ProblemSection: React.FC = () => {
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center justify-between pt-2">
-                  <h3 className="font-lastik font-bold text-2xl text-red-600">
+                  <h3 id="problema-sem-partidinha" className="font-lastik font-bold text-2xl text-red-600">
                     O grupo sem Partidinha
                   </h3>
                   <span className="bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
@@ -87,7 +87,7 @@ export const ProblemSection: React.FC = () => {
                 <div className="rounded-2xl border border-red-100 shadow-xs overflow-hidden font-sans">
                   {/* Barra de topo estilo WhatsApp */}
                   <div className="bg-[#075E54] px-3 py-2 flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
+                    <div aria-hidden="true" className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
                       ⚽
                     </div>
                     <div className="leading-tight min-w-0">
@@ -124,7 +124,7 @@ export const ProblemSection: React.FC = () => {
                         <p className="text-xs text-slate-800 leading-snug">Gente CONFIRMA logo pfvr 🙏</p>
                         <div className="text-[9px] text-slate-500/80 text-right mt-0.5 flex items-center justify-end gap-0.5">
                           20:31
-                          <svg viewBox="0 0 16 11" className="w-3.5 h-3.5 fill-sky-500 inline-block">
+                          <svg viewBox="0 0 16 11" aria-hidden="true" className="w-3.5 h-3.5 fill-sky-500 inline-block">
                             <path d="M11.071.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-2.612-2.16a.483.483 0 0 0-.671.061l-.702.845a.463.463 0 0 0 .062.65l3.485 2.883c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077zM15.05.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-.694-.574a.234.234 0 0 0-.328.03l-.552.665a.226.226 0 0 0 .03.318l1.443 1.194c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077z"/>
                           </svg>
                         </div>
@@ -153,13 +153,13 @@ export const ProblemSection: React.FC = () => {
                 Resultado: Você passa a semana estressado e não aproveita o jogo.
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Card: Solução (Azul) */}
-          <div className="relative group border-sky-200/80 border-dashed gsap-reveal">
+          <article aria-labelledby="problema-com-partidinha" className="relative group border-sky-200/80 border-dashed gsap-reveal">
             <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
               {/* Background SVG Grid Overlay & Cyan Rays */}
-              <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+              <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
                 <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
                   <BlueGridPattern />
                 </div>
@@ -167,7 +167,7 @@ export const ProblemSection: React.FC = () => {
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center justify-between pt-2">
-                  <h3 className="font-lastik font-bold text-2xl text-sky-600">
+                  <h3 id="problema-com-partidinha" className="font-lastik font-bold text-2xl text-sky-600">
                     O admin do grupo que nunca esquece
                   </h3>
                   <span className="bg-sky-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
@@ -178,7 +178,7 @@ export const ProblemSection: React.FC = () => {
                 <div className="rounded-2xl border border-sky-100 shadow-xs overflow-hidden font-sans">
                   {/* Barra de topo estilo WhatsApp */}
                   <div className="bg-[#075E54] px-3 py-2 flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
+                    <div aria-hidden="true" className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-sm shrink-0">
                       ⚽
                     </div>
                     <div className="leading-tight min-w-0">
@@ -261,11 +261,11 @@ export const ProblemSection: React.FC = () => {
               <div className="relative z-10 mt-6 pt-4 border-t border-sky-200/60 text-xs font-bold text-slate-900 flex items-center justify-between">
                 <span>Sua pelada vira um campeonato profissional!</span>
                 <span className="text-sky-600 font-extrabold flex items-center gap-1">
-                  Bora pro campo <ArrowRight className="w-3.5 h-3.5" />
+                  Bora pro campo <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
                 </span>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

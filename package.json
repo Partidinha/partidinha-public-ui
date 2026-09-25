@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node -e \"import('aeo.js/next').then(m => m.postBuild({ title: 'Partidinha: Bot no seu WhatsApp', description: 'Organize sua pelada sem sair do WhatsApp.', url: 'https://partidinha.com' }))\"",
+    "postbuild": "node -e \"import('aeo.js/next').then(m => m.postBuild({ title: 'Partidinha: Bot no seu WhatsApp', description: 'Organize sua pelada sem sair do WhatsApp.', url: 'https://partidinha.com', generators: { robotsTxt: false, sitemap: false, llmsTxt: false, llmsFullTxt: false } }))\"",
     "start": "next start",
     "lint": "eslint",
     "test": "node --test lib/scroll-depth.test.mjs lib/bot-redirect.test.mjs",

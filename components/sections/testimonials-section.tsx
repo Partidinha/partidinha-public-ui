@@ -27,48 +27,49 @@ function GridPattern() {
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-16 sm:py-24 bg-white border-b border-sky-100 relative">
+    <section id="depoimentos" aria-labelledby="depoimentos-title" className="py-16 sm:py-24 bg-white border-b border-sky-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 gsap-reveal">
           <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
             Times que pararam de sofrer
           </span>
-          <h2 className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="depoimentos-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             De bagunça para organização. Em uma semana.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10">
+        <ul className="grid grid-cols-1 md:grid-cols-3 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10">
           {TESTIMONIALS.map((t, i) => (
-            <div
+            <li
               key={i}
               className={`relative group border-sky-200/80 border-dashed ${
                 i === 0 ? "md:border-r" : i === 1 ? "md:border-r" : ""
               } border-b md:border-b-0`}
             >
-              <div className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
+              <figure className="relative overflow-hidden p-6 md:p-8 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
                 {/* Background SVG Grid Overlay & Cyan Rays */}
-                <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+                <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
                   <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
                     <GridPattern />
                   </div>
                 </div>
 
                 {/* Quote icon */}
-                <div className="relative z-10 mb-4">
+                <div aria-hidden="true" className="relative z-10 mb-4">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
                     <Quote className="size-5" strokeWidth={2} aria-hidden />
                   </div>
                 </div>
 
                 {/* Quote text */}
-                <p className="relative z-10 text-sm sm:text-base text-slate-700 leading-relaxed italic flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
+                <blockquote className="relative z-10 text-sm sm:text-base text-slate-700 leading-relaxed italic flex-1">
+                  <p>&ldquo;{t.quote}&rdquo;</p>
+                </blockquote>
 
                 {/* Author */}
-                <div className="relative z-10 flex items-center gap-3 pt-5 mt-5 border-t border-sky-200/60">
+                <figcaption className="relative z-10 flex items-center gap-3 pt-5 mt-5 border-t border-sky-200/60">
                   <div
+                    aria-hidden="true"
                     className={`w-10 h-10 rounded-full ${t.gradient} text-white font-bold flex items-center justify-center text-sm shadow-xs shrink-0`}
                   >
                     {t.initial}
@@ -79,11 +80,11 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                     <div className="text-xs text-slate-500">{t.role}</div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </figcaption>
+              </figure>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -7,9 +7,10 @@ import { BOT_START_PATH, WEB_APP_URL } from "@/lib/copy";
 
 export const CtaSection: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 bg-[#0B1926] text-white relative overflow-hidden">
+    <section aria-labelledby="cta-title" className="py-20 sm:py-28 bg-[#0B1926] text-white relative overflow-hidden">
       {/* STATIC GRID (same pattern as hero, no animation) */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage:
@@ -22,11 +23,11 @@ export const CtaSection: React.FC = () => {
         }}
       />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-sky-500/20 blur-[140px] rounded-full pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-sky-500/20 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-6 gsap-reveal">
-        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-lastik tracking-tight text-white">
-          Bora pro campo? ⚽
+        <h2 id="cta-title" className="text-4xl sm:text-6xl lg:text-7xl font-lastik tracking-tight text-white">
+          Bora pro campo? <span aria-hidden="true">⚽</span>
         </h2>
 
         <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto font-normal">
@@ -65,14 +66,14 @@ export const CtaSection: React.FC = () => {
                 })
               }
             >
-              Criar pelo App →
+              Criar pelo App <span aria-hidden="true">→</span>
             </a>
-            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span aria-hidden="true" className="text-slate-600 hidden sm:inline">•</span>
             <a
               href="#planos"
               className="font-semibold text-slate-300 hover:text-white transition"
             >
-              Ver planos e preços →
+              Ver planos e preços <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>

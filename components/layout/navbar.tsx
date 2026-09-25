@@ -13,21 +13,24 @@ const AnimatedNavLink: React.FC<{
   label: string;
   children: React.ReactNode;
 }> = ({ href, label, children }) => (
-  <a
-    href={href}
-    className="group relative inline-block h-4 overflow-hidden"
-    onClick={() =>
-      posthog.capture("navbar_link_clicked", {
-        link_label: label,
-        link_href: href,
-      })
-    }
-  >
-    <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
-      <span className="text-sky-200/80">{children}</span>
-      <span className="text-white">{children}</span>
-    </span>
-  </a>
+  <li className="flex">
+    <a
+      href={href}
+      className="group relative inline-block h-4 overflow-hidden"
+      onClick={() =>
+        posthog.capture("navbar_link_clicked", {
+          link_label: label,
+          link_href: href,
+        })
+      }
+    >
+      {/* Two stacked copies drive the hover roll; only the first is exposed to assistive tech. */}
+      <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
+        <span className="text-sky-200/80">{children}</span>
+        <span className="text-white" aria-hidden="true">{children}</span>
+      </span>
+    </a>
+  </li>
 );
 
 export const Navbar: React.FC = () => {
@@ -36,8 +39,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto billow-glass-pill-navy px-4 sm:px-6 h-16 flex items-center justify-between gap-3 shadow-cta-glow transition-colors duration-300 hover:border-sky-300/40">
         {/* Logo */}
 
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink-0">
-          <Image src={Logo} alt="Partidinha Logo" className="w-9 h-9 sm:w-10 sm:h-10 shrink-0" />
+        <Link
+          href="/"
+          aria-label="Partidinha, página inicial"
+          className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink-0"
+        >
+          <Image src={Logo} alt="" className="w-9 h-9 sm:w-10 sm:h-10 shrink-0" />
           <span
             className="hidden min-[400px]:inline font-bold text-lg sm:text-xl text-white font-lastik whitespace-nowrap"
             style={{ letterSpacing: "0.03em" }}
@@ -47,22 +54,27 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
-          <AnimatedNavLink href="#como-funciona" label="Como funciona">
-            Como funciona
-          </AnimatedNavLink>
-          <AnimatedNavLink href="#features" label="Recursos">
-            Recursos
-          </AnimatedNavLink>
-          <AnimatedNavLink href="#depoimentos" label="Depoimentos">
-            Depoimentos
-          </AnimatedNavLink>
-          <AnimatedNavLink href="#planos" label="Planos">
-            Planos
-          </AnimatedNavLink>
-          <AnimatedNavLink href="#faq" label="FAQ">
-            FAQ
-          </AnimatedNavLink>
+        <nav
+          aria-label="Navegação principal"
+          className="hidden lg:block text-xs font-semibold uppercase tracking-wider"
+        >
+          <ul className="flex items-center gap-8">
+            <AnimatedNavLink href="#como-funciona" label="Como funciona">
+              Como funciona
+            </AnimatedNavLink>
+            <AnimatedNavLink href="#features" label="Recursos">
+              Recursos
+            </AnimatedNavLink>
+            <AnimatedNavLink href="#depoimentos" label="Depoimentos">
+              Depoimentos
+            </AnimatedNavLink>
+            <AnimatedNavLink href="#planos" label="Planos">
+              Planos
+            </AnimatedNavLink>
+            <AnimatedNavLink href="#faq" label="FAQ">
+              FAQ
+            </AnimatedNavLink>
+          </ul>
         </nav>
 
         {/* CTA Nav */}

@@ -15,7 +15,7 @@ export const WhatsAppBotJoin: React.FC = () => {
       {/* Barra de topo estilo WhatsApp */}
       <div className="bg-[#075E54] px-[2.1cqw] pt-[6.3cqw] pb-[2.1cqw] flex items-center gap-[1.6cqw] shrink-0">
         <ArrowLeft className="w-[3.7cqw] h-[3.7cqw] text-white/90 shrink-0" />
-        <div className="w-[7.4cqw] h-[7.4cqw] rounded-full bg-white/15 flex items-center justify-center text-[3.7cqw] shrink-0">
+        <div aria-hidden="true" className="w-[7.4cqw] h-[7.4cqw] rounded-full bg-white/15 flex items-center justify-center text-[3.7cqw] shrink-0">
           ⚽
         </div>
         <div className="leading-tight min-w-0 flex-1">
@@ -94,7 +94,7 @@ export const WhatsAppBotJoin: React.FC = () => {
             </p>
             <div className="text-[2.1cqw] text-slate-500/80 text-right mt-[0.5cqw] flex items-center justify-end gap-[0.5cqw]">
               19:05
-              <svg viewBox="0 0 16 11" className="w-[3.2cqw] h-[3.2cqw] fill-sky-500 inline-block">
+              <svg viewBox="0 0 16 11" aria-hidden="true" className="w-[3.2cqw] h-[3.2cqw] fill-sky-500 inline-block">
                 <path d="M11.071.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-2.612-2.16a.483.483 0 0 0-.671.061l-.702.845a.463.463 0 0 0 .062.65l3.485 2.883c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077zM15.05.653a.457.457 0 0 0-.304-.102.483.483 0 0 0-.371.166l-6.03 7.276-.694-.574a.234.234 0 0 0-.328.03l-.552.665a.226.226 0 0 0 .03.318l1.443 1.194c.183.15.44.13.6-.033l6.696-8.088a.457.457 0 0 0-.06-.65l-.093-.077z" />
               </svg>
             </div>

@@ -24,3 +24,10 @@
   to = "https://us.i.posthog.com/:splat"
   status = 200
   force = true
+
+# Alias comum (erro de digitação) para o arquivo padrão llms.txt.
+[[redirects]]
+  from = "/llm.txt"
+  to = "/llms.txt"
+  status = 301
+  force = true

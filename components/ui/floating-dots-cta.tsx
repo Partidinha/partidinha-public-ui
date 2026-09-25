@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 function FdcPoints() {
   return (
-    <span className="fdc-points_wrapper">
+    <span className="fdc-points_wrapper" aria-hidden="true">
       {Array.from({ length: 10 }).map((_, i) => (
         <i key={i} className="fdc-point" />
       ))}
@@ -24,6 +24,7 @@ function FdcPoints() {
 function FdcArrowIcon() {
   return (
     <svg
+      aria-hidden="true"
       className="fdc-icon"
       fill="none"
       stroke="currentColor"

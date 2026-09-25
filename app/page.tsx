@@ -21,7 +21,7 @@ export default function Home() {
   const [isRaffleModalOpen, setIsRaffleModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* GSAP Scroll Animations Initializer */}
       <ScrollAnimations />
       {/* PostHog Scroll Depth Tracker (50%, 75%, 100%) */}
@@ -33,15 +33,17 @@ export default function Home() {
         className={`transition-all duration-300 min-h-screen relative overflow-x-clip ${viewportMode === "mobile" ? "view-mobile-frame my-6" : ""
           }`}
       >
-        <HeroSection selectedHeadlineKey={selectedHeadlineKey} />
-        <ProblemSection />
-        <FeaturesSection />
-        <HowItWorksSection />
-        {/* <ShowcaseSection /> */}
-        <TestimonialsSection />
-        <PricingSection />
-        <FaqSection />
-        <CtaSection />
+        <main>
+          <HeroSection selectedHeadlineKey={selectedHeadlineKey} />
+          <ProblemSection />
+          <FeaturesSection />
+          <HowItWorksSection />
+          {/* <ShowcaseSection /> */}
+          <TestimonialsSection />
+          <PricingSection />
+          <FaqSection />
+          <CtaSection />
+        </main>
         <Footer />
       </div>
 
@@ -50,6 +52,6 @@ export default function Home() {
         isOpen={isRaffleModalOpen}
         onClose={() => setIsRaffleModalOpen(false)}
       />
-    </main>
+    </div>
   );
 }

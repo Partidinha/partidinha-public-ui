@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { LegalPage } from "@/components/layout/legal-page";
 
+const title = "Termos de Uso";
+const description =
+  "Leia os Termos de Uso do Partidinha: regras de uso do app e do bot de WhatsApp para organizar peladas, pagamentos, responsabilidades e cancelamento de conta.";
+
 export const metadata: Metadata = {
-  title: "Termos de Uso | Partidinha",
-  description:
-    "Condições de uso do aplicativo Partidinha e do bot de WhatsApp para organização de peladas.",
+  title,
+  description,
+  alternates: {
+    canonical: "/termos-de-uso",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: SITE_NAME,
+    url: "/termos-de-uso",
+    title: `${title} | ${SITE_NAME}`,
+    description,
+  },
 };
 
 export default function TermosDeUsoPage() {

@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import { SITE_TITLE } from "@/lib/site";
 import { Suspense } from "react";
 import { BotRedirectClient } from "./bot-redirect-client";
 import { WHATSAPP_BOT_URL } from "@/lib/bot-redirect";
 
 export const metadata: Metadata = {
-  title: "Partidinha: Bot no seu WhatsApp",
-  description: "Redirecionando para o WhatsApp do Partidinha...",
+  // Keeps the full brand title (no template suffix) for link previews.
+  title: { absolute: SITE_TITLE },
+  description:
+    "Abrindo a conversa com o bot do Partidinha no WhatsApp. Adicione o bot ao grupo da sua pelada e automatize confirmações, cobranças e sorteio de times.",
+  alternates: {
+    canonical: "/bot-start",
+  },
+  // openGraph intentionally inherited from the root layout so shared
+  // /bot-start links preview like the home page.
   robots: {
     index: false,
     follow: false,

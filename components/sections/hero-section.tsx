@@ -24,12 +24,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
     HEADLINES.find((h) => h.key === selectedHeadlineKey) || HEADLINES[0];
 
   return (
-    <section className="relative pt-4 pb-12 lg:pt-6 lg:pb-16 overflow-hidden bg-[#0B1926] text-white border-b border-sky-950">
+    <section
+      aria-labelledby="hero-headline"
+      className="relative pt-4 pb-12 lg:pt-6 lg:pb-16 overflow-hidden bg-[#0B1926] text-white border-b border-sky-950">
       {/* DYNAMIC NOISE & SQUARES BACKGROUND */}
       <NoiseDarkBlueGradientWithSquares className="absolute inset-0 z-0 bg-transparent" />
 
       {/* HERO CONIC LIGHT BEAM */}
-      <div id="hero-light-beam" className="hero-light-ray-navy relative z-10 pointer-events-none" />
+      <div id="hero-light-beam" aria-hidden="true" className="hero-light-ray-navy relative z-10 pointer-events-none" />
 
       {/* FLOATING GLASS PILL NAVBAR */}
       <Navbar />
@@ -39,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left hero-reveal-text pb-16 lg:pb-28 pt-20 lg:pt-24">
             <div className="billow-glass-pill-navy inline-flex items-center gap-2 px-4 py-1.5 text-sky-300 text-xs font-semibold tracking-wide shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
               <span>{"  "}O Bot do Partidinha no seu WhatsApp</span>
             </div>
 
@@ -81,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
                   }
                 >
                   <span>Ver como funciona</span>
-                  <ArrowDown className="w-4 h-4 opacity-80" />
+                  <ArrowDown aria-hidden="true" className="w-4 h-4 opacity-80" />
                 </a>
               </div>
               <p className="text-xs text-slate-400 text-center lg:text-left">
@@ -97,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
                     })
                   }
                 >
-                  Criar pelo App →
+                  Criar pelo App <span aria-hidden="true">→</span>
                 </a>
               </p>
             </div>
@@ -106,11 +108,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
           {/* Right Column: Hero Image Mockup */}
           <div className="lg:col-span-5 relative hero-reveal-card min-h-[450px] sm:min-h-[580px] lg:min-h-[680px] xl:min-h-[740px]">
             {/* Bottom-Up Blue Light Glow (BEHIND IMAGE - Extra Wide) */}
-            <div className="absolute -bottom-10 -left-[200px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-64 sm:h-80 bg-gradient-to-t from-sky-400/50 via-cyan-400/20 to-transparent blur-3xl z-10 pointer-events-none" />
+            <div aria-hidden="true" className="absolute -bottom-10 -left-[200px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-64 sm:h-80 bg-gradient-to-t from-sky-400/50 via-cyan-400/20 to-transparent blur-3xl z-10 pointer-events-none" />
 
             <Image
               src={heroimg}
-              alt="Partidinha no WhatsApp"
+              alt="Celular com o app Partidinha aberto na tela Dia do Jogo, mostrando o placar da partida, os jogadores de cada time e os eventos de gols e assistências"
               sizes="(min-width: 1280px) 1160px, (min-width: 1024px) 1080px, (min-width: 640px) 880px, 650px"
               className="absolute -bottom-14 lg:-bottom-[104px] -left-[155px] sm:-left-[270px] lg:-left-[305px] max-[1439px]:xl:-left-[395px] xl:-left-[315px] w-[650px] sm:w-[880px] lg:w-[1080px] xl:w-[1160px] max-w-none h-auto object-contain drop-shadow-2xl z-30 pointer-events-none"
               quality={100}
@@ -118,10 +120,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
             />
 
             {/* Bottom-Up Blue Light Glow (IN FRONT OF IMAGE - Extra Wide) */}
-            <div className="absolute -bottom-10 -left-[200px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
+            <div aria-hidden="true" className="absolute -bottom-10 -left-[200px] sm:-left-[330px] lg:-left-[395px] xl:-left-[415px] w-[770px] sm:w-[980px] lg:w-[1280px] xl:w-[1380px] max-w-none h-44 sm:h-56 bg-gradient-to-t from-sky-400/40 via-cyan-400/15 to-transparent blur-2xl z-40 pointer-events-none mix-blend-screen" />
 
             {/* Floating app UI element images. Rotation echoes the phone mockup's own perspective tilt */}
             <div
+              aria-hidden="true"
               className="hero-float-item absolute bottom-[5%] right-[4%] lg:right-[-8%] max-[1439px]:xl:-ml-[80px] z-50"
               style={{ animationDelay: "0s", animationDuration: "6s", "--float-rotate": "7deg", "--reveal-delay": "0.75s" } as React.CSSProperties}
             >
@@ -130,6 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
+              aria-hidden="true"
               className="hero-float-item absolute bottom-[28%] left-[58%] lg:left-[80%] max-[1439px]:xl:-ml-[80px] w-max z-50"
               style={{ animationDelay: "0.6s", animationDuration: "5.5s", "--float-rotate": "7deg", "--reveal-delay": "0.9s" } as React.CSSProperties}
             >
@@ -138,6 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
+              aria-hidden="true"
               className="hero-float-item absolute top-[24%] right-[0%] lg:right-[-23%] max-[1439px]:xl:-ml-[80px] z-50"
               style={{ animationDelay: "1.8s", animationDuration: "6.5s", "--float-rotate": "7deg", "--reveal-delay": "1.05s" } as React.CSSProperties}
             >
@@ -146,6 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
               </div>
             </div>
             <div
+              aria-hidden="true"
               className="hero-float-item absolute top-[14%] left-[4%] lg:-left-[4%] max-[1439px]:xl:-ml-[70px] z-50"
               style={{ animationDelay: "0.9s", animationDuration: "5s", "--float-rotate": "7deg", "--float-rotate-y": "-9deg", "--float-rotate-x": "2deg", "--reveal-delay": "1.2s" } as React.CSSProperties}
             >
