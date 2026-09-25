@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useId } from "react";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +19,8 @@ export const Modal: React.FC<ModalProps> = ({
   children,
   className,
 }) => {
+  const titleId = useId();
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -40,21 +42,25 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
         className={cn(
           "focused-grid-card-light max-w-md w-full p-6 space-y-5 shadow-2xl relative border border-slate-200 animate-in fade-in zoom-in-95 duration-200",
           className
         )}
       >
         <div className="flex items-center justify-between border-b border-slate-100 pb-3 relative z-10">
-          <h3 className="font-lastik font-bold text-slate-900 text-lg flex items-center gap-2">
+          <h2 id={titleId} className="font-lastik font-bold text-slate-900 text-lg flex items-center gap-2">
             {title}
-          </h3>
+          </h2>
           <button
+            type="button"
             onClick={onClose}
             className="text-slate-400 hover:text-slate-700 transition"
-            aria-label="Close modal"
+            aria-label="Fechar"
           >
-            <X className="w-5 h-5" />
+            <X aria-hidden="true" className="w-5 h-5" />
           </button>
         </div>
 

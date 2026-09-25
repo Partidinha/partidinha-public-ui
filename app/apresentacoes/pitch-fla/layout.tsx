@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
+
+const title = "Partidinha + Escola Flamengo Palmas | Apresentação";
+const description =
+  "Apresentação e proposta comercial exclusiva do Partidinha para a Escola Flamengo Palmas: organização de jogos, confirmações e pagamentos direto no WhatsApp.";
 
 export const metadata: Metadata = {
-  title: "Partidinha + Escola Flamengo Palmas | Apresentação",
-  description: "Apresentação e proposta comercial exclusiva para a Escola Flamengo Palmas.",
+  title: { absolute: title },
+  description,
+  alternates: {
+    canonical: "/apresentacoes/pitch-fla",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: SITE_NAME,
+    url: "/apresentacoes/pitch-fla",
+    title,
+    description,
+  },
   robots: {
     index: false,
     follow: false,

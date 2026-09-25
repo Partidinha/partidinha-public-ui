@@ -7,18 +7,22 @@ export type FeatureType = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   description: string;
   image?: ImageProps["src"];
+  /** Texto alternativo do screenshot; usa o título como fallback. */
+  imageAlt?: string;
 };
 
-export type FeatureCardProps = React.ComponentProps<"div"> & {
+export type FeatureCardProps = React.ComponentProps<"article"> & {
   feature: FeatureType;
 };
 
 export function FeatureCard({ feature, className, ...props }: FeatureCardProps) {
   const patternSeed = React.useId();
+  const titleId = `${patternSeed}-title`;
   const p = genPattern(patternSeed);
 
   return (
-    <div
+    <article
+      aria-labelledby={titleId}
       className={cn(
         "relative overflow-hidden p-8 md:p-10 min-h-[460px] sm:min-h-[520px] flex flex-col justify-between group transition-all duration-300",
         className
@@ -26,7 +30,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
       {...props}
     >
       {/* Background SVG Grid Overlay & Cyan Rays */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+      <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
         <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
           <GridPattern
             width={24}
@@ -44,7 +48,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
           <feature.icon className="size-6" strokeWidth={2} aria-hidden />
         </div>
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
+        <h3 id={titleId} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
           {feature.title}
         </h3>
         <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
@@ -65,7 +69,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
           <div className="relative w-full h-full bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
             <Image
               src={feature.image!}
-              alt={feature.title}
+              alt={feature.imageAlt ?? feature.title}
               fill
               sizes="240px"
               className="object-cover"
@@ -73,7 +77,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

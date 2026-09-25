@@ -1,354 +1,97 @@
-# Partidinha: Bot no seu WhatsApp - Complete Documentation
+# Partidinha
 
-This file contains all documentation concatenated into a single file for easy consumption by LLMs.
+> Partidinha é um bot de WhatsApp (com app para o administrador) que organiza peladas e jogos de futebol amador direto no grupo do WhatsApp: lista de presença automática, cobrança de quem está devendo, sorteio de times e estatísticas de gols e assistências. Produto brasileiro, conteúdo em português (pt-BR).
 
-> Organize sua pelada sem sair do WhatsApp.
+- Site: https://partidinha.com/
+- App do administrador: https://app.partidinha.com/
+- Contato: contato@partidinha.com
+- Resumo curto: https://partidinha.com/llms.txt
 
-## Table of Contents
+## O problema
 
-This document includes all content from this project.
-Each section is separated by a horizontal rule (---) for easy parsing.
+Em grupos de pelada no WhatsApp, o administrador costuma perder horas por semana: a lista de confirmados se perde no meio de memes e áudios, há desistências de última hora, ele vira "o chato" que cobra dinheiro de amigo no privado e o sorteio de times no papel consome tempo de quadra.
 
----
+## A solução
 
-# Partidinha: Bot no seu WhatsApp
+O Partidinha coloca um bot dentro do próprio grupo do WhatsApp. Os jogadores não instalam nada: marcam o bot no grupo e usam comandos simples, como "@Partidinha Bot entrar" ou "sair". Só o administrador usa o app para criar o grupo, as partidas e marcar pagamentos. Quando o bot entra no grupo, envia um menu explicativo; se alguém digitar um comando errado, ele responde mostrando as opções corretas.
 
-URL: https://partidinha.com
-
-> Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente.
-
-O Bot do Partidinha no seu WhatsApp
-
-## Sua pelada no piloto automático
-
-Organize seus jogos sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores no grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente no seu grupo.
-
-[Acessar o bot](/bot-start)[Ver como funciona](#como-funciona)
-Prefere pelo aplicativo? [Criar pelo App →](https://app.partidinha.com/)
-
-Pelada das Quintas FC
-
-Grupo • 24 participantes
-
-Gabriel
-
-@Partidinha Bot entrar
-
-18:31
-
-Partidinha BotBot
-
-Pelada das Quintas FC (Sáb, 18:00)
-Campo do Bairro Novo
-
-Gabriel entrou! (14/14)
-
-Você conhece essa cena?
-
-## O grupo do Whats virou bagunça.
-E você é o único que se estressa.
-
-Todo dia de jogo é a mesma novela. Você puxa a lista da partida e começa o caos de mensagens perdidas, furos de última hora e cobranças chatinhas.
-
-### O grupo sem Partidinha
-
-O Caos
-
-Resenha FC
-
-Pedrinho, Neco, Lucas e mais 11
-
-Pedrinho
-Vou mas só posso chegar 20h30
-
-20:14
-
-Neco
-Foi mal, não vou conseguir ir hoje
-
-20:17
-
-Lucas
-Galera quem pagou o Pix da quadra?? Ninguém mandou comprovante no pv
-
-20:23
-
-Gente CONFIRMA logo pfvr
-
-20:31
-
-- Mensagens perdidas no meio de memes e áudios longos
-- Você vira o “chato do privado” tendo que cobrar dinheiro de amigo
-- Sorteio no papel no dia do jogo perdendo tempo de quadra
-
-Resultado: Você passa a semana estressado e não aproveita o jogo.
-
-### O admin do grupo que nunca esquece
-
-Com Partidinha
-
-Resenha FC
-
-Bot do Partidinha está online
-
-Bot do Partidinha
-
-Resenha FC (Ter, 01/09 20:00)
-
-Flamengo da 212 Sul
-
-LISTA DO GRUPO
-
-- 1. Alexandre
-- 2. Rafael Lima
-- 3. Carlos
-+ 14 confirmados...
-
-20:04
-
-Kennedy
-@partidinha entrar
-
-20:12
-
-Bot do Partidinha
-
-Kennedy entrou na lista!
-
-18. Kennedy NOVO
-
-18/20 confirmados
-
-20:12
-
-- Confirmação via comando simples (@partidinha entrar)
-- Cobrança automática dos devedores do grupo sem constrangimento
-- Sorteio equilibrado em 1 clique no app com stats históricas
-
-Sua pelada vira um campeonato profissional!Bora pro campo
-
-Tudo que seu time precisa
-
-## Tudo que sua pelada precisa para rodar no piloto automático
-
-Cada recurso foi pensado para tirar o peso das costas do admin e devolver o prazer do futebol.
+## Recursos
 
 ### Bot no WhatsApp
+O bot entra direto no grupo pelo link de convite e responde instantaneamente aos comandos. O grupo não precisa baixar nenhum app extra. Funciona em qualquer grupo em que o usuário seja administrador.
 
-Seu grupo não precisa baixar nada extra. O bot entra direto no seu grupo do Whats e responde instantaneamente aos comandos.
+### Confirmações de presença
+O bot anuncia cada partida no grupo e monta a lista de confirmados automaticamente, ajudando a garantir time completo.
 
-### Confirmações de Presença
+### Cobrança de devedores
+O admin marca no app quem pagou, e o bot manda lembretes educados e periódicos no grupo para quem ainda deve, de forma imparcial.
 
-Automatize a lista no grupo e garanta time completo na sua próxima pelada.
+### Controle de pagamentos
+Depois de cada jogo, o admin marca quem pagou. A tela mostra o saldo pago e os devedores. Opcionalmente, o bot impede quem está devendo de confirmar presença nas próximas peladas até o admin registrar o pagamento. Cobrança e bloqueio podem ficar desligados; o admin usa só o que quiser.
 
-### Cobrança de Devedores
+### Sorteio de times
+No dia do jogo, o admin sorteia os times em segundos a partir da lista de confirmados, sem papelzinho.
 
-Marque quem pagou no app. O bot manda lembretes educados no grupo periodicamente. Pare de ser o chato da cobrança!
+### Estatísticas em tempo real
+Gols, assistências e cartões são registrados durante o jogo. Ao final, o bot publica no grupo a imagem do ranking de artilheiros.
 
-### Sorteio de Times
+## Como funciona (4 passos)
 
-Chegou no campo? Abra o app e sorteie os times em segundos direto da lista de confirmados, sem papelzinho nem confusão.
+1. Crie seu grupo: baixe o app, crie a conta e cadastre o time em menos de 2 minutos.
+2. O bot entra no WhatsApp: cole o link de convite do grupo; o bot entra e se apresenta aos atletas.
+3. Crie a partida: defina data, hora e valor no app; o bot anuncia no grupo e coleta as confirmações.
+4. Só chegar e jogar: sorteie os times, anote os gols no app e acompanhe o resultado no grupo.
 
-### Estatísticas em Tempo Real
+## Planos e preços
 
-Registre gols, assistências e cartões durante o jogo. Ao final, o bot publica a imagem do ranking de artilheiros direto no grupo.
-
-### Controle de Pagamentos
-
-Depois de cada jogo, o admin marca quem pagou. A tela mostra saldo pago e devedores, e o próprio bot barra quem está devendo de confirmar presença nas próximas peladas, até o admin confirmar o pagamento no app.
-
-Do grupo ao campo em 4 toques
-
-## Mais fácil que cobrar pênalti sem goleiro
-
-### Crie seu grupo
-
-Baixe o app, crie sua conta e cadastre o seu time em menos de 2 minutos.
-
-2
-
-### O bot entra no Whats
-
-Cole o link de convite do grupo. Nosso bot entra automaticamente e se apresenta aos atletas.
-
-3
-
-### Crie a partida
-
-Defina data, hora e valor no app. O bot anuncia no Whats e colhe confirmações.
-
-4
-
-### Só chegar e jogar
-
-No dia do jogo, sorteie os times, anote os gols no app e veja a resenha acontecer.
-
-Pelada das Quintas FC
-
-Renan, Pedrinho, Neco e mais 11
-
-HOJE
-
-Renan adicionou **Bot do Partidinha**
-
-Bot do Partidinhaoficial
-Fala, craques! A partir de agora eu cuido das **confirmações**, do **sorteio dos times** e da **cobrança do Pix**.
-
-É só marcar o bot e digitar:
-entrar · sair · apelido
-
-19:02
-
-Grupo conectado ao app do **Renan**. Pode criar a primeira partida!
-
-19:02
-
-Neco
-boaaa, chega de cobrança no pv
-
-19:04
-
-agora é só chegar e jogar
-
-19:05
-
-Mensagem
-
-Passo 01
-
-Times que pararam de sofrer
-
-## De bagunça para organização. Em uma semana.
-
-“Antes eu passava 2 horas por semana organizando a pelada no Whats. Agora crio a partida em 30 segundos no app e o bot faz o resto. Meu sábado voltou a ser meu.”
-
-A
-
-Alexandre
-
-Admin de pelada há 4 anos (TO)
-
-“A cobrança automática mudou nosso fut. Ninguém mais fica devendo 3 meses ou dando preju pro admin. O bot cobra de forma imparcial no grupo sem eu precisar ser o chato.”
-
-B
-
-Bruno
-
-Admin de pelada há 2 anos. (PE)
-
-“A gente sorteava time no papel. Agora abre o app, clica e pronto. Ainda temos estatísticas de todo jogo direto no grupo”
-
-A
-
-Arthur
-
-Admin de Pelada há 2 anos (TO)
-
-Escolha seu plano
-
-## Menos que o valor de um lanche por mês
-
-Comece grátis e evolua conforme seu grupo cresce. Sem contratos, cancele quando quiser.
-
-### Plano Free
-
+### Plano Free: R$ 0/mês
 Para grupos pequenos testarem sem compromisso.
-
-R$ 0/mês
-
 - 1 grupo cadastrado
 - Até 15 jogadores
 - Bot básico (confirmações)
 
-[Começar grátis](https://app.partidinha.com/)
-
-Recomendado
-
-### Plano Pro
-
+### Plano Pro: R$ 29,90/mês
 Para o admin que quer automação completa.
-
-R$ 29,90/mês
-
-- Grupos, Jogadores & Partidas Ilimitadas
-- Bot completo com Cobranças Automáticas
+- Grupos, jogadores e partidas ilimitados
+- Bot completo com cobranças automáticas
 - Sorteio inteligente de times
-- Tabelas de artilharia & Estatísticas
-- Notificações push & Lembretes
+- Tabelas de artilharia e estatísticas
+- Notificações push e lembretes
 - Suporte prioritário
 
-[Assinar Pro](https://app.partidinha.com/)
+O primeiro mês do Plano Pro é grátis, sem pedir cartão. Sem contrato: dá para cancelar quando quiser.
 
-Primeiro mês grátis pra testar o Pro completo. Sem cartão agora — combinamos o pagamento com você depois.
+## Perguntas frequentes
 
-Dúvidas Frequentes
+### Meu grupo precisa baixar o app?
+Não. Apenas o administrador baixa o aplicativo. Os jogadores interagem com o bot diretamente no grupo do WhatsApp, marcando o bot e digitando comandos simples como entrar ou sair.
 
-## Ainda com dúvida?
+### O bot funciona em qualquer grupo de WhatsApp?
+Sim. Basta ser admin do grupo e fornecer o link de convite dentro do app Partidinha. O bot entra em instantes.
 
-Meu grupo precisa baixar o app?
+### E se alguém não souber usar os comandos?
+Assim que entra no grupo, o bot manda um menu explicativo simples. Se alguém digitar algo errado, ele envia uma mensagem amigável mostrando os comandos corretos.
 
-O bot funciona em qualquer grupo de WhatsApp?
+### Sou obrigado a bloquear quem atrasa o pagamento?
+Não. O bloqueio fica nas configurações do grupo e é opcional. Dá para usar só a lista de presença e o sorteio de times, com cobrança e bloqueio desligados.
 
-E se alguém não souber usar os comandos?
+### O Partidinha cobra automaticamente via Pix ou cartão?
+Ainda não. O bot automatiza os lembretes no grupo e o controle de quem pagou, mas quem recebe o pagamento (Pix, dinheiro etc.) é o administrador, que depois marca no app quem já acertou.
 
-Sou obrigado a bloquear quem atrasa o pagamento?
+### Preciso pagar para testar?
+Não. O primeiro mês do Plano Pro é grátis, sem cartão e sem contrato.
 
-O Partidinha cobra automaticamente via Pix ou cartão?
+### Dá para usar em mais de uma pelada com a mesma conta?
+Sim. É possível gerenciar vários grupos com a mesma conta, cada um com suas próprias configurações e cobranças.
 
-Preciso pagar pra testar?
+## Depoimentos
 
-Dá pra usar em mais de uma pelada com a mesma conta?
+- Alexandre, admin de pelada há 4 anos (TO): deixou de gastar cerca de 2 horas por semana organizando a pelada; cria a partida em 30 segundos e o bot faz o resto.
+- Bruno, admin de pelada há 2 anos (PE): com a cobrança automática, ninguém mais fica meses devendo, e o bot cobra de forma imparcial no grupo.
+- Arthur, admin de pelada há 2 anos (TO): trocou o sorteio no papel pelo app e passou a ter estatísticas de todo jogo no grupo.
 
-## Bora pro campo?
+## Páginas
 
-Crie seu grupo grátis em menos de 2 minutos. Seu time vai agradecer e você vai voltar a jogar sem estresse.
-
-[Acessar o bot](/bot-start)
-
-[Criar pelo App →](https://app.partidinha.com/)•[Ver planos e preços →](#planos)
-
-Sem necessidade de cartão de crédito. Teste 100% grátis.
-
----
-
-# Pitch-fla
-
-URL: https://partidinha.com/apresentacoes/pitch-fla
-
-> Organize sua pelada sem sair do WhatsApp.
-
----
-
-# Bot-start
-
-URL: https://partidinha.com/bot-start
-
-> Organize sua pelada sem sair do WhatsApp.
-
----
-
-# Politica-de-privacidade
-
-URL: https://partidinha.com/politica-de-privacidade
-
-> Organize sua pelada sem sair do WhatsApp.
-
----
-
-# Termos-de-uso
-
-URL: https://partidinha.com/termos-de-uso
-
-> Organize sua pelada sem sair do WhatsApp.
-
----
-
-## About This Document
-
-This concatenated documentation file is generated automatically by aeo.js
-to make it easier for AI systems to understand the complete context of this project.
-
-For a structured index, see: https://partidinha.com/llms.txt
-For individual files, see: https://partidinha.com/docs.json
-
-Generated by aeo.js - https://aeojs.org
+- [Página inicial](https://partidinha.com/): apresentação do produto, recursos, planos e perguntas frequentes.
+- [Termos de Uso](https://partidinha.com/termos-de-uso): regras de uso do app e do bot de WhatsApp, pagamentos, responsabilidades e cancelamento de conta.
+- [Política de Privacidade](https://partidinha.com/politica-de-privacidade): como o Partidinha coleta, usa e protege os dados de administradores e jogadores, em conformidade com a LGPD.

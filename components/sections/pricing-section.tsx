@@ -84,13 +84,13 @@ export const PricingSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="planos" className="py-16 md:py-32 bg-white border-b border-sky-100 relative">
+    <section ref={sectionRef} id="planos" aria-labelledby="planos-title" className="py-16 md:py-32 bg-white border-b border-sky-100 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-4 gsap-reveal">
           <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
             Escolha seu plano
           </span>
-          <h2 className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="planos-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             Menos que o valor de um lanche por mês
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto">
@@ -100,8 +100,9 @@ export const PricingSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 border border-dashed border-sky-300/80 rounded-3xl overflow-hidden shadow-xs bg-sky-50/10">
           {plans.map((plan) => (
-            <div
+            <article
               key={plan.name}
+              aria-labelledby={`plano-${plan.name.toLowerCase()}-title`}
               className={`relative group border-sky-200/80 border-dashed ${plan.popular ? "md:border-l" : "md:border-r"
                 } border-b md:border-b-0`}
             >
@@ -113,7 +114,7 @@ export const PricingSection: React.FC = () => {
 
               <div className="relative overflow-hidden p-8 md:p-10 h-full flex flex-col justify-between bg-sky-50/20 hover:bg-sky-50/70 transition-colors duration-300">
                 {/* Background SVG Grid Overlay & Cyan Rays */}
-                <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+                <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
                   <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
                     <GridPattern />
                   </div>
@@ -123,14 +124,14 @@ export const PricingSection: React.FC = () => {
                 <div className="relative z-10 space-y-6">
                   {/* Header */}
                   <div className="space-y-2">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
+                    <div aria-hidden="true" className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
                       {plan.popular ? (
                         <Zap className="size-6" strokeWidth={2} aria-hidden />
                       ) : (
                         <CheckCircle2 className="size-6" strokeWidth={2} aria-hidden />
                       )}
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
+                    <h3 id={`plano-${plan.name.toLowerCase()}-title`} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
                       {plan.title}
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
@@ -139,14 +140,14 @@ export const PricingSection: React.FC = () => {
                   </div>
 
                   {/* Price */}
-                  <div className="flex items-baseline gap-1">
+                  <p className="flex items-baseline gap-1">
                     <span className="text-4xl sm:text-5xl font-bold text-slate-900 font-lastik">
                       {plan.price}
                     </span>
                     <span className="text-sm font-normal text-slate-500">
                       {plan.period}
                     </span>
-                  </div>
+                  </p>
 
                   {/* Features */}
                   <ul className="space-y-3">
@@ -198,7 +199,7 @@ export const PricingSection: React.FC = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

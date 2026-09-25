@@ -11,6 +11,8 @@ export interface Feature {
   content: string;
   /** Screenshot do app exibido dentro da moldura de celular. */
   image?: ImageProps["src"];
+  /** Texto alternativo do screenshot; usa o título/passo como fallback. */
+  imageAlt?: string;
   /** Alternativa ao screenshot: um mock renderizado (ex.: tela do WhatsApp). */
   node?: React.ReactNode;
 }
@@ -19,12 +21,15 @@ export interface FeatureStepsProps {
   features: Feature[];
   className?: string;
   title?: string;
+  /** id do heading, para a seção pai referenciar via aria-labelledby. */
+  titleId?: string;
 }
 
 export function FeatureSteps({
   features,
   className,
   title = "How to get Started",
+  titleId,
 }: FeatureStepsProps) {
   const [currentFeature, setCurrentFeature] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,16 +59,17 @@ export function FeatureSteps({
       <div className="sticky top-20 min-h-[75vh] flex flex-col justify-center p-4 md:p-8">
         <div className="max-w-7xl mx-auto w-full">
           {title && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center font-lastik text-slate-900 tracking-tight">
+            <h2 id={titleId} className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center font-lastik text-slate-900 tracking-tight">
               {title}
             </h2>
           )}
 
           <div className="flex flex-col md:grid md:grid-cols-2 gap-14 md:gap-12 items-center">
-            <div className="order-2 md:order-1 space-y-6 md:space-y-8">
+            <ol className="order-2 md:order-1 space-y-6 md:space-y-8">
               {features.map((feature, index) => (
-                <motion.div
+                <motion.li
                   key={index}
+                  aria-current={index === currentFeature ? "step" : undefined}
                   className="flex items-start gap-5 md:gap-7 cursor-pointer group"
                   onClick={() => handleStepClick(index)}
                   initial={false}
@@ -71,6 +77,7 @@ export function FeatureSteps({
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
+                    aria-hidden="true"
                     className={cn(
                       "w-9 h-9 md:w-11 md:h-11 rounded-full flex items-center justify-center border-2 shrink-0 transition-all duration-200 mt-1",
                       index === currentFeature
@@ -93,9 +100,9 @@ export function FeatureSteps({
                       {feature.content}
                     </p>
                   </div>
-                </motion.div>
+                </motion.li>
               ))}
-            </div>
+            </ol>
 
             <div className="order-1 md:order-2 relative flex items-center justify-center">
               {/* Brilho de fundo atrás do celular */}
@@ -112,6 +119,7 @@ export function FeatureSteps({
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
+                      aria-hidden={index !== currentFeature}
                       className="absolute inset-0 overflow-hidden pointer-events-none"
                       initial={false}
                       animate={{
@@ -125,7 +133,7 @@ export function FeatureSteps({
                       ) : feature.image ? (
                         <Image
                           src={feature.image}
-                          alt={feature.title || feature.step}
+                          alt={feature.imageAlt ?? (feature.title || feature.step)}
                           className="w-full h-full object-cover object-top"
                           width={380}
                           height={826}
@@ -137,7 +145,7 @@ export function FeatureSteps({
                 </div>
 
                 {/* Etiqueta do passo atual */}
-                <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-20">
+                <div aria-hidden="true" className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-20">
                   <span className="bg-sky-600 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-sky-500/40 shadow-lg shadow-sky-500/25 whitespace-nowrap">
                     {features[currentFeature]?.step}
                   </span>

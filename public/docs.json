@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-09-22T01:07:08.694Z",
+  "generated": "2026-09-25T21:54:43.007Z",
   "site": {
     "title": "Partidinha: Bot no seu WhatsApp",
     "description": "Organize sua pelada sem sair do WhatsApp.",
@@ -10,26 +10,26 @@
     {
       "url": "https://partidinha.com",
       "title": "Partidinha: Bot no seu WhatsApp",
-      "description": "Organize sua pelada sem sair do WhatsApp. Confirmações automáticas, cobrança dos devedores do grupo, sorteio de times e estatísticas: tudo gerido por um bot inteligente."
+      "description": "Organize sua pelada sem sair do WhatsApp: confirmação automática, cobrança dos devedores, sorteio de times e estatísticas, tudo gerido por um bot."
     },
     {
-      "url": "https://partidinha.com/apresentacoes/pitch-fla",
-      "title": "Pitch-fla",
+      "url": "https://partidinha.com/\\apresentacoes\\pitch-fla",
+      "title": "\\apresentacoes\\pitch-fla",
       "description": "Organize sua pelada sem sair do WhatsApp."
     },
     {
-      "url": "https://partidinha.com/bot-start",
-      "title": "Bot-start",
+      "url": "https://partidinha.com/\\bot-start",
+      "title": "\\bot-start",
       "description": "Organize sua pelada sem sair do WhatsApp."
     },
     {
-      "url": "https://partidinha.com/politica-de-privacidade",
-      "title": "Politica-de-privacidade",
+      "url": "https://partidinha.com/\\politica-de-privacidade",
+      "title": "\\politica-de-privacidade",
       "description": "Organize sua pelada sem sair do WhatsApp."
     },
     {
-      "url": "https://partidinha.com/termos-de-uso",
-      "title": "Termos-de-uso",
+      "url": "https://partidinha.com/\\termos-de-uso",
+      "title": "\\termos-de-uso",
       "description": "Organize sua pelada sem sair do WhatsApp."
     }
   ],

@@ -9,10 +9,19 @@ import Match from "@/app/match.webp";
 
 /** Visual de cada passo: screenshot do app ou mock renderizado (Passo 02). */
 const STEP_VISUALS: Partial<Feature>[] = [
-  { image: CreateGroup },
+  {
+    image: CreateGroup,
+    imageAlt: "Tela Criar grupo do app Partidinha com nome do grupo, link de convite do WhatsApp, esporte e local",
+  },
   { node: <WhatsAppBotJoin /> },
-  { image: NewMatch },
-  { image: Match },
+  {
+    image: NewMatch,
+    imageAlt: "Tela Marcar jogo do app Partidinha com data, horário, número de jogadores e cores dos times",
+  },
+  {
+    image: Match,
+    imageAlt: "Tela da partida no app Partidinha com placar, cronômetro e eventos de gols e assistências",
+  },
 ];
 
 const FEATURES: Feature[] = HOW_IT_WORKS.map((step, index) => ({
@@ -45,10 +54,10 @@ function GridPattern() {
 
 export const HowItWorksSection: React.FC = () => {
   return (
-    <section id="como-funciona" className="bg-slate-50 border-b border-slate-200/60 relative">
+    <section id="como-funciona" aria-labelledby="como-funciona-title" className="bg-slate-50 border-b border-slate-200/60 relative">
       {/* Background SVG Grid Overlay & Cyan Rays. Sibling of the sticky FeatureSteps
           panel (not an ancestor) so its own overflow-hidden can't break position: sticky. */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden [mask-image:linear-gradient(white,transparent)]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden [mask-image:linear-gradient(white,transparent)]">
         <div className="from-sky-500/15 via-cyan-400/10 to-transparent absolute -inset-x-20 inset-y-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
           <GridPattern />
         </div>
@@ -66,6 +75,7 @@ export const HowItWorksSection: React.FC = () => {
         <FeatureSteps
           features={FEATURES}
           title="Mais fácil que cobrar pênalti sem goleiro"
+          titleId="como-funciona-title"
         />
       </div>
     </section>

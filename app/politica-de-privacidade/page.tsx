@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { LegalPage } from "@/components/layout/legal-page";
 
+const title = "Política de Privacidade";
+const description =
+  "Saiba como o Partidinha coleta, usa e protege os dados de administradores e jogadores do seu grupo de pelada no WhatsApp, em conformidade com a LGPD.";
+
 export const metadata: Metadata = {
-  title: "Política de Privacidade | Partidinha",
-  description:
-    "Saiba como o Partidinha coleta, usa e protege os dados do administrador e dos jogadores do seu grupo de pelada.",
+  title,
+  description,
+  alternates: {
+    canonical: "/politica-de-privacidade",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: SITE_NAME,
+    url: "/politica-de-privacidade",
+    title: `${title} | ${SITE_NAME}`,
+    description,
+  },
 };
 
 export default function PoliticaDePrivacidadePage() {
