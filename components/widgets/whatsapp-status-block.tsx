@@ -29,7 +29,7 @@ export const WhatsAppStatusBlock: React.FC = () => {
           <p className="text-[6px] sm:text-[9px] font-bold text-emerald-400 leading-none mb-0.5">
             Gabriel
           </p>
-          <p className="text-[6.5px] sm:text-[9.5px] leading-snug text-white font-medium whitespace-nowrap">
+          <p className="text-[6.5px] sm:text-[9.5px] leading-snug text-white font-medium break-words sm:whitespace-nowrap">
             <span className="text-sky-300 font-bold">@Partidinha Bot</span> entrar
           </p>
           <p className="text-[5px] sm:text-[7px] text-emerald-200/60 text-right mt-0.5">
@@ -47,7 +47,7 @@ export const WhatsAppStatusBlock: React.FC = () => {
             Bot
           </span>
         </div>
-        <div className="text-[6.5px] sm:text-[9.5px] text-slate-100 leading-snug font-medium whitespace-nowrap">
+        <div className="text-[6.5px] sm:text-[9.5px] text-slate-100 leading-snug font-medium break-words sm:whitespace-nowrap">
           <div className="game-header">
             ⚽ Pelada das Quintas FC (Sáb, 18:00) <br />
             📍 Campo do Bairro Novo
