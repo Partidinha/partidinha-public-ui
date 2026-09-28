@@ -59,7 +59,7 @@ export function FeatureSteps({
       <div className="sticky top-20 min-h-[75vh] flex flex-col justify-center p-4 md:p-8">
         <div className="max-w-7xl mx-auto w-full">
           {title && (
-            <h2 id={titleId} className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center font-lastik text-slate-900 tracking-tight">
+            <h2 id={titleId} className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center font-display text-slate-900 tracking-tight">
               {title}
             </h2>
           )}
@@ -93,7 +93,7 @@ export function FeatureSteps({
                   </motion.div>
 
                   <div className="flex-1">
-                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 font-lastik tracking-tight mb-1">
+                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 font-display tracking-tight mb-1">
                       {feature.title || feature.step}
                     </h3>
                     <p className="text-sm md:text-base text-slate-600 leading-relaxed">

@@ -47,7 +47,7 @@ export default function DemoOne() {
     <section className="py-16 md:py-32 bg-white">
       <div className="mx-auto w-full max-w-6xl space-y-8 px-4">
         <AnimatedContainer className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-5xl xl:font-extrabold text-slate-900 font-lastik">
+          <h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-5xl xl:font-extrabold text-slate-900 font-display">
             Power. Speed. Control.
           </h2>
           <p className="text-slate-600 mt-4 text-sm tracking-wide text-balance md:text-base">

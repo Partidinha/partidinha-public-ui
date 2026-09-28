@@ -33,7 +33,7 @@ export const TestimonialsSection: React.FC = () => {
           <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
             Times que pararam de sofrer
           </span>
-          <h2 id="depoimentos-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="depoimentos-title" className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             De bagunça para organização. Em uma semana.
           </h2>
         </div>
@@ -75,7 +75,7 @@ export const TestimonialsSection: React.FC = () => {
                     {t.initial}
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 text-sm font-lastik">
+                    <div className="font-bold text-slate-900 text-sm font-display">
                       {t.name}
                     </div>
                     <div className="text-xs text-slate-500">{t.role}</div>

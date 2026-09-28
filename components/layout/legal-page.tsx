@@ -53,13 +53,13 @@ export const LegalPage: React.FC<LegalPageProps> = ({ title, updatedAt, children
               >
                 <Image src={Logo} alt="" className="w-9 h-9" />
                 <span
-                  className="font-bold text-lg text-white font-lastik"
+                  className="font-bold text-lg text-white font-display"
                   style={{ letterSpacing: "0.03em" }}
                 >
                   Partidinha
                 </span>
               </Link>
-              <h1 id="legal-title" className="font-lastik text-3xl sm:text-4xl font-bold text-white">
+              <h1 id="legal-title" className="font-display text-3xl sm:text-4xl font-bold text-white">
                 {title}
               </h1>
               <p className="mt-3 text-sm text-slate-400">
@@ -73,7 +73,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ title, updatedAt, children
             <div
               className="
                 text-slate-700 leading-relaxed space-y-6
-                [&_h2]:font-lastik [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:pt-6
+                [&_h2]:font-display [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:pt-6
                 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-slate-900 [&_h3]:pt-2
                 [&_p]:text-sm [&_p]:sm:text-base
                 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_ul]:text-sm [&_ul]:sm:text-base

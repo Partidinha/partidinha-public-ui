@@ -29,7 +29,7 @@ export default function NotFound() {
           <Link href="/" className="inline-flex items-center gap-3">
             <Image src={Logo} alt="Partidinha Logo" className="w-9 h-9" />
             <span
-              className="font-bold text-lg text-white font-lastik"
+              className="font-bold text-lg text-white font-display"
               style={{ letterSpacing: "0.03em" }}
             >
               Partidinha
@@ -42,12 +42,12 @@ export default function NotFound() {
             <span aria-hidden="true">⚽</span> Erro 404
           </span>
 
-          <h1 className="mt-8 font-lastik text-4xl sm:text-6xl font-bold text-white">
+          <h1 className="mt-8 font-display text-4xl sm:text-6xl font-bold text-white">
             Bola fora!
           </h1>
 
           <p
-            className="mt-4 font-lastik text-7xl sm:text-9xl font-bold text-gradient-cyan select-none"
+            className="mt-4 font-display text-7xl sm:text-9xl font-bold text-gradient-cyan select-none"
             aria-hidden="true"
           >
             404

@@ -20,7 +20,7 @@ export const FaqSection: React.FC = () => {
           <span className="bg-sky-100 text-sky-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block border border-sky-200">
             Dúvidas Frequentes
           </span>
-          <h2 id="faq-title" className="headline-title text-3xl font-lastik text-slate-900 tracking-tight">
+          <h2 id="faq-title" className="headline-title text-3xl font-display text-slate-900 tracking-tight">
             Ainda com dúvida?
           </h2>
         </div>
@@ -42,7 +42,7 @@ export const FaqSection: React.FC = () => {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full p-5 text-left font-bold text-slate-900 text-sm flex items-center justify-between font-lastik cursor-pointer"
+                    className="w-full p-5 text-left font-bold text-slate-900 text-sm flex items-center justify-between font-display cursor-pointer"
                   >
                     <span className="text-base">{faq.question}</span>
                     <ChevronDown

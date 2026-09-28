@@ -48,7 +48,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100/90 text-sky-600 border border-sky-200/80 shadow-xs group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
           <feature.icon className="size-6" strokeWidth={2} aria-hidden />
         </div>
-        <h3 id={titleId} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
+        <h3 id={titleId} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-display pt-2">
           {feature.title}
         </h3>
         <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">

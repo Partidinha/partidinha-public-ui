@@ -90,7 +90,7 @@ export const PricingSection: React.FC = () => {
           <span className="inline-flex items-center rounded-full bg-sky-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 border border-sky-200 shadow-xs">
             Escolha seu plano
           </span>
-          <h2 id="planos-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="planos-title" className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             Menos que o valor de um lanche por mês
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto">
@@ -131,7 +131,7 @@ export const PricingSection: React.FC = () => {
                         <CheckCircle2 className="size-6" strokeWidth={2} aria-hidden />
                       )}
                     </div>
-                    <h3 id={`plano-${plan.name.toLowerCase()}-title`} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-lastik pt-2">
+                    <h3 id={`plano-${plan.name.toLowerCase()}-title`} className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-display pt-2">
                       {plan.title}
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
@@ -141,7 +141,7 @@ export const PricingSection: React.FC = () => {
 
                   {/* Price */}
                   <p className="flex items-baseline gap-1">
-                    <span className="text-4xl sm:text-5xl font-bold text-slate-900 font-lastik">
+                    <span className="text-4xl sm:text-5xl font-bold text-slate-900 font-display">
                       {plan.price}
                     </span>
                     <span className="text-sm font-normal text-slate-500">

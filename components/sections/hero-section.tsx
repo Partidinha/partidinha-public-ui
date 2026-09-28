@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ selectedHeadlineKey })
 
             <h1
               id="hero-headline"
-              className="headline-title text-4xl sm:text-6xl lg:text-7xl font-lastik text-white tracking-tight leading-[1.05]"
+              className="headline-title text-4xl sm:text-6xl lg:text-7xl font-display text-white tracking-tight leading-[1.05]"
               dangerouslySetInnerHTML={{ __html: currentHeadline.titleHtml }}
             />
 

@@ -55,7 +55,7 @@ export const ProblemSection: React.FC = () => {
           <span className="inline-flex items-center rounded-full bg-red-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-red-700 border border-red-200 shadow-xs">
             Você conhece essa cena?
           </span>
-          <h2 id="problema-title" className="font-lastik text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
+          <h2 id="problema-title" className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">
             O grupo do Whats virou bagunça.<br />E você é o único que se estressa.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
@@ -76,7 +76,7 @@ export const ProblemSection: React.FC = () => {
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center justify-between pt-2">
-                  <h3 id="problema-sem-partidinha" className="font-lastik font-bold text-2xl text-red-600">
+                  <h3 id="problema-sem-partidinha" className="font-display font-bold text-2xl text-red-600">
                     O grupo sem Partidinha
                   </h3>
                   <span className="bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
@@ -167,7 +167,7 @@ export const ProblemSection: React.FC = () => {
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center justify-between pt-2">
-                  <h3 id="problema-com-partidinha" className="font-lastik font-bold text-2xl text-sky-600">
+                  <h3 id="problema-com-partidinha" className="font-display font-bold text-2xl text-sky-600">
                     O admin do grupo que nunca esquece
                   </h3>
                   <span className="bg-sky-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">

@@ -2,7 +2,7 @@
 
 > **Versão Final Aprovada (Protótipo Interativo)**  
 > **Gerado em**: 2026-08-07  
-> **Inspirações**: Billow.so (Tipografia Lastik & Glass Pills), Resend.com (Feixe de Luz Abstrato Conic Ray), Linea Prompt (Malha Técnica de Grid Overlay & Focused Cards)
+> **Inspirações**: Billow.so (Glass Pills), Resend.com (Feixe de Luz Abstrato Conic Ray), Linea Prompt (Malha Técnica de Grid Overlay & Focused Cards)
 
 ---
 
@@ -23,16 +23,10 @@ Análise e extração estrita das cores do ícone oficial da marca (eliminados q
 ## 2. Tipografia Oficial
 
 ### 2.1 Headings & Títulos de Destaque
-- **Fonte Principal de Títulos**: `Lastik Variable Variable Regular` / `Lastik Test Bold` (Fonte editorial do Billow.so)
-- **Importação `@font-face`**:
-  ```css
-  @font-face {
-    font-family: "Lastik Variable Variable Regular";
-    src: url("https://framerusercontent.com/assets/0cNKkawYj3lQlwSys33leW5jRI.woff2");
-    font-display: swap;
-  }
-  ```
-- **Classe CSS**: `.font-lastik { font-family: "Lastik Variable Variable Regular", Georgia, serif, sans-serif; letter-spacing: -0.02em; }`
+- **Fonte Principal de Títulos**: `Fraunces` (Google Fonts, licença SIL OFL — livre para uso comercial)
+- **Carregamento**: via `next/font/google` em `app/layout.tsx` (self-hosted, expõe a variável `--font-fraunces`)
+- **Classe CSS**: `.font-display { font-family: var(--font-fraunces), Georgia, serif; font-weight: 700; letter-spacing: -0.02em; }` (todos os títulos em Bold)
+- **Histórico**: até 2026-09 usávamos Lastik (hotlinked do Billow.so, sem licença). Foi removida após notificação de licenciamento — não reintroduzir fontes comerciais sem licença.
 
 ### 2.2 Corpo de Texto & UI
 - **Interface e Leitura**: `Geist`, `Inter`, `sans-serif`

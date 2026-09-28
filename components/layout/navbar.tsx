@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
         >
           <Image src={Logo} alt="" className="w-9 h-9 sm:w-10 sm:h-10 shrink-0" />
           <span
-            className="hidden min-[400px]:inline font-bold text-lg sm:text-xl text-white font-lastik whitespace-nowrap"
+            className="hidden min-[400px]:inline font-bold text-lg sm:text-xl text-white font-display whitespace-nowrap"
             style={{ letterSpacing: "0.03em" }}
           >
             Partidinha

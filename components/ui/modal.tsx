@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({
         )}
       >
         <div className="flex items-center justify-between border-b border-slate-100 pb-3 relative z-10">
-          <h2 id={titleId} className="font-lastik font-bold text-slate-900 text-lg flex items-center gap-2">
+          <h2 id={titleId} className="font-display font-bold text-slate-900 text-lg flex items-center gap-2">
             {title}
           </h2>
           <button

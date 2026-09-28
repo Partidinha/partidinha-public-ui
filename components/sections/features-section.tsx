@@ -57,7 +57,7 @@ export const FeaturesSection: React.FC = () => {
           </span>
           <h2
             id="features-title"
-            className="headline-title text-3xl sm:text-5xl font-lastik text-slate-900 tracking-tight"
+            className="headline-title text-3xl sm:text-5xl font-display text-slate-900 tracking-tight"
             dangerouslySetInnerHTML={{ __html: FEATURES_HEADER.titleHtml }}
           />
           <p className="text-slate-600 text-base">

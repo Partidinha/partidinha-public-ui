@@ -15,7 +15,7 @@ export const ShowcaseSection: React.FC = () => {
           <span className="bg-sky-500/20 text-sky-300 border border-sky-400/30 px-4 py-1 text-xs font-bold uppercase tracking-wider inline-block rounded-full">
             Veja por dentro
           </span>
-          <h2 className="headline-title text-3xl sm:text-5xl font-lastik tracking-tight text-white">
+          <h2 className="headline-title text-3xl sm:text-5xl font-display tracking-tight text-white">
             O aplicativo que todo admin de grupo sempre quis
           </h2>
         </div>
@@ -76,7 +76,7 @@ export const ShowcaseSection: React.FC = () => {
             <div className="space-y-6 animate-in fade-in duration-300">
               <div className="flex items-center justify-between border-b border-sky-900/40 pb-4">
                 <div>
-                  <h4 className="font-lastik font-bold text-xl text-white">
+                  <h4 className="font-display font-bold text-xl text-white">
                     Próxima Pelada #42
                   </h4>
                   <p className="text-xs text-slate-300">
@@ -123,7 +123,7 @@ export const ShowcaseSection: React.FC = () => {
 
           {activeTab === "partida" && (
             <div className="space-y-4 animate-in fade-in duration-300">
-              <h4 className="font-lastik font-bold text-xl text-white mb-2">
+              <h4 className="font-display font-bold text-xl text-white mb-2">
                 Agendar Nova Partida
               </h4>
               <div className="grid grid-cols-2 gap-3 text-xs">
@@ -141,7 +141,7 @@ export const ShowcaseSection: React.FC = () => {
 
           {activeTab === "sorteio" && (
             <div className="space-y-4 animate-in fade-in duration-300">
-              <h4 className="font-lastik font-bold text-xl text-white">
+              <h4 className="font-display font-bold text-xl text-white">
                 Times Sorteados (Equilíbrio 5.0)
               </h4>
               <div className="grid grid-cols-2 gap-4 text-xs font-mono">
@@ -173,7 +173,7 @@ export const ShowcaseSection: React.FC = () => {
 
           {activeTab === "tabela" && (
             <div className="space-y-4 animate-in fade-in duration-300">
-              <h4 className="font-lastik font-bold text-xl text-white">
+              <h4 className="font-display font-bold text-xl text-white">
                 🏆 Artilharia da Temporada 2026
               </h4>
               <div className="space-y-2 text-xs font-mono">

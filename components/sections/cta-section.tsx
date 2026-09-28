@@ -26,7 +26,7 @@ export const CtaSection: React.FC = () => {
       <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-sky-500/20 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-6 gsap-reveal">
-        <h2 id="cta-title" className="text-4xl sm:text-6xl lg:text-7xl font-lastik tracking-tight text-white">
+        <h2 id="cta-title" className="text-4xl sm:text-6xl lg:text-7xl font-display tracking-tight text-white">
           Bora pro campo? <span aria-hidden="true">⚽</span>
         </h2>
 
